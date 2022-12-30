@@ -39,7 +39,7 @@
                     <div class="color__box" style="background-color: #2e5055;">
                         <p class="color__hex" style="color: white;">#2e5055</p>
                     </div>
-                    <p class="color__variable">$color-dk-green</p>
+                    <p class="color__variable">$color-dark-green</p>
                 </div>
                 <div class="color">
                     <div class="color__box" style="background-color: #e4d8cf;">
@@ -80,6 +80,15 @@
 
             </div>
         </section>
+
+        <section class="design-system-section">
+            <h1 class="title">
+                Fonts
+            </h1>
+            <div class="fonts">
+                <h1>H1 Title</h1>
+            </div>
+        </section>
     </main>
 
     <script src="../js/vendor/modernizr-3.11.2.min.js"></script>
@@ -90,11 +99,15 @@
         main {
             max-width: 70vw;
             margin: 2rem auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
         }
 
         .design-system-section .title {
             font-size: 2em;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
         }
 
         .colors {
@@ -129,6 +142,10 @@
 
         .color__variable {
             font-size: .75em; 
+        }
+
+        .fonts {
+            
         }
     </style>
 </body>
