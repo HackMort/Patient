@@ -27,6 +27,67 @@
             <h1 class="title">
                 Colors
             </h1>
+            <div class="colors">
+
+                <div class="color">
+                    <div class="color__box" style="background-color: #de0000;">
+                        <p class="color__hex" style="color: white;">#de0000</p>
+                    </div>
+                    <p class="color__variable">$color-red</p>
+                </div>
+                <div class="color">
+                    <div class="color__box" style="background-color: #2e5055;">
+                        <p class="color__hex" style="color: white;">#2e5055</p>
+                    </div>
+                    <p class="color__variable">$color-dark-green</p>
+                </div>
+                <div class="color">
+                    <div class="color__box" style="background-color: #e4d8cf;">
+                        <p class="color__hex">#e4d8cf</p>
+                    </div>
+                    <p class="color__variable">$color-light-beige</p>
+                </div>
+                <div class="color">
+                    <div class="color__box" style="background-color: #607cbe;">
+                        <p class="color__hex" style="color: white;">#607cbe</p>
+                    </div>
+                    <p class="color__variable">$color-blue</p>
+                </div>
+                <div class="color">
+                    <div class="color__box" style="background-color: #b4d6bd;">
+                        <p class="color__hex">#b4d6bd</p>
+                    </div>
+                    <p class="color__variable">$color-light-green</p>
+                </div>
+                <div class="color">
+                    <div class="color__box" style="background-color: #d8c6ba;">
+                        <p class="color__hex">#d8c6ba</p>
+                    </div>
+                    <p class="color__variable">$color-beige</p>
+                </div>
+                <div class="color">
+                    <div class="color__box" style="background-color: #455782;">
+                        <p class="color__hex" style="color: white;">#455782</p>
+                    </div>
+                    <p class="color__variable">$color-ada-blue</p>
+                </div>
+                <div class="color">
+                    <div class="color__box" style="background-color: rgba(96, 124, 190, 0.2);">
+                        <p class="color__hex">rgba(96, 124, 190, 0.2)</p>
+                    </div>
+                    <p class="color__variable">$color-light-blue</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="design-system-section">
+            <h1 class="title">
+                Fonts
+            </h1>
+            <div class="fonts">
+                <h1>H1 Title</h1>
+            </div>
         </section>
     </main>
 
@@ -36,20 +97,57 @@
 
     <style>
         main {
-            max-width: 80vw;
+            max-width: 70vw;
+            margin: 2rem auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
         }
 
         .design-system-section .title {
             font-size: 2em;
+            margin-bottom: 3rem;
+        }
+
+        .colors {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            transition: all 100ms ease-in-out;
+        }
+
+        .color {
+            width: 6.25rem;
+        }
+
+        .color__box {
+            width: 6.25rem;
+            height: 4.375rem;
+            padding: .2rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-bottom: .5rem;
+        }
+
+        .color__hex {
+            margin: auto;
+            font-size: .75em;
+        }
+
+        .color__variable {
+            font-size: .75em; 
+        }
+
+        .fonts {
+            
         }
     </style>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <!-- <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
 </body>
 
 </html>
