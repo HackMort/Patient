@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    padding: 1rem;
+  }
+
+  &__nav {
+
+    padding: 1rem;
+  }
+
+  &__nav--toggle {
+    cursor: pointer;
+    padding: 1rem;
+
+    & span {
+      display: block;
+      cursor: pointer;
+      width: 1.5rem;
+      height: 0.2rem;
+      margin: 0.2rem;
+      background-color: #000
+    }
+  }
+
+
+  &__nav--list {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+
+    &--dropdown {
+      display: none;
+    }
+
+    &--dropdown_item {}
+
+    &--item {}
+
+    &--list {}
+  }
+}
+
+.no-js {}

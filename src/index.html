@@ -1,40 +1,78 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="apple-touch-icon" href="/icon.png">
-  <!-- Place favicon.ico in the root directory -->
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="/scss/style.scss">
+    <link rel="stylesheet" href="/scss/style.scss">
 
-  <meta name="theme-color" content="#fafafa">
-</head>
+    <meta name="theme-color" content="#fafafa">
+  </head>
 
-<body>
+  <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo">
+        <a href="/">
+          <img src="https://via.placeholder.com/130x71.png?text=NMOSD" alt="logo">
+        </a>
+      </div>
+      <nav class="header__nav">
+        <!-- nav toggle -->
+        <div class="header__nav--toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="header__nav--list">
+          <li class="header__nav--item"><a href="/">Home</a></li>
+          <li class="header__nav--item">
+            <a href="#">Understanding NMOSD</a>
+            <ul class="header__nav--dropdown">
+              <li class="header__nav--dropdown_item"><a href="#">Item 1</a></li>
+              <li class="header__nav--dropdown_item"><a href="#">Item 2</a></li>
+              <li class="header__nav--dropdown_item"><a href="#">Item 3</a></li>
+            </ul>
+          </li>
+          <li class="header__nav--item"><a href="#">A Course of Damage</a></li>
+          <li class="header__nav--item"><a href="#">Managing NMOSD</a></li>
+          <li class="header__nav--item">
+            <a href="#">NMOSD Support</a>
+            <ul class="header__nav--dropdown">
+              <li class="header__nav--dropdown_item"><a href="#">Item 1</a></li>
+              <li class="header__nav--dropdown_item"><a href="#">Item 2</a></li>
+              <li class="header__nav--dropdown_item"><a href="#">Item 3</a></li>
+            </ul>
+          </li>
+          <li class="header__nav--item"><a href="#">Get the Newsletter</a></li>
+          <li class="header__nav--item"><a href="#">Healthcare Professionals</a></li>
+          <li class="header__nav--item"><a href="#">Attend an Event </a></li>
+        </ul>
+      </nav>
+    </header>
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <!-- <script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <!-- <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script> -->
-</body>
+  </body>
 
 </html>
