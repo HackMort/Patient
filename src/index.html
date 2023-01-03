@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
@@ -21,47 +21,69 @@
     <meta name="theme-color" content="#fafafa">
   </head>
 
-  <body>
+  <body class="body">
 
     <!-- Header -->
     <header class="header">
-      <div class="header__logo">
-        <a href="/">
-          <img src="https://via.placeholder.com/130x71.png?text=NMOSD" alt="logo">
-        </a>
-      </div>
-      <nav class="header__nav">
-        <!-- nav toggle -->
-        <div class="header__nav--toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="header__nav--list">
-          <li class="header__nav--item"><a href="/">Home</a></li>
-          <li class="header__nav--item">
-            <a href="#">Understanding NMOSD</a>
-            <ul class="header__nav--dropdown">
-              <li class="header__nav--dropdown_item"><a href="#">Item 1</a></li>
-              <li class="header__nav--dropdown_item"><a href="#">Item 2</a></li>
-              <li class="header__nav--dropdown_item"><a href="#">Item 3</a></li>
-            </ul>
+      <div class="top__bar">
+        <ul class="top__bar--links">
+          <li class="top__bar--links_item"><a class="link" href="#">Healthcare Professionals</a></li>
+          <li class="top__bar--links_item attend_event">
+            <a target="_blank" href="#">Attend an Event
+              <img src="/assets/img/icon-external-link.svg" alt="Attend an Event" />
+            </a>
           </li>
-          <li class="header__nav--item"><a href="#">A Course of Damage</a></li>
-          <li class="header__nav--item"><a href="#">Managing NMOSD</a></li>
-          <li class="header__nav--item">
-            <a href="#">NMOSD Support</a>
-            <ul class="header__nav--dropdown">
-              <li class="header__nav--dropdown_item"><a href="#">Item 1</a></li>
-              <li class="header__nav--dropdown_item"><a href="#">Item 2</a></li>
-              <li class="header__nav--dropdown_item"><a href="#">Item 3</a></li>
-            </ul>
-          </li>
-          <li class="header__nav--item"><a href="#">Get the Newsletter</a></li>
-          <li class="header__nav--item"><a href="#">Healthcare Professionals</a></li>
-          <li class="header__nav--item"><a href="#">Attend an Event </a></li>
         </ul>
-      </nav>
+      </div>
+      <div class="header__wrapper">
+        <div class="header__logo">
+          <a href="/">
+            <img src="https://via.placeholder.com/130x71.png?text=NMOSD" alt="logo">
+          </a>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav--menu">
+            <li class="header__nav--menu_item mobile--logo">
+              <a href="/">
+                <img src="https://via.placeholder.com/130x71.png?text=NMOSD" alt="logo">
+              </a>
+            </li>
+            <li class="header__nav--menu_item"><a href="/">Home</a></li>
+            <li class="header__nav--menu_item has--dropdown">
+              <a href="#">Understanding NMOSD</a>
+              <ul class="sub__menu">
+                <li class="sub__menu_item"><a href="#">About NMOSD</a></li>
+                <li class="sub__menu_item"><a href="#">NMOSD vs MS</a></li>
+                <li class="sub__menu_item"><a href="#">How Diagnosis Works</a></li>
+              </ul>
+            </li>
+            <li class="header__nav--menu_item"><a href="#">A Course of Damage</a></li>
+            <li class="header__nav--menu_item"><a href="#">Managing NMOSD</a></li>
+            <li class="header__nav--menu_item has--dropdown">
+              <a href="#">NMOSD Support</a>
+              <ul class="sub__menu">
+                <li class="sub__menu_item"><a href="#">Item 1</a></li>
+                <li class="sub__menu_item"><a href="#">Item 2</a></li>
+                <li class="sub__menu_item"><a href="#">Item 3</a></li>
+              </ul>
+            </li>
+            <li class="header__nav--menu_item"><a href="#">Get the Newsletter</a></li>
+            <li class="header__nav--menu_item"><a href="#">Healthcare Professionals</a></li>
+            <li class="header__nav--menu_item attend_event">
+              <a target="_blank" href="#">Attend an Event
+                <img src="/assets/img/icon-external-link.svg" alt="Attend an Event" />
+              </a>
+            </li>
+          </ul>
+          <button class="header__nav--toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="nav__toggle--text">Menu</span>
+          </button>
+        </nav>
+      </div>
+
     </header>
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
