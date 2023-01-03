@@ -41,19 +41,19 @@ h1, h2, h3 {
 
 h1 {
     font-size: 2em;
-    line-height: .0781em;
+    line-height: 1.25;
     
     
 }
 
 h2 {
     font-size: 1.75em;
-    line-height: .0844em;
+    line-height: 1.35;
 }
 
 h3 {
     font-size: 1.5em;
-    line-height: .0844em;
+    line-height: 1.35;
 }
 
 .paragraph {
@@ -62,12 +62,13 @@ h3 {
     font-style: normal;
     letter-spacing: normal;
     text-align: left;
-    color: $color-black;
-}
-
-.paragraph {
     font-size: 1.125em;
-    line-height: .0938rem;
+    line-height: 1.5;
+    color: $color-black;
+
+    &.paragraph--center {
+        text-align: center;
+    }
 
     &.paragraph--16 {
         font-size: 1em;

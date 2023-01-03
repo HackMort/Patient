@@ -1,0 +1,32 @@
+.icon-card {
+    text-align: center;
+    width: 100%;
+
+    max-width: 20.1875rem;
+    padding: 1.25rem;
+
+    .icon-card__icon {
+        width: 8rem;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .icon-card__content {
+        font-weight: bold;
+
+        .icon-card__amount {
+            font-size: 3.125em;
+            color: $color-dark-green;
+        }
+
+        .icon-card__title {
+            color: $color-dark-green;
+            font-size: 1.5em;
+            line-height: 1.35;
+            margin-bottom: .5rem;
+        }
+    }
+}
