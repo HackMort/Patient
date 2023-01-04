@@ -1,3 +1,5 @@
+@use '../settings/breakpoints' as *;
+
 .button {
     border-radius: .25rem;
     width: 100%;

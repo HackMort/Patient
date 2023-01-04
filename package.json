@@ -9,8 +9,8 @@
   "license": "",
   "author": "",
   "scripts": {
-    "build": "rm -R dist/* &&  parcel build src/*.html src/**/*.html",
-    "serve": "rm -R dist/* && parcel src/*.html src/**/*.html --port 3000"
+    "build": "rm -d -r dist &&  parcel build src/*.html src/**/*.html",
+    "serve": "rm -d -r dist && parcel src/*.html src/**/*.html --port 3000"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
