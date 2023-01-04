@@ -1,11 +1,11 @@
 /* Toggle Menu Stuff */
-const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 const body = document.querySelector('body');
+const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 document.addEventListener("DOMContentLoaded", () => {
   toggleMenuBtn.addEventListener('click', () => {
     toggleMenu();
   });
-
+  toggleSubmenu();
 });
 
 function toggleMenu() {
@@ -22,6 +22,38 @@ function toggleMenu() {
   overlay.addEventListener('click', () => {
     toggleMenu();
   });
+}
+
+// Submenu Functionality 
+function toggleSubmenu() {
+  const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
+  if (subMenuItems && subMenuItems.length > 0) {
+    subMenuItems.forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        item.classList.add('active');
+      });
+      item.addEventListener('mouseleave', () => {
+        item.classList.remove('active');
+      });
+      item.addEventListener('touchstart', () => {
+        item.classList.add('active');
+      });
+      item.addEventListener('touchend', () => {
+        item.classList.remove('active');
+      });
+    })
+  }
+}
+
+// set active class on menu item depending on page
+const menuItems = document.querySelectorAll('.header__nav--menu_item');
+if (menuItems && menuItems.length > 0) {
+  menuItems.forEach((item) => {
+    const link = item.querySelector('a');
+    if (link && link.href === window.location.href) {
+      item.classList.add('current-menu-item');
+    }
+  })
 }
 
 
