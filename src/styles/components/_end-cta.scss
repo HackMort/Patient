@@ -22,4 +22,12 @@
             text-align: left;
         }
     }
+
+    &.end-cta--white {
+        .end-cta__text {
+            color: $color-white;
+            font-size: 2.5em;
+            line-height: 1.25;
+        }
+    }
 }
