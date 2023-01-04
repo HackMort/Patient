@@ -1,0 +1,25 @@
+@import '../settings/variables';
+
+.end-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (min-width: 600px) {
+        flex-direction: row;
+    }
+
+    .end-cta__text {
+        color: $color-dark-green;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1.35;
+        text-align: center;
+
+        @media screen and (min-width: 600px) {
+            text-align: left;
+        }
+    }
+}

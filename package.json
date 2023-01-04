@@ -9,9 +9,8 @@
   "license": "",
   "author": "",
   "scripts": {
-    "build": "rm -f -R dist/* && parcel build src/*.html src/**/*.html src/scss/*.scss src/scss/**/*.scss  src/js/*.js src/js/**/*.js --out-dir dist/js src/assets/fonts/* src/assets/img/* --out-dir dist --public-url ./  --no-source-maps --no-minify",
-    "serve": "parcel src/index.html --port 3000",
-    "dev": "parcel src/index.html --port 3000 --no-cache --no-source-maps"
+    "build": "rm -f -R dist/* && parcel build src/*.html src/**/*.html src/styles/*.scss src/js/*.js src/js/**/*.js src/assets/* src/assets/**/* src/assets/**/**/* --out-dir dist --public-url ./  --no-source-maps --no-minify --no-cache",
+    "serve": "rm -f -R dist/* && parcel serve src/*.html src/**/*.html src/styles/*.scss src/js/*.js src/js/**/*.js src/assets/* src/assets/**/* src/assets/**/**/*  --no-source-maps --no-cache --port 3000"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
