@@ -1,3 +1,6 @@
+@import '../settings/variables';
+@import '../settings/mixins';
+
 .header {
   background-color: $color-light-green;
   padding-bottom: 1rem;
