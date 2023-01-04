@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleMenuBtn.addEventListener('click', () => {
     toggleMenu();
   });
+  toggleSubmenu();
 
 });
 
@@ -22,6 +23,22 @@ function toggleMenu() {
   overlay.addEventListener('click', () => {
     toggleMenu();
   });
+}
+
+// Submenu Functionality on Desktop
+
+function toggleSubmenu() {
+  const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
+  if (subMenuItems && subMenuItems.length > 0) {
+    subMenuItems.forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        item.classList.add('active');
+      });
+      item.addEventListener('mouseleave', () => {
+        item.classList.remove('active');
+      });
+    })
+  }
 }
 
 
