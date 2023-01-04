@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function toggleMenu() {
   const toggleTextSpan = document.querySelector('.nav__toggle--text');
+  const overlayDiv = document.querySelector('.overlay');
+  if (overlayDiv) {
+    overlayDiv.remove();
+  }
   const overlay = document.createElement('div');
   toggleTextSpan.innerHTML === 'Menu' ? toggleTextSpan.innerHTML = 'Close' : toggleTextSpan.innerHTML = 'Menu';
   overlay.classList.add('overlay');
