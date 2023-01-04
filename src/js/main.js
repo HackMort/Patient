@@ -24,8 +24,7 @@ function toggleMenu() {
   });
 }
 
-// Submenu Functionality on Desktop
-
+// Submenu Functionality 
 function toggleSubmenu() {
   const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
   if (subMenuItems && subMenuItems.length > 0) {
@@ -44,6 +43,17 @@ function toggleSubmenu() {
       });
     })
   }
+}
+
+// set active class on menu item depending on page
+const menuItems = document.querySelectorAll('.header__nav--menu_item');
+if (menuItems && menuItems.length > 0) {
+  menuItems.forEach((item) => {
+    const link = item.querySelector('a');
+    if (link && link.href === window.location.href) {
+      item.classList.add('current-menu-item');
+    }
+  })
 }
 
 
