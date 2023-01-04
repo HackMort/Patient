@@ -101,6 +101,11 @@
     width: 300px;
     z-index: 2;
 
+    @media screen and (min-width: 1200px) {
+      overflow-x: initial;
+      overflow-y: initial;
+    }
+
     &_item {
       background-color: $color-dark-green;
       min-height: 68px;
@@ -215,11 +220,47 @@
               border-radius: 4px;
               color: $color-dark-green;
               font-weight: bold;
+
+              @media screen and (min-width: 1200px) {
+                background-color: $color-soft-green;
+                color: $color-dark-green;
+              }
+
+            }
+
+            @media screen and (min-width: 1200px) {
+              background-color: $color-dark-green;
+              border: 0;
+              border-radius: 4px;
+              box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+              -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+              -moz-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+              -ms-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+              -o-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+              color: $color-light-green;
+              font-weight: bold;
+              height: auto;
+              line-height: 0.85;
+              margin-bottom: 5px;
+              padding: 10px;
             }
           }
+
+          @media screen and (min-width: 1200px) {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+          }
+
         }
 
         &.active {
+          .sub__menu {
+            display: block;
+          }
+
           >a {
             font-weight: bold;
 
@@ -232,11 +273,6 @@
               border-bottom: 5px solid $color-light-green;
             }
           }
-
-          .sub__menu {
-            display: block;
-          }
-
         }
       }
 
