@@ -10,7 +10,8 @@
   "author": "",
   "scripts": {
     "build": "rm -f -R dist/* && parcel build src/*.html src/**/*.html src/scss/*.scss src/scss/**/*.scss  src/js/*.js src/js/**/*.js --out-dir dist/js src/assets/fonts/* src/assets/img/* --out-dir dist --public-url ./  --no-source-maps --no-minify",
-    "serve": "parcel src/index.html --port 3000"
+    "serve": "parcel src/index.html --port 3000",
+    "dev": "parcel src/index.html --port 3000 --no-cache --no-source-maps"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
