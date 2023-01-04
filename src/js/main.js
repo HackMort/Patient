@@ -1,12 +1,11 @@
 /* Toggle Menu Stuff */
-const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 const body = document.querySelector('body');
+const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 document.addEventListener("DOMContentLoaded", () => {
   toggleMenuBtn.addEventListener('click', () => {
     toggleMenu();
   });
   toggleSubmenu();
-
 });
 
 function toggleMenu() {
@@ -35,6 +34,12 @@ function toggleSubmenu() {
         item.classList.add('active');
       });
       item.addEventListener('mouseleave', () => {
+        item.classList.remove('active');
+      });
+      item.addEventListener('touchstart', () => {
+        item.classList.add('active');
+      });
+      item.addEventListener('touchend', () => {
         item.classList.remove('active');
       });
     })
