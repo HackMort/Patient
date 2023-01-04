@@ -1,8 +1,8 @@
 @import 'settings/reset';
 @import 'settings/variables';
 @import 'settings/fonts';
-
-
+@import 'settings/mixins';
+@import 'components/header';
 @import 'components/button';
 @import 'components/icon-card';
 @import 'components/end-cta';

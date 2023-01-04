@@ -1,4 +1,5 @@
-@use '../settings/breakpoints' as *;
+@import '../settings/variables';
+@import '../settings/mixins';
 
 .button {
     border-radius: .25rem;
@@ -11,7 +12,8 @@
 
     cursor: pointer;
 
-    transition: all 100ms ease;
+    // transition: all 100ms ease;
+    @include transition(all, 100ms, ease);
 
     &:disabled,
     &[disabled] {
@@ -42,6 +44,12 @@
 
         font-weight: bold;
         font-size: 1.125em;
+
+        -webkit-user-select: none;
+
+        -moz-user-select: none;
+
+        -ms-user-select: none;
 
         user-select: none;
         position: relative;
