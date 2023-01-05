@@ -83,3 +83,49 @@ if (elements && elements.length > 0) {
   })
 }
 // NUMBER COUNTER ANIMATION
+
+
+// Wistia Video Sample
+
+document.addEventListener("DOMContentLoaded", () => {
+  const wrapper = document.querySelector('.wistia_embed');
+  const button = document.querySelector('.video__control');
+  const playIcon = document.querySelector('.control--icon.play');
+  const pauseIcon = document.querySelector('.control--icon.pause');
+  let video;
+
+  window._wq = window._wq || [];
+
+  _wq.push({
+    id: 'wistia-747xnmy4p8-1', onReady: function (v) {
+      video = v
+      console.log(video)
+      console.log(video.state())
+    }
+  });
+
+  const onPlay = function () {
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+  }
+
+  const onPause = function () {
+    pauseIcon.style.display = 'none';
+    playIcon.style.display = 'block';
+  }
+
+  // Add listener
+  if (button) {
+    button.addEventListener('click', function () {
+      const isPlaying = video.state() === 'playing';
+
+      if (isPlaying) {
+        video.pause()
+        onPause()
+      } else {
+        video.play()
+        onPlay()
+      }
+    })
+  }
+})

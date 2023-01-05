@@ -1,0 +1,139 @@
+@import '../settings/variables';
+@import '../settings/mixins';
+
+.hero {
+  background-color: $color-light-green;
+  color: $color-black;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 3rem;
+    align-items: center;
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+    .hero__content {
+      order: 1;
+    }
+
+    .hero__media {
+      order: 2;
+      margin-top: 2.5rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 480px;
+    }
+  }
+
+  &.hero--single {
+    .wrapper {
+      grid-template-columns: 1fr;
+
+      @media screen and (min-width: 1024px) {
+        grid-row-gap: 2rem;
+      }
+
+      @media screen and (min-width: 1024px) {
+        .hero__content {
+          order: 2;
+        }
+
+        .hero__media {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  &__content {
+    order: 2;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 890px;
+
+    @media screen and (min-width: 1204px) {
+      word-wrap: break-word;
+      width: 582px;
+    }
+
+    &--title {
+      color: $color-dark-green;
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 1.75rem;
+    }
+
+    &--subtitle {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      @media screen and (min-width: 768px) {
+        font-size: 2.5rem;
+        line-height: 3.125rem;
+      }
+
+    }
+
+    &--text {
+      font-size: 14px;
+      line-height: 18px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    .button {
+      margin-top: 2rem;
+      width: 215px;
+    }
+  }
+
+  &__media {
+    order: 1;
+    margin-bottom: 1.5rem;
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    &--video {
+      position: relative;
+      width: 100%;
+
+      .video__control {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: $color-dark-green;
+        border: none;
+        cursor: pointer;
+        height: 1.5rem;
+        width: 2rem;
+        outline: none;
+        z-index: 2;
+
+        .control--icon {
+          color: $color-white;
+          width: 100%;
+        }
+
+      }
+
+    }
+
+  }
+
+}
