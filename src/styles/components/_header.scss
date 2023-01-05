@@ -103,7 +103,7 @@
     overflow-y: auto;
     @include transition(transform, 0.3s, ease-in-out);
     width: 300px;
-    z-index: 2;
+    z-index: 3;
 
     @media screen and (min-width: 1200px) {
       overflow-x: initial;
