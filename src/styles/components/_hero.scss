@@ -36,17 +36,27 @@
     .wrapper {
       grid-template-columns: 1fr;
 
+      .hero__media {
+        order: 1;
+      }
+
+      .hero__content {
+        order: 2;
+      }
+
+      .hero__content--subtitle {
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+      }
+
       @media screen and (min-width: 1024px) {
         grid-row-gap: 2rem;
       }
 
       @media screen and (min-width: 1024px) {
         .hero__content {
-          order: 2;
-        }
-
-        .hero__media {
-          order: 1;
+          max-width: 837px;
+          width: 100%;
         }
       }
     }
