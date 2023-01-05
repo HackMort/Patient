@@ -7,20 +7,12 @@
     align-items: center;
     justify-content: space-between;
 
-    @media screen and (min-width: 600px) {
-        flex-direction: row;
-    }
-
     .end-cta__text {
         color: $color-dark-green;
         font-size: 1.5em;
         font-weight: bold;
         line-height: 1.35;
         text-align: center;
-
-        @media screen and (min-width: 600px) {
-            text-align: left;
-        }
     }
 
     &.end-cta--white {
@@ -29,5 +21,9 @@
             font-size: 2.5em;
             line-height: 1.25;
         }
+    }
+
+    @media screen and (min-width: 1024px) {
+        flex-direction: row;
     }
 }

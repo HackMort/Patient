@@ -1,0 +1,39 @@
+.video__button {
+    background-color: $color-dark-green;
+    width: 2rem;
+    height: 2rem;
+    padding: .125rem .375rem;
+
+    cursor: pointer;
+
+    img {
+        width: 100%;
+        height: 100%;
+
+        display: none;
+    }
+
+    .play {
+        display: initial;
+    }
+
+    &.video__button--pause {
+        .play {
+            display: none;
+        }
+
+        .pause {
+            display: initial;
+        }
+    }
+
+    &.video__button--play {
+        .play {
+            display: initial;
+        }
+
+        .pause {
+            display: none;
+        }
+    }
+}

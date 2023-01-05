@@ -3,13 +3,28 @@
 @import 'settings/fonts';
 @import 'settings/mixins';
 @import 'components/header';
+@import 'components/video-container';
 @import 'components/button';
 @import 'components/icon-card';
 @import 'components/end-cta';
 
 .section-wrapper {
     width: calc(100% - 2.75rem);
+    height: 100%;
     margin: 0 auto;
+
+    @media screen and (min-width: 402px) {
+        width: calc(100% - 3.75rem);
+    }
+
+    @media screen and (min-width: 448px) {
+        width: calc(100% - 5.75rem);
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: 100%;
+        max-width: 58.25rem;
+    }
 }
 
 // ========================== HOME PAGE =====================================
@@ -18,21 +33,57 @@
 .home__cta {
 
     .video {
-        height: 34.4375rem;
+        height: 32.4375rem;
+        position: relative;
+
+        background-image: url('../assets/img/tmp-home-cta.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 46% 0%;
+
+        .section-wrapper {
+            position: relative;
+
+            .video__cta {
+                position: absolute;
+                top: 55%;
+                transform: translateY(-50%);
+
+                width: 100%;
+            }
+        }
+
+        .video__button-container {
+            position: absolute;
+            z-index: 2;
+            bottom: .9375rem;
+        }
     }
 
     .end-cta--white {
+        padding: 0 2rem;
+        align-items: initial;
+
         .end-cta__text {
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 4px 4px rgba(0, 0, 0, 0.25);
-            padding: 0 2rem;
             text-align: left;
+        }
+
+        .end-cta__button {
+            width: 100%;
+            max-width: 18.25rem;
+
+            margin: 0 auto;
         }
     }
 
     .cta {
         background-color: $color-light-beige;
         padding-bottom: 4rem;
-        
+        padding-top: 1rem;
+
+        position: relative;
+
         .cta__title,
         .cta__subtitle,
         .paragraph {
@@ -41,6 +92,7 @@
 
         .cta__title {
             margin-bottom: 2rem;
+            padding: 0 1rem;
         }
 
         .cta__subtitle {
@@ -62,13 +114,18 @@
         }
 
 
-        &::before {
-            content: "";
-            background-color: $color-white;
+        .cta__wave {
+            background-color: transparent;
             width: 100%;
             display: block;
 
             height: 5.625rem;
+
+            position: absolute;
+            left: 0;
+            bottom: 100%;
+
+            z-index: 0;
 
             background-image: url('../assets/vectors/waves/home-cta-wave.svg');
             background-repeat: no-repeat;
@@ -76,7 +133,163 @@
             background-size: 600%;
         }
     }
+
+    @media screen and (min-width: 408px) {
+        .video {
+            background-position: 44% 0%;
+        }
+
+        .cta .cta__wave {
+            background-position: 16% 55%;
+        }
+    }
+
+    @media screen and (min-width: 408px) {
+        .cta .cta__wave {
+            background-position: 13% 55%;
+            background-size: 400%;
+        }
+    }
+
+    @media screen and (min-width: 514px) {
+        .video {
+            background-position: 43% 0%;
+        }
+
+        .cta .cta__wave {
+            background-position: 10% 55%;
+            background-size: 386%;
+        }
+    }
+
+    @media screen and (min-width: 572px) {
+        .video {
+            background-position: 39% 0%;
+        }
+
+        .cta .cta__wave {
+            background-position: 9% 55%;
+            background-size: 338%;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .cta .cta__wave {
+            background-position: 4% 55%;
+            background-size: 309%;
+        }
+    }
+
+    @media screen and (min-width: 640px) {
+        .video {
+            background-position: 41% 0%;
+            background-size: 378%;
+        }
+
+        .cta .cta__wave {
+            background-position: 92% 55%;
+            background-size: 272%;
+        }
+    }
+
+    @media screen and (min-width: 690px) {
+        .video {
+            background-position: 39% 0%;
+            background-size: 355%;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .video {
+            background-position: 1% 3%;
+            background-size: 250%;
+            height: 25rem;
+        }
+
+        .cta .cta__wave {
+            background-position: 54% 55%;
+            background-size: 180%;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        .video {
+            background-size: 213%;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .cta {
+            padding-bottom: 2.625rem;
+        }
+
+        .end-cta--white {
+            align-items: center;
+            padding: 0;
+        }
+
+        .cta .cta__subtitle {
+            font-size: 1.5em;
+            line-height: 1.35;
+        }
+    }
+
+    @media screen and (min-width: 1108px) {
+        .video {
+            background-size: cover;
+            background-position: 1% 0%;
+        }
+
+        .cta .cta__wave {
+            height: 7.25rem;
+            background-size: cover;
+            background-position: 0% 67%;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .cta .cta__wave {
+            height: 8.25rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .cta .cta__wave {
+            height: 10.25rem;
+            bottom: 98%;
+        }
+    }
+
+    @media screen and (min-width: 1629px) {
+        .cta {
+            padding-top: 3rem;
+        }
+
+        .cta .cta__wave {
+            height: 11.25rem;
+            bottom: 91%;
+        }
+    }
+
+    @media screen and (min-width: 1788px) {
+        .cta .cta__wave {
+            height: 12.25rem;
+            bottom: 84%;
+        }
+    }
+
+    @media screen and (min-width: 2136px) {
+        .cta {
+            padding-top: 5rem;
+        }
+
+        .cta .cta__wave {
+            height: 14.25rem;
+            bottom: 78%;
+        }
+    }
 }
+
 // CTA Section
 
 // ========================== HOME PAGE =====================================
