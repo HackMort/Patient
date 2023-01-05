@@ -12,7 +12,8 @@
 @import 'components/footer';
 
 .section-wrapper {
-    width: calc(100% - 2.75rem);
+    max-width: calc(100% - 2.75rem);
+    width: 100%;
     height: 100%;
     margin: 0 auto;
 
@@ -25,8 +26,7 @@
     }
 
     @media screen and (min-width: 1024px) {
-        width: 100%;
-        max-width: 58.25rem;
+        max-width: 74.625rem;
     }
 }
 
@@ -96,6 +96,9 @@
         .cta__title {
             margin-bottom: 2rem;
             padding: 0 1rem;
+
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta__subtitle {
@@ -234,6 +237,18 @@
         .cta .cta__subtitle {
             font-size: 1.5em;
             line-height: 1.35;
+        }
+
+        .video .end-cta__text {
+          max-width: 39rem;
+        }
+
+        .cta .cta__title {
+          max-width: 58.25rem;
+        }
+
+        .end-cta--white .end-cta__button {
+          margin: 0;
         }
     }
 

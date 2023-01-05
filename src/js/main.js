@@ -1,11 +1,45 @@
+
 /* Toggle Menu Stuff */
 const body = document.querySelector('body');
 const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 document.addEventListener("DOMContentLoaded", () => {
-  toggleMenuBtn.addEventListener('click', () => {
-    toggleMenu();
-  });
+  const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop();
+  if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
+    window.location.href = '/validate.html';
+  }
+  // Validate Form
+  const form = document.querySelector('.form__validate');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const accessCode = form.querySelector('input[name="access-code"]').value;
+      if (accessCode === 'P4Ti3Nt2023') {
+        document.cookie = `accessCookie=${accessCode};max-age=604800`; // 1 week
+        window.location.href = '/';
+      } else {
+        alert('Invalid Access Code');
+      }
+    });
+  }
+
+  if (toggleMenuBtn) {
+    toggleMenuBtn.addEventListener('click', () => {
+      toggleMenu();
+    });
+  }
   toggleSubmenu();
+
+  // set active class on menu item depending on page
+  const menuItems = document.querySelectorAll('.header__nav--menu_item');
+  if (menuItems && menuItems.length > 0) {
+    menuItems.forEach((item) => {
+      const link = item.querySelector('a');
+      if (link && link.href === window.location.href) {
+        item.classList.add('current-menu-item');
+      }
+    })
+  }
+
 });
 
 function toggleMenu() {
@@ -26,6 +60,7 @@ function toggleMenu() {
 
 // Submenu Functionality 
 function toggleSubmenu() {
+  console.log('I am here');
   const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
   if (subMenuItems && subMenuItems.length > 0) {
     subMenuItems.forEach((item) => {
@@ -43,17 +78,6 @@ function toggleSubmenu() {
       });
     })
   }
-}
-
-// set active class on menu item depending on page
-const menuItems = document.querySelectorAll('.header__nav--menu_item');
-if (menuItems && menuItems.length > 0) {
-  menuItems.forEach((item) => {
-    const link = item.querySelector('a');
-    if (link && link.href === window.location.href) {
-      item.classList.add('current-menu-item');
-    }
-  })
 }
 
 
@@ -129,3 +153,5 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
+
+

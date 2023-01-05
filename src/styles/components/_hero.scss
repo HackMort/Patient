@@ -57,6 +57,10 @@
           max-width: 837px;
           width: 100%;
         }
+
+        .hero__media {
+          margin-top: 1rem;
+        }
       }
     }
   }
@@ -153,8 +157,21 @@
   height: 13.875rem;
 
   background-color: transparent;
-  
-  &.hero-waves--bg-white  {
+
+  &.hero-waves--bg-white {
     background-color: $color-white;
+  }
+
+  &.hero-waves--primary {
+    background-image: url('/assets/vectors/waves/hero-waves.png');
+    background-size: cover;
+    background-position: 78% 0%;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1200px) {
+    &.hero-waves--primary {
+      background-position: left;
+    }
   }
 }
