@@ -85,3 +85,9 @@ h3 {
         line-height: normal;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    h2 {
+        font-size: 2em;
+    }
+}
