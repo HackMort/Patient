@@ -11,6 +11,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
+    max-width: 1366px;
     padding-right: 1.75rem;
     padding-left: 1.75rem;
   }
@@ -29,6 +31,8 @@
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
+      margin: 0 auto;
+      max-width: 1366px;
       padding: 0 1.75rem;
 
       &_item {
