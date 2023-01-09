@@ -84,6 +84,7 @@
 
   &__logo {
     align-self: flex-start;
+    width: 130px;
 
     @media screen and (min-width: 1200px) {
       position: relative;
@@ -106,8 +107,12 @@
     overflow-x: hidden;
     overflow-y: auto;
     @include transition(transform, 0.3s, ease-in-out);
-    width: 300px;
+    width: 235px;
     z-index: 3;
+
+    @media screen and (min-width: 375px) {
+      width: 300px;
+    }
 
     @media screen and (min-width: 1200px) {
       overflow-x: initial;
