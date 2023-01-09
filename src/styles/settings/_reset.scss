@@ -119,9 +119,9 @@ button,
 label {
     font-family: inherit;
     font-size: inherit;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
+    // -webkit-hyphens: auto;
+    // -ms-hyphens: auto;
+    // hyphens: auto;
     background-color: transparent;
     color: inherit;
     display: block;
@@ -213,9 +213,9 @@ body {
     font-size: 100%;
     font-family: var(--primary-font);
     color: var(--black);
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
+    // -webkit-hyphens: auto;
+    // -ms-hyphens: auto;
+    // hyphens: auto;
     font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
