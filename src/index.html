@@ -7,35 +7,28 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <head>
-      <meta charset="utf-8">
-      <title></title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-      <meta property="og:title" content="">
-      <meta property="og:type" content="">
-      <meta property="og:url" content="">
-      <meta property="og:image" content="">
-      <meta property="og:title" content="">
-      <meta property="og:type" content="">
-      <meta property="og:url" content="">
-      <meta property="og:image" content="">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-      <link rel="manifest" href="/site.webmanifest">
-      <link rel="apple-touch-icon" href="/icon.png">
-      <!-- Place favicon.ico in the root directory -->
-      <link rel="manifest" href="/site.webmanifest">
-      <link rel="apple-touch-icon" href="/icon.png">
-      <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="/styles/style.scss">
+    <link rel="stylesheet" href="/styles/style.scss">
 
-      <link rel="stylesheet" href="/styles/style.scss">
-      <link rel="stylesheet" href="/styles/style.scss">
-
-      <meta name="theme-color" content="#fafafa">
-    </head>
     <meta name="theme-color" content="#fafafa">
   </head>
+
 
   <body class="body">
 
@@ -159,220 +152,70 @@
           </div>
         </section>
         <div class="hero-waves hero-waves--primary"></div>
-        <!-- Hero section -->
-        <!-- Main -->
-        <main>
-          <!-- Hero section -->
-          <section class="home__hero hero hero--single">
-            <div class="wrapper">
-              <div class="hero__content">
-                <!-- <h1 class="hero__content--title">Home</h1> -->
-                <h2 class="hero__content--subtitle">Whether you’re just beginning your journey with neuromyelitis optica
-                  spectrum disorder (NMOSD) or you’ve been on it for a while, there’s a lot to understand. The more you
-                  know, the better you can manage your condition.</h2>
-                <!-- <p class="hero__content--text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
-                <button class="button button--default">
-                  <span class="button__label">
-                    About NMOSD
-                  </span>
-                  <span class="button__icon">
-                    <img src="assets/icons/play--white.svg" alt="Button icon">
-                  </span>
-                </button>
-              </div>
-              <div class="hero__media">
-                <div class="hero__media--video">
-                  <script src="https://fast.wistia.com/embed/medias/747xnmy4p8.jsonp" async></script>
-                  <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-                  <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-                    <div class="wistia_responsive_wrapper"
-                      style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                      <div class="wistia_embed wistia_async_747xnmy4p8 videoFoam=true"
-                        style="height:100%;position:relative;width:100%">
-                        <div class="wistia_swatch"
-                          style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                          <img src="https://fast.wistia.com/embed/medias/747xnmy4p8/swatch"
-                            style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt=""
-                            aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <button class="video__control">
-                    <svg class="control--icon play" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                      viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
-                      <path d="M7 6v12l10-6z"></path>
-                    </svg>
-                    <svg class="control--icon pause" style="display: none;" xmlns="http://www.w3.org/2000/svg"
-                      width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
-                      <path d="M8 7h3v10H8zm5 0h3v10h-3z"></path>
-                    </svg>
-                  </button>
+        <!-- NMOSD Info Section -->
+        <section class="home__nmosd-info">
+          <div class="section-wrapper">
+            <div class="nmosd-info">
+              <h2 class="nmosd-info__title">NMOSD is a rare autoimmune disease</h2>
+              <p class="nmosd-info__description paragraph paragraph--center">
+                NMOSD is a chronic condition that affects the central nervous system, but it can usually be managed
+                with
+                the
+                right treatment.
+              </p>
+            </div>
+            <div class="icon-card__container">
+              <!-- People in the US -->
+              <div class="icon-card">
+                <div class="icon-card__icon">
+                  <img src="/assets/icons/people-in-map.svg" alt="Info icon">
+                </div>
+                <div class="icon-card__content">
+                  <p class="icon-card__amount">15,000</p>
+                  <p class="icon-card__title">
+                    people in the US
+                  </p>
+                  <p class="paragraph paragraph--center">
+                    are estimated to be living with NMOSD
+                  </p>
                 </div>
               </div>
+              <!-- People in the US -->
+              <!-- Years of age -->
+              <div class="icon-card">
+                <div class="icon-card__icon">
+                  <img src="/assets/icons/id-card.svg" alt="Info icon">
+                </div>
+                <div class="icon-card__content">
+                  <p class="icon-card__amount">
+                    39
+                  </p>
+                  <p class="icon-card__title">
+                    years of age
+                  </p>
+                  <p class="paragraph paragraph--center">
+                    median age of onset of NMOSD
+                  </p>
+                </div>
+              </div>
+              <!-- Years of age -->
             </div>
-          </section>
-          <div class="hero-waves hero-waves--primary"></div>
-          <!-- Hero section -->
+          </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="home__cta">
 
-          <!-- NMOSD Info Section -->
-          <section class="home__nmosd-info">
+          <div class="video">
             <div class="section-wrapper">
-              <div class="nmosd-info">
-                <h2 class="nmosd-info__title">NMOSD is a rare autoimmune disease</h2>
-                <p class="nmosd-info__description paragraph paragraph--center">
-                  NMOSD is a chronic condition that affects the central nervous system, but it can usually be managed
-                  with
-                  the
-                  right treatment.
-                </p>
-              </div>
-              <div class="icon-card__container">
-                <!-- People in the US -->
-                <div class="icon-card">
-                  <div class="icon-card__icon">
-                    <img src="/assets/icons/people-in-map.svg" alt="Info icon">
-                  </div>
-                  <div class="icon-card__content">
-                    <p class="icon-card__amount" data-animated="false" data-end="15000" data-duration="200"
-                      data-increment="50">0</p>
-                    <p class="icon-card__title">
-                      people in the US
-                    </p>
-                    <p class="paragraph paragraph--center">
-                      are estimated to be living with NMOSD
-                    </p>
-                  </div>
-                </div>
-                <!-- People in the US -->
-                <!-- Years of age -->
-                <div class="icon-card">
-                  <div class="icon-card__icon">
-                    <img src="/assets/icons/id-card.svg" alt="Info icon">
-                  </div>
-                  <div class="icon-card__content">
-                    <p class="icon-card__amount" data-animated="false" data-end="39" data-duration="200"
-                      data-increment="1">
-                      0
-                    </p>
-                    <p class="icon-card__title">
-                      years of age
-                    </p>
-                    <p class="paragraph paragraph--center">
-                      median age of onset of NMOSD
-                    </p>
-                  </div>
-                </div>
-                <!-- Years of age -->
-              </div>
-            </div>
-          </section>
-          <!-- NMOSD Info Section -->
-          </section>
-          <!-- NMOSD Info Section -->
-
-          <!-- CTA Section -->
-          <section class="home__cta">
-            <!-- CTA Section -->
-            <section class="home__cta">
-
-              <div class="video">
-                <div class="section-wrapper">
-                  <div class="video__cta">
-                    <div class="end-cta end-cta--white">
-                      <p class="end-cta__text">
-                        Uncover a cause of damage and disability in NMOSD
-                      </p>
-                      <div class="end-cta__button">
-                        <a class="button button--white">
-                          <span class="button__label">
-                            A Cause of Damage
-                          </span>
-                          <span class="button__icon">
-                            <img src="assets/icons/play--white.svg" alt="Button icon">
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="video">
-                  <div class="section-wrapper">
-                    <div class="video__cta">
-                      <div class="end-cta end-cta--white">
-                        <p class="end-cta__text">
-                          Uncover a cause of damage and disability in NMOSD
-                        </p>
-                        <div class="end-cta__button">
-                          <a class="button button--white">
-                            <span class="button__label">
-                              A Cause of Damage
-                            </span>
-                            <span class="button__icon">
-                              <img src="assets/icons/play--white.svg" alt="Button icon">
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="video__button-container">
-                    <button class="video__button video__button--pause">
-                      <img class="play" src="assets/icons/play--white.svg" alt="Play video">
-                      <img class="pause" src="assets/icons/pause--white.svg" alt="Pause video">
-                    </button>
-                  </div>
-                </div>
-                <div class="video__button-container">
-                  <button class="video__button video__button--pause">
-                    <img class="play" src="assets/icons/play--white.svg" alt="Play video">
-                    <img class="pause" src="assets/icons/pause--white.svg" alt="Pause video">
-                  </button>
-                </div>
-              </div>
-
-              <div class="cta">
-                <div class="cta__wave"></div>
-                <div class="section-wrapper">
-                  <h2 class="cta__title">
-                    Understanding NMOSD attacks is a first step toward managing your condition
-                  </h2>
-                  <p class="cta__subtitle">
-                    Learn how to manage your NMOSD
+              <div class="video__cta">
+                <div class="end-cta end-cta--white">
+                  <p class="end-cta__text">
+                    Uncover a cause of damage and disability in NMOSD
                   </p>
-                  <p class="paragraph">
-                    Engage with experts and keep up with the NMOSD community
-                  </p>
-                  <div class="cta">
-                    <div class="cta__wave"></div>
-                    <div class="section-wrapper">
-                      <h2 class="cta__title">
-                        Understanding NMOSD attacks is a first step toward managing your condition
-                      </h2>
-                      <p class="cta__subtitle">
-                        Learn how to manage your NMOSD
-                      </p>
-                      <p class="paragraph">
-                        Engage with experts and keep up with the NMOSD community
-                      </p>
-
-                      <div class="button__container">
-                        <a class="button button--default">
-                          <span class="button__label">
-                            Managing NMOSD
-                          </span>
-                          <span class="button__icon">
-                            <img src="assets/icons/play--white.svg" alt="Button icon">
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="button__container">
-                    <a class="button button--default">
+                  <div class="end-cta__button">
+                    <a class="button button--white">
                       <span class="button__label">
-                        Managing NMOSD
+                        A Cause of Damage
                       </span>
                       <span class="button__icon">
                         <img src="assets/icons/play--white.svg" alt="Button icon">
@@ -381,12 +224,41 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="video__button-container">
+              <button class="video__button video__button--pause">
+                <img class="play" src="assets/icons/play--white.svg" alt="Play video">
+                <img class="pause" src="assets/icons/pause--white.svg" alt="Pause video">
+              </button>
+            </div>
+          </div>
 
-            </section>
-            <!-- CTA Section -->
-        </main>
+          <div class="cta">
+            <div class="cta__wave"></div>
+            <div class="section-wrapper">
+              <h2 class="cta__title">
+                Understanding NMOSD attacks is a first step toward managing your condition
+              </h2>
+              <p class="cta__subtitle">
+                Learn how to manage your NMOSD
+              </p>
+              <p class="paragraph">
+                Engage with experts and keep up with the NMOSD community
+              </p>
+              <div class="button__container">
+                <a class="button button--default">
+                  <span class="button__label">
+                    Managing NMOSD
+                  </span>
+                  <span class="button__icon">
+                    <img src="assets/icons/play--white.svg" alt="Button icon">
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
         </section>
-        <!-- CTA Section -->
       </main>
 
       <!-- Footer -->
