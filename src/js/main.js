@@ -89,21 +89,36 @@ if (elements && elements.length > 0) {
   elements.forEach((element) => {
     try {
       const start = 0;
-      const end = parseInt(element.getAttribute('data-end'));
-      const duration = parseInt(element.getAttribute('data-duration'));
-      const increment = parseInt(element.getAttribute('data-increment'));
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const animated = element.getAttribute('data-animated').toString() === 'true';
-          if (!animated && entry.isIntersecting) {
-            numberAnimation(element, start, end, duration, increment);
-            element.setAttribute('data-animated', 'true');
-          }
-        })
-      }, { threshold: .5 });
+      const dataEnd = element.getAttribute('data-end');
+      const dataDuration = element.getAttribute('data-duration');
+      const dataIncrement = element.getAttribute('data-increment');
 
-      observer.observe(element);
+      const observe = (dataEnd !== null) && (dataDuration !== null) && (dataIncrement !== null);
+      
+      if (observe) {
+
+      const end = parseInt(dataEnd);
+      const duration = parseInt(dataDuration);
+      const increment = parseInt(dataIncrement);
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            let animated = false;
+
+            if (element.getAttribute('data-animated')) {
+              animated = element.getAttribute('data-animated').toString() === 'true' || false;
+            }
+
+            if (!animated && entry.isIntersecting) {
+              numberAnimation(element, start, end, duration, increment);
+              element.setAttribute('data-animated', 'true');
+            }
+          })
+        }, { threshold: .5 });
+
+        observer.observe(element);
+      }
     } catch (error) {
       console.log(`Number animation error: `, error)
     }

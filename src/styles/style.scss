@@ -94,6 +94,7 @@
       position: absolute;
       z-index: 2;
       bottom: .9375rem;
+      right: 0;
     }
   }
 
@@ -309,6 +310,12 @@
     .cta .cta__wave {
       height: 10.25rem;
       bottom: 98%;
+    }
+
+    .video .video__button-container {
+      bottom: initial;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
