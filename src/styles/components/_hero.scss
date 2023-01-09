@@ -7,7 +7,6 @@
   font-size: 0.875rem;
   line-height: 1.5;
   padding-top: 1rem;
-  padding-bottom: 3rem;
 
   .wrapper {
     display: grid;
@@ -150,4 +149,29 @@
 
   }
 
+}
+
+.hero-waves {
+  width: 100%;
+  position: relative;
+  height: 13.875rem;
+
+  background-color: transparent;
+
+  &.hero-waves--bg-white {
+    background-color: $color-white;
+  }
+
+  &.hero-waves--primary {
+    background-image: url('/assets/vectors/waves/hero-waves.png');
+    background-size: cover;
+    background-position: 78% 0%;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1200px) {
+    &.hero-waves--primary {
+      background-position: left;
+    }
+  }
 }
