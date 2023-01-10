@@ -764,6 +764,7 @@ h3 {
   font-size: 0.875rem;
   line-height: 1.5;
   padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 .hero .wrapper {
   display: grid;
@@ -1090,6 +1091,8 @@ h3 {
 @media screen and (min-width: 1024px) {
   .end-cta {
     flex-direction: row;
+    max-width: 54rem;
+    margin: 0 auto;
   }
 }
 
@@ -1766,7 +1769,7 @@ h3 {
 }
 
 .about__nmosd {
-  margin-bottom: 2.5rem;
+  margin: 2.5rem 0;
 }
 .about__nmosd .intro .wrapper {
   margin-top: 4rem;
@@ -2058,11 +2061,13 @@ h3 {
     padding-right: 5.75rem;
     padding-left: 5.75rem;
   }
-  .about-nmosd__symptoms .all__symptoms--content_columns {
-    padding: 0 2.5rem;
-    grid-column-gap: 1.4375rem;
-  }
   .about-nmosd__symptoms .all__symptoms--content_title {
     text-align: left;
+  }
+  .waves__callout {
+    height: 23.9375rem;
+  }
+  .waves__callout .section-wrapper .end-cta {
+    bottom: 4rem;
   }
 }/*# sourceMappingURL=style.css.map */

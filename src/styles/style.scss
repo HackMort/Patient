@@ -520,7 +520,7 @@
 // ========================== ABOUT PAGE =====================================
 
 .about__nmosd {
-  margin-bottom: 2.5rem;
+  margin: 2.5rem 0;
 
   .intro .wrapper {
     margin-top: 4rem;
@@ -849,13 +849,16 @@
     padding-left: 5.75rem;
   }
 
-  .about-nmosd__symptoms .all__symptoms--content_columns {
-    padding: 0 2.5rem;
-    grid-column-gap: 1.4375rem;
-  }
-
   .about-nmosd__symptoms .all__symptoms--content_title {
     text-align: left;
+  }
+
+  .waves__callout {
+    height: 23.9375rem;
+  }
+
+  .waves__callout .section-wrapper .end-cta {
+    bottom: 4rem;
   }
 }
 
