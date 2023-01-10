@@ -31,11 +31,11 @@ function numberIncrementAnimation(element, start, end, duration, increment) {
   increment = end > start ? increment : (increment * -1);
   const step = Math.abs(Math.floor(duration / range));
   const timer = setInterval(() => {
-      current += increment;
-      element.textContent = new Intl.NumberFormat().format(current);
-      if (current == end) {
-          clearInterval(timer);
-      }
+    current += increment;
+    element.textContent = new Intl.NumberFormat().format(current);
+    if (current == end) {
+      clearInterval(timer);
+    }
   }, step);
 }
 
@@ -105,20 +105,31 @@ function toggleSubmenu() {
   const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
   if (subMenuItems && subMenuItems.length > 0) {
     subMenuItems.forEach((item) => {
-      item.addEventListener('click', (event) => {
-        // event.preventDefault();
-        item.classList.toggle('active');
+      const anchor = item.querySelector('a');
+      const mediaQuery = window.matchMedia('(min-width: 1200px)');
+      if (mediaQuery.matches) {
+        item.addEventListener('mouseenter', () => {
+          item.classList.add('active');
+        });
+        item.addEventListener('mouseleave', () => {
+          item.classList.remove('active');
+        });
+      }
+      else {
+        anchor.addEventListener('click', (e) => {
+          e.preventDefault();
+          item.classList.toggle('active');
+        });
+      }
+      mediaQuery.addEventListener('change', (e) => {
+        if (e.matches) {
+          body.classList.remove('mobile__nav--open');
+          subMenuItems.forEach((item) => {
+            item.classList.remove('active');
+          });
+        }
       });
-      // item.addEventListener('mouseleave', () => {
-      //   item.classList.remove('active');
-      // });
-      // item.addEventListener('touchstart', () => {
-      //   item.classList.add('active');
-      // });
-      // item.addEventListener('touchend', () => {
-      //   item.classList.remove('active');
-      // });
-    })
+    });
   }
 }
 

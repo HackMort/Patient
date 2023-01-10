@@ -720,11 +720,13 @@ h3 {
   right: 0;
   left: 0;
   border-bottom-right-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: baseline;
+  display: block;
+  height: 100%;
+  overflow-y: scroll;
   padding-top: 0;
+}
+.mobile__nav--open .header__nav--menu .sub__menu a {
+  margin-bottom: 0;
 }
 .mobile__nav--open .header__nav--toggle {
   color: #b4d6bd;
@@ -1732,13 +1734,14 @@ h3 {
   grid-template-columns: 128px 138px;
   grid-template-rows: 1fr -webkit-min-content;
   grid-template-rows: 1fr min-content;
-  grid-column-gap: 22px;
+  grid-column-gap: 5px;
   grid-row-gap: 17px;
   align-items: center;
   margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .nmosd__vs_ms .card__icons .icon-card {
+    grid-column-gap: 22px;
     border-bottom: 0;
     padding-top: 0;
   }
