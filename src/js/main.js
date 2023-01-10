@@ -4,6 +4,8 @@ const body = document.querySelector('body');
 const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 document.addEventListener("DOMContentLoaded", () => {
   const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop();
+  const host = window.location.host;
+  console.log('Host: ', host);
   if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
     window.location.href = '/validate.html';
   }
@@ -95,12 +97,12 @@ if (elements && elements.length > 0) {
       const dataIncrement = element.getAttribute('data-increment');
 
       const observe = (dataEnd !== null) && (dataDuration !== null) && (dataIncrement !== null);
-      
+
       if (observe) {
 
-      const end = parseInt(dataEnd);
-      const duration = parseInt(dataDuration);
-      const increment = parseInt(dataIncrement);
+        const end = parseInt(dataEnd);
+        const duration = parseInt(dataDuration);
+        const increment = parseInt(dataIncrement);
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
