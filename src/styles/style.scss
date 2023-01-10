@@ -356,10 +356,509 @@
 
 // ========================== NMOSD vs MS PAGE =====================================
 
-.nmosd__vs_ms {
-  .section-wrapper {
-    max-width: 990px;
+
+@import './components/nmosd_vs_ms';
+
+.nmosd_vs_ms__hero {
+  @media screen and (max-width: 640px) {
+    .wrapper {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
   }
 }
 
+.nmosd__vs_ms {
+
+  .desktop__only {
+    display: none;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .mobile__only {
+      display: none;
+    }
+
+    .desktop__only {
+      display: block;
+    }
+  }
+
+  &.symptoms {
+    background-color: $color-light-purple;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .section-wrapper {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    max-width: 990px;
+  }
+
+  .nmosd__vs_ms_intro_content {
+    font-size: 18px;
+    line-height: 1.5;
+
+    p {
+      margin-bottom: 1.5rem;
+
+      &.paragraph.sup {
+        position: relative;
+      }
+
+      &.paragraph.sup::before {
+        content: "•";
+        position: absolute;
+        left: -5px;
+        top: -2px;
+      }
+
+      &.paragraph.paragraph--14 {
+        line-height: 1.25;
+      }
+
+    }
+  }
+
+  .nmosd__vs_ms_intro_content--title {
+    margin-bottom: 1.5rem;
+  }
+
+  .card__icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(261px, 1fr));
+    place-content: center;
+    margin: 0 auto;
+    max-width: 691px;
+    width: 100%;
+
+    .card__icons_column:first-of-type {
+      border-bottom: 1px solid;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    @media screen and (min-width: 676px) {
+      margin: 3.5rem auto;
+
+      .card__icons_column:first-of-type {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .card__icons_column:first-of-type {
+        border-right: 1px solid;
+      }
+    }
+
+    .icon-card {
+      display: grid;
+      grid-template-columns: 128px 138px;
+      grid-template-rows: 1fr -webkit-min-content;
+      grid-template-rows: 1fr min-content;
+      grid-column-gap: 22px;
+      grid-row-gap: 17px;
+      align-items: center;
+      margin: 0 auto;
+
+      @media screen and (min-width: 768px) {
+        border-bottom: 0;
+        padding-top: 0;
+      }
+    }
+
+    .icon-card__icon {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .icon-card__content {
+      grid-area: 1 / 2 / 2 / 3;
+      text-align: left;
+
+      .icon-card__title {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+    }
+
+    .icon-card__description {
+      grid-area: 2 / 1 / 3 / 3;
+
+      .paragraph {
+        color: $color-dark-green;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+
+    .icon-card__amount {
+      position: relative;
+      display: inline-block;
+      font-size: 50px;
+      line-height: 33px;
+      margin-bottom: 5px;
+
+      &::after {
+        content: '%';
+        position: absolute;
+        top: -10px;
+        left: 100%;
+        font-size: .5em;
+      }
+    }
+  }
+
+}
+
 // ========================== NMOSD vs MS PAGE =====================================
+
+//#########################################################################################
+
+// ========================== ABOUT PAGE =====================================
+
+.about__nmosd {
+  margin-bottom: 2.5rem;
+
+  .intro .wrapper {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .intro__content--title {
+    margin-bottom: 1.5rem;
+  }
+
+  .intro__content p:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .intro__content small {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
+
+.about-nmosd__symptoms {
+  margin-bottom: 2.5rem;
+
+  .all__symptoms--content {
+    border-radius: .625rem;
+    box-shadow: 0 .3125rem .75rem 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-grow: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    padding-right: 1.75rem;
+    padding-bottom: 3.5rem;
+    padding-left: 1.75rem;
+
+    position: relative;
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 0;
+
+    //   width: 87.4px;
+    //   height: 74.3px;
+    //   margin: 572.7px 0 0 1106.6px;
+    //   background-image: linear-gradient(142deg, #ebebeb 24%, #e6e6e6 33%, #d8d8d8 43%, #cdcdcd 49%, #b4b4b4 56%, #b6b6b6 58%, #bfbfbf 59%, #cdcdcd 60%);
+    // }
+  }
+
+  .all__symptoms--content_title {
+    text-align: center;
+  }
+
+  .all__symptoms--content_text {
+    text-align: left;
+  }
+
+  .all__symptoms--content_columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 130px;
+    grid-row-gap: 2rem;
+    place-content: space-between;
+    margin: 3rem auto;
+    max-width: 888px;
+    width: 100%;
+  }
+
+  .all__symptoms--content_list_item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-column-gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .all__symptoms--content_list_item .text {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold;
+    max-width: 294px;
+  }
+
+  .all__symptoms--content_list_item:first-of-type {
+    margin-top: 0;
+  }
+
+  .all__symptoms--content_list_item:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.icon__callout {
+  position: relative;
+}
+
+.icon__callout--inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  color: #2e5055;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-align: center;
+  gap: 24px;
+  padding: 40px 48px;
+  border-radius: 12px;
+  border: solid 4px #da5b79;
+  box-shadow: 10px 10px 0px #da5b79;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.nmosd__by_the_numbers {
+  background-color: rgba(96, 124, 190, 0.2);
+  margin-top: 4rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+
+  margin-bottom: 0;
+
+  .nmosd__by_the_numbers--title {
+    font-size: 2rem;
+    line-height: 2.68rem;
+    margin-bottom: 2.25rem;
+    text-align: center;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(319px, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    place-items: stretch;
+  }
+
+  .cards .icon-card {
+    position: relative;
+    background-image: linear-gradient(to bottom, #fff 33%, #e2e9ec 100%);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 410px;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .cards .icon-card::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    right: .875rem;
+    width: 1.5rem;
+    height: 14.5rem;
+    transform: rotate(348deg);
+    -webkit-filter: blur(24px);
+    filter: blur(24px);
+    background-color: rgba(96, 124, 190, 0.9);
+    z-index: -1;
+  }
+
+  .cards .icon-card .icon-card__title {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.card__callouts_section_title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.icon__card_callouts {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 85px;
+  margin-top: 130px;
+}
+
+.icon__card_callout_columns {
+  max-width: 480px;
+  width: 100%;
+}
+
+.icon__card_callout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 72px 40px 40px;
+  border-radius: 12px;
+  border: solid 3px #607cbe;
+  background-color: #fff;
+  min-height: 185px;
+  position: relative;
+  margin-bottom: 2rem;
+  /* max-width: 480px; */
+  /* width: 100%; */
+}
+
+.icon__card_callout_icon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 128px;
+  height: 128px;
+  padding: 0;
+  border-radius: 150px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.icon__card_callout_icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.icon__card_callout.unstyled {
+  background: none;
+  border: 0;
+  padding-top: 0;
+
+  padding-left: 0;
+  padding-right: 0;
+
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.icon__card_callout.unstyled .icon__card_callout_icon {
+  position: relative;
+  left: auto;
+  top: auto;
+  box-shadow: none;
+  margin-bottom: 2rem;
+  transform: none;
+}
+
+.icon__card_callout_content--heading {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+
+.icon__card_callout_content {
+  font-size: 18px;
+  line-height: 24px;
+  color: #2e5055;
+  text-align: center;
+}
+
+.icon__card_callout_content p {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 785px;
+}
+
+.icon__card_callout_content p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.card_callouts_section {
+  padding-top: 60px;
+  margin-bottom: 0;
+}
+
+.waves__callout {
+  background-image: url('/assets/img/pre-footer-beige-waves.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  height: 17.9375rem;
+}
+
+.waves__callout .section-wrapper {
+  position: relative;
+}
+
+.waves__callout .section-wrapper .end-cta {
+  position: absolute;
+  bottom: 2rem;
+
+  left: 0;
+  right: 0;
+}
+
+.section__callout {
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .icon__card_callouts {
+    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .icon__card_callouts {
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  }
+
+  .about__nmosd .intro__content {
+    max-width: 58.25rem;
+    margin: 0 auto;
+  }
+
+  .about-nmosd__symptoms .all__symptoms--content {
+    padding-right: 5.75rem;
+    padding-left: 5.75rem;
+  }
+
+  .about-nmosd__symptoms .all__symptoms--content_columns {
+    padding: 0 2.5rem;
+    grid-column-gap: 1.4375rem;
+  }
+
+  .about-nmosd__symptoms .all__symptoms--content_title {
+    text-align: left;
+  }
+}
+
+// ========================== ABOUT PAGE =====================================

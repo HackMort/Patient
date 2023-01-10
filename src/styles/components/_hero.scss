@@ -14,8 +14,14 @@
     grid-template-rows: 1fr;
     grid-column-gap: 3rem;
     align-items: center;
-    padding-right: 2rem;
-    padding-left: 2rem;
+
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+
+    @media screen and (min-width: 640px) {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
 
     .hero__content {
       order: 1;
