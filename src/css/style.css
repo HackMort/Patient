@@ -1173,6 +1173,56 @@ h3 {
   }
 }
 
+.step-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 18rem;
+  padding: 3rem 2.5rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0.625rem 0.625rem 0rem #da5b79;
+  position: relative;
+}
+.step-card .step-card__number {
+  border-radius: 50%;
+  width: 5.625rem;
+  height: 5.625rem;
+  background-color: #ffffff;
+  position: absolute;
+  top: -11%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.step-card .step-card__number span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.75rem;
+}
+.step-card .step-card__content .step-card__title {
+  text-align: center;
+}
+.step-card .step-card__content .step-card__icon {
+  width: 100%;
+}
+.step-card .step-card__content .step-card__icon img {
+  width: 8rem;
+  margin: 0 auto;
+}
+
+.list .list__element {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+.list .list__element .list__element-marker {
+  content: url("../assets//icons/list-dot.svg");
+  margin-right: 1rem;
+}
+.list .list__element:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
 .section-wrapper {
   max-width: calc(100% - 2.75rem);
   width: 100%;
@@ -2070,4 +2120,31 @@ h3 {
   .waves__callout .section-wrapper .end-cta {
     bottom: 4rem;
   }
+}
+.how-diagnosis-works__diagnosed {
+  margin: 2.5rem 0;
+}
+.how-diagnosis-works__diagnosed .how-is-diagnosed,
+.how-diagnosis-works__diagnosed .diagnosis-by,
+.how-diagnosis-works__diagnosed h2,
+.how-diagnosis-works__diagnosed h3,
+.how-diagnosis-works__diagnosed ul {
+  margin-bottom: 1.5rem;
+}
+
+.how-diagnosis-works__discover-steps {
+  padding: 3.4375rem 0;
+  background-color: rgba(96, 124, 190, 0.2);
+}
+.how-diagnosis-works__discover-steps .how-diagnosis-works__title {
+  text-align: center;
+  margin-bottom: 2.375rem;
+}
+.how-diagnosis-works__discover-steps .cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6.375rem;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
 }/*# sourceMappingURL=style.css.map */
