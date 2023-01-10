@@ -27,6 +27,10 @@
 
   @media screen and (min-width: 1024px) {
     max-width: 74.625rem;
+
+    &.section-wrapper--small {
+      max-width: 61.875rem;
+    }
   }
 }
 
@@ -304,18 +308,18 @@
     .cta .cta__wave {
       height: 8.25rem;
     }
+
+    .video .video__button-container {
+      bottom: initial;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   @media screen and (min-width: 1440px) {
     .cta .cta__wave {
       height: 10.25rem;
       bottom: 98%;
-    }
-
-    .video .video__button-container {
-      bottom: initial;
-      top: 50%;
-      transform: translateY(-50%);
     }
   }
 
@@ -388,12 +392,6 @@
     background-color: $color-light-purple;
     padding-top: 40px;
     padding-bottom: 40px;
-  }
-
-  .section-wrapper {
-    padding-right: 2rem;
-    padding-left: 2rem;
-    max-width: 990px;
   }
 
   .nmosd__vs_ms_intro_content {
