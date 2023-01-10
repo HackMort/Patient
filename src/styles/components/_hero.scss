@@ -175,6 +175,13 @@
     background-repeat: no-repeat;
   }
 
+  &.hero-waves--secondary {
+    background-image: url('/assets/vectors/waves/hero-2-waves.png');
+    background-size: cover;
+    background-position: 78% 0%;
+    background-repeat: no-repeat;
+  }
+
   @media screen and (min-width: 1200px) {
     &.hero-waves--primary {
       background-position: left;
