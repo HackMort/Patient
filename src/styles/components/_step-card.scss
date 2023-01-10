@@ -1,0 +1,60 @@
+.step-card {
+  background-color: $color-white;
+  width: 100%;
+  max-width: 18rem;
+  padding: 3rem 2.5rem 1.5rem;
+
+  height: 33rem;
+
+  border-radius: 1rem;
+  box-shadow: .625rem .625rem 0rem $color-cranberry;
+  position: relative;
+
+  .step-card__number {
+    border-radius: 50%;
+
+    width: 5.625rem;
+    height: 5.625rem;
+    background-color: $color-white;
+
+    position: absolute;
+
+    top: -9%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  }
+
+  .step-card__content {
+
+    .step-card__title {
+      text-align: center;
+    }
+
+    .step-card__icon {
+      width: 100%;
+
+      margin: 1rem 0;
+
+      img {
+        width: 8rem;
+        margin: 0 auto;
+      }
+    }
+
+    .step-card__text {
+      text-align: center;
+    }
+  }
+}
