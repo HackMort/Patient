@@ -410,13 +410,16 @@
 
   &.symptoms {
     background-color: $color-light-purple;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 3.5rem;
   }
 
   .nmosd__vs_ms_intro_content {
     font-size: 18px;
     line-height: 1.5;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
 
     p {
       margin-bottom: 1.5rem;
@@ -426,10 +429,12 @@
       }
 
       &.paragraph.sup::before {
-        content: "•";
+        content: "*";
         position: absolute;
-        left: -5px;
-        top: -2px;
+        left: -6px;
+        top: 2px;
+        line-height: 1;
+        font-size: smaller;
       }
 
       &.paragraph.paragraph--14 {
@@ -440,6 +445,7 @@
   }
 
   .nmosd__vs_ms_intro_content--title {
+    font-size: 24px;
     margin-bottom: 1.5rem;
   }
 
@@ -452,7 +458,7 @@
     width: 100%;
 
     .card__icons_column:first-of-type {
-      border-bottom: 1px solid;
+      border-bottom: 2px solid $color-blue;
       margin-bottom: 1rem;
       padding-bottom: 1rem;
     }
@@ -469,7 +475,7 @@
 
     @media screen and (min-width: 768px) {
       .card__icons_column:first-of-type {
-        border-right: 1px solid;
+        border-right: 2px solid $color-blue;
       }
     }
 
@@ -478,12 +484,13 @@
       grid-template-columns: 128px 138px;
       grid-template-rows: 1fr -webkit-min-content;
       grid-template-rows: 1fr min-content;
-      grid-column-gap: 22px;
+      grid-column-gap: 5px;
       grid-row-gap: 17px;
       align-items: center;
       margin: 0 auto;
 
       @media screen and (min-width: 768px) {
+        grid-column-gap: 22px;
         border-bottom: 0;
         padding-top: 0;
       }
@@ -703,7 +710,7 @@
   .cards .icon-card::after {
     content: '';
     position: absolute;
-    bottom: 1rem;
+    bottom: 2rem;
     right: .875rem;
     width: 1.5rem;
     height: 14.5rem;
@@ -770,7 +777,9 @@
 .icon__card_callout_icon img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center;
   object-position: center;
 }
 
@@ -889,7 +898,7 @@
 // ========================== HOW DIAGNOSIS WORKS PAGE =====================================
 .how-diagnosis-works__diagnosed {
 
-  margin: 2.5rem 0;
+  margin-bottom: 2.5rem;
 
   .how-is-diagnosed,
   .diagnosis-by,
@@ -898,9 +907,14 @@
   ul {
     margin-bottom: 1.5rem;
   }
+
+  @media screen and (min-width: 1024px) {
+    margin: 2.5rem 0;
+  }
 }
 
 .how-diagnosis-works__discover-steps {
+  margin-bottom: 2rem;
   padding: 3.4375rem 0;
   background-color: $color-light-blue;
 
@@ -918,6 +932,16 @@
 
     margin-top: 5rem;
     margin-bottom: 2.5rem;
+  }
+
+  @media screen and (min-width: 980px) {
+    .cards {
+      flex-direction: row;
+      row-gap: 0;
+      column-gap: 1rem;
+
+      justify-content: space-between;
+    }
   }
 }
 

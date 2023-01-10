@@ -31,11 +31,11 @@ function numberIncrementAnimation(element, start, end, duration, increment) {
   increment = end > start ? increment : (increment * -1);
   const step = Math.abs(Math.floor(duration / range));
   const timer = setInterval(() => {
-      current += increment;
-      element.textContent = new Intl.NumberFormat().format(current);
-      if (current == end) {
-          clearInterval(timer);
-      }
+    current += increment;
+    element.textContent = new Intl.NumberFormat().format(current);
+    if (current == end) {
+      clearInterval(timer);
+    }
   }, step);
 }
 
@@ -44,6 +44,8 @@ const body = document.querySelector('body');
 const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 document.addEventListener("DOMContentLoaded", () => {
   const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop();
+  const host = window.location.host;
+  console.log('Host: ', host);
   if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
     window.location.href = '/validate.html';
   }
@@ -77,6 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (link && link.href === window.location.href) {
         item.classList.add('current-menu-item');
       }
+      if (item.classList.contains('has--dropdown')) {
+        const subMenuItems = item.querySelectorAll('.sub__menu_item a');
+        if (subMenuItems && subMenuItems.length > 0) {
+          subMenuItems.forEach((subItem) => {
+            if (subItem.href === window.location.href) {
+              item.classList.add('current-menu-item');
+            }
+          });
+        }
+      }
     })
   }
 
@@ -103,20 +115,31 @@ function toggleSubmenu() {
   const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
   if (subMenuItems && subMenuItems.length > 0) {
     subMenuItems.forEach((item) => {
-      item.addEventListener('click', (event) => {
-        // event.preventDefault();
-        item.classList.toggle('active');
+      const anchor = item.querySelector('a');
+      const mediaQuery = window.matchMedia('(min-width: 1200px)');
+      if (mediaQuery.matches) {
+        item.addEventListener('mouseenter', () => {
+          item.classList.add('active');
+        });
+        item.addEventListener('mouseleave', () => {
+          item.classList.remove('active');
+        });
+      }
+      else {
+        anchor.addEventListener('click', (e) => {
+          e.preventDefault();
+          item.classList.toggle('active');
+        });
+      }
+      mediaQuery.addEventListener('change', (e) => {
+        if (e.matches) {
+          body.classList.remove('mobile__nav--open');
+          subMenuItems.forEach((item) => {
+            item.classList.remove('active');
+          });
+        }
       });
-      // item.addEventListener('mouseleave', () => {
-      //   item.classList.remove('active');
-      // });
-      // item.addEventListener('touchstart', () => {
-      //   item.classList.add('active');
-      // });
-      // item.addEventListener('touchend', () => {
-      //   item.classList.remove('active');
-      // });
-    })
+    });
   }
 }
 
@@ -134,12 +157,12 @@ if (elements && elements.length > 0) {
       const dataIncrement = element.getAttribute('data-increment');
 
       const observe = (dataEnd !== null) && (dataDuration !== null) && (dataIncrement !== null);
-      
+
       if (observe) {
 
-      const end = parseInt(dataEnd);
-      const duration = parseInt(dataDuration);
-      const increment = parseInt(dataIncrement);
+        const end = parseInt(dataEnd);
+        const duration = parseInt(dataDuration);
+        const increment = parseInt(dataIncrement);
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
