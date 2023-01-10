@@ -1,3 +1,43 @@
+/**
+ * "Increment a number from a start value to an end value over a duration of time,
+ * and display the number in a specified element."
+ * 
+ * The function takes five parameters:
+ * 
+ * element: The element that will display the number.
+ * start: The starting number.
+ * end: The ending number.
+ * duration: The duration of the animation in milliseconds.
+ * increment: The amount to increment the number by.
+ * The function uses the following variables:
+ * 
+ * current: The current number.
+ * range: The difference between the start and end numbers.
+ * step: The amount of time in milliseconds between each increment.
+ * timer: The timer that controls the animation.
+ * The function uses the setInterval() method to increment the number and display
+ * it in the element. The setInterval() method is called once, and it calls a
+ * function that increments the number and displays it in the element. The function
+ * is called repeatedly until the current number reaches the end number
+ * @param element {Element} - The element that will be updated with the number.
+ * @param start {number} - The starting number
+ * @param end {number} - The number to end at.
+ * @param duration {number} - The total duration of the animation in milliseconds.
+ * @param increment {number} - The amount to increment the number by.
+ */
+function numberIncrementAnimation(element, start, end, duration, increment) {
+  let current = start;
+  const range = end - start;
+  increment = end > start ? increment : (increment * -1);
+  const step = Math.abs(Math.floor(duration / range));
+  const timer = setInterval(() => {
+      current += increment;
+      element.textContent = new Intl.NumberFormat().format(current);
+      if (current == end) {
+          clearInterval(timer);
+      }
+  }, step);
+}
 
 /* Toggle Menu Stuff */
 const body = document.querySelector('body');
@@ -65,26 +105,25 @@ function toggleSubmenu() {
   const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
   if (subMenuItems && subMenuItems.length > 0) {
     subMenuItems.forEach((item) => {
-      item.addEventListener('mouseenter', () => {
-        item.classList.add('active');
+      item.addEventListener('click', (event) => {
+        // event.preventDefault();
+        item.classList.toggle('active');
       });
-      item.addEventListener('mouseleave', () => {
-        item.classList.remove('active');
-      });
-      item.addEventListener('touchstart', () => {
-        item.classList.add('active');
-      });
-      item.addEventListener('touchend', () => {
-        item.classList.remove('active');
-      });
+      // item.addEventListener('mouseleave', () => {
+      //   item.classList.remove('active');
+      // });
+      // item.addEventListener('touchstart', () => {
+      //   item.classList.add('active');
+      // });
+      // item.addEventListener('touchend', () => {
+      //   item.classList.remove('active');
+      // });
     })
   }
 }
 
 
 // NUMBER COUNTER ANIMATION
-import numberAnimation from './utils/number-increment-animation';
-
 const elements = document.querySelectorAll('.icon-card .icon-card__amount');
 
 if (elements && elements.length > 0) {
@@ -113,7 +152,7 @@ if (elements && elements.length > 0) {
             }
 
             if (!animated && entry.isIntersecting) {
-              numberAnimation(element, start, end, duration, increment);
+              numberIncrementAnimation(element, start, end, duration, increment);
               element.setAttribute('data-animated', 'true');
             }
           })
