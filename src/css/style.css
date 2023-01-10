@@ -479,8 +479,21 @@ h3 {
   width: 100%;
 }
 @media screen and (min-width: 1200px) {
-  .header__nav--menu_item.current-menu-item a {
+  .header__nav--menu_item.current-menu-item > a {
     font-weight: bold;
+    border-bottom: 2px solid #2e5055;
+    margin-top: -12px;
+    padding-bottom: 5px;
+  }
+}
+.header__nav--menu_item > a {
+  transition: all 0.3s ease-in-out;
+}
+.header__nav--menu_item > a:hover, .header__nav--menu_item > a:focus {
+  font-weight: bold;
+}
+@media screen and (min-width: 1200px) {
+  .header__nav--menu_item > a:hover, .header__nav--menu_item > a:focus {
     border-bottom: 2px solid #2e5055;
     margin-top: -12px;
     padding-bottom: 5px;
@@ -490,6 +503,7 @@ h3 {
   position: relative;
   border-bottom: 2px solid transparent;
   color: #b4d6bd;
+  cursor: pointer;
   display: inline-block;
   font-size: 1rem;
   font-weight: 500;
@@ -524,16 +538,18 @@ h3 {
 }
 .header__nav--menu_item.attend_event {
   padding: 0;
+  background-color: transparent;
 }
 .header__nav--menu_item.attend_event a {
   background-color: #eee;
+  border-bottom-right-radius: 10px;
   color: #2e5055;
   display: flex;
   align-items: center;
   padding-left: 0.75rem;
 }
 .header__nav--menu_item.attend_event a img {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   width: 20px;
   height: 20px;
 }
@@ -719,7 +735,6 @@ h3 {
   top: 0;
   right: 0;
   left: 0;
-  border-bottom-right-radius: 10px;
   display: block;
   height: 100%;
   overflow-y: scroll;
@@ -1916,7 +1931,7 @@ h3 {
 .nmosd__by_the_numbers .cards .icon-card::after {
   content: "";
   position: absolute;
-  bottom: 1rem;
+  bottom: 2rem;
   right: 0.875rem;
   width: 1.5rem;
   height: 14.5rem;

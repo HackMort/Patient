@@ -79,6 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (link && link.href === window.location.href) {
         item.classList.add('current-menu-item');
       }
+      if (item.classList.contains('has--dropdown')) {
+        const subMenuItems = item.querySelectorAll('.sub__menu_item a');
+        if (subMenuItems && subMenuItems.length > 0) {
+          subMenuItems.forEach((subItem) => {
+            if (subItem.href === window.location.href) {
+              item.classList.add('current-menu-item');
+            }
+          });
+        }
+      }
     })
   }
 
