@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --black: #393939;
   --primary-font: Helvetica, Arial, sans-serif;
@@ -266,7 +265,9 @@ button:-moz-focusring,
   font-family: poppins, Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -1496,7 +1497,10 @@ h3 {
 .nmosd__heading {
   font-size: 2rem;
   text-align: center;
+  margin-right: auto;
   margin-bottom: 1.5rem;
+  margin-left: auto;
+  max-width: 940px;
 }
 
 .nmosd__description {
@@ -1664,12 +1668,15 @@ h3 {
 }
 .nmosd__vs_ms.symptoms {
   background-color: #dfe5f2;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 3.5rem;
 }
 .nmosd__vs_ms .nmosd__vs_ms_intro_content {
   font-size: 18px;
   line-height: 1.5;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
 }
 .nmosd__vs_ms .nmosd__vs_ms_intro_content p {
   margin-bottom: 1.5rem;
@@ -1678,15 +1685,18 @@ h3 {
   position: relative;
 }
 .nmosd__vs_ms .nmosd__vs_ms_intro_content p.paragraph.sup::before {
-  content: "•";
+  content: "*";
   position: absolute;
-  left: -5px;
-  top: -2px;
+  left: -6px;
+  top: 2px;
+  line-height: 1;
+  font-size: smaller;
 }
 .nmosd__vs_ms .nmosd__vs_ms_intro_content p.paragraph.paragraph--14 {
   line-height: 1.25;
 }
 .nmosd__vs_ms .nmosd__vs_ms_intro_content--title {
+  font-size: 24px;
   margin-bottom: 1.5rem;
 }
 .nmosd__vs_ms .card__icons {
@@ -1698,7 +1708,7 @@ h3 {
   width: 100%;
 }
 .nmosd__vs_ms .card__icons .card__icons_column:first-of-type {
-  border-bottom: 1px solid;
+  border-bottom: 2px solid #607cbe;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
@@ -1714,7 +1724,7 @@ h3 {
 }
 @media screen and (min-width: 768px) {
   .nmosd__vs_ms .card__icons .card__icons_column:first-of-type {
-    border-right: 1px solid;
+    border-right: 2px solid #607cbe;
   }
 }
 .nmosd__vs_ms .card__icons .icon-card {
@@ -1968,9 +1978,9 @@ h3 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
 }
 
 .icon__card_callout.unstyled {
