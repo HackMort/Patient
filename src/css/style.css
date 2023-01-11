@@ -1266,6 +1266,40 @@ h3 {
 .list .list__element:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
+.list .list__element.hidden {
+  display: none;
+}
+
+.list--toggle_button {
+  border: 1px solid #2e5055;
+  border-radius: 4px;
+  color: #2e5055;
+  cursor: pointer;
+  font-weight: bold;
+  min-width: 143px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 12px 16px;
+  height: 43px;
+}
+.list--toggle_button .text::before {
+  content: "More";
+  margin-left: 0.25rem;
+}
+.list--toggle_button .icon::before {
+  content: url("../assets/icons/icon-plus.svg");
+  position: relative;
+  top: 3px;
+  margin-left: 0.25rem;
+}
+.list--toggle_button.active .text::before {
+  content: "Less";
+}
+.list--toggle_button.active .icon::before {
+  content: url("../assets/icons/icon-minus.svg");
+}
 
 .section-wrapper {
   max-width: calc(100% - 2.75rem);
