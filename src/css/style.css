@@ -2235,4 +2235,11 @@ h3 {
 .manage-nmosd__treatment-essential .treatment-essential__title,
 .manage-nmosd__treatment-essential .paragraph:not(:last-of-type) {
   margin-bottom: 1.5rem;
+}
+
+.accessibility__content {
+  margin: 2.5rem 0;
+}
+.accessibility__content .paragraph:not(:last-of-type) {
+  margin-bottom: 1.5rem;
 }/*# sourceMappingURL=style.css.map */

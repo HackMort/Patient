@@ -986,3 +986,14 @@
     }
 }
 // ========================== MANAGING NMOSD PAGE =====================================
+
+
+// ========================== ACCESSIBILITY PAGE =====================================
+.accessibility__content {
+    margin: 2.5rem 0;
+
+    .paragraph:not(:last-of-type) {
+        margin-bottom: 1.5rem;
+    }
+}
+// ========================== ACCESSIBILITY PAGE =====================================
