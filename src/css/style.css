@@ -1246,10 +1246,9 @@ h3 {
 .list .list__element {
   display: flex;
   align-items: baseline;
-  justify-content: flex-start;
 }
-.list .list__element .list__element-marker {
-  content: url("../assets//icons/list-dot.svg");
+.list .list__element::before {
+  content: url("../assets/icons/list-dot.svg");
   margin-right: 1rem;
 }
 .list .list__element:not(:last-of-type) {

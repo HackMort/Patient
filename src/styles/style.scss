@@ -17,12 +17,10 @@
 
     display: flex;
     align-items: baseline;
-    justify-content: flex-start;
 
-    .list__element-marker {
-      content: url("../assets//icons/list-dot.svg");
-
-      margin-right: 1rem;
+    &::before {
+        content: url("../assets/icons/list-dot.svg");
+        margin-right: 1rem;
     }
 
     &:not(:last-of-type) {
