@@ -238,3 +238,27 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
+
+// list--toggle functionality only 2 list items are visible (Show More / Show Less)
+const listToggles = document.querySelectorAll('.list--toggle');
+if (listToggles && listToggles.length > 0) {
+  listToggles.forEach((listToggle) => {
+    const listItems = listToggle.querySelectorAll('.list__element');
+    if (listItems && listItems.length > 2) {
+      listItems.forEach((item, index) => {
+        if (index > 1) {
+          item.classList.add('hidden');
+        }
+      });
+      const button = listToggle.querySelector('.list--toggle_button');
+      button.addEventListener('click', () => {
+        listItems.forEach((item, index) => {
+          if (index > 1) {
+            item.classList.toggle('hidden');
+          }
+        });
+        button.classList.toggle('active');
+      });
+    }
+  });
+}

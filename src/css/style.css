@@ -1241,17 +1241,72 @@ h3 {
   text-align: center;
 }
 
+.desktop__only {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile__only {
+    display: none;
+  }
+  .desktop__only {
+    display: block;
+  }
+}
 .list .list__element {
   display: flex;
   align-items: baseline;
   justify-content: flex-start;
 }
-.list .list__element .list__element-marker {
+.list .list__element .list__element-marker, .list .list__element::before {
   content: url("../assets//icons/list-dot.svg");
   margin-right: 1rem;
 }
 .list .list__element:not(:last-of-type) {
   margin-bottom: 0.5rem;
+}
+.list.list--toggle .list__element {
+  transition: display 0.5s ease-in-out;
+}
+.list.list--toggle .hidden {
+  display: none;
+}
+.list.list--toggle .active {
+  display: flex;
+}
+
+.list--toggle_button {
+  color: #2e5055;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  height: 43px;
+  margin-top: 2rem;
+  min-width: 143px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: solid 1px #2e5055;
+}
+.list--toggle_button .text {
+  display: inline-block;
+  vertical-align: middle;
+}
+.list--toggle_button .text::before {
+  content: "More";
+  margin-left: 0.25rem;
+  margin-right: 0.5rem;
+}
+.list--toggle_button .icon::before {
+  content: url("../assets/icons/icon-plus.svg");
+  position: relative;
+  top: 2px;
+}
+.list--toggle_button.active .text::before {
+  content: "Less";
+}
+.list--toggle_button.active .icon::before {
+  content: url("../assets/icons/icon-minus.svg");
 }
 
 .section-wrapper {
@@ -1735,17 +1790,6 @@ h3 {
   }
 }
 
-.nmosd__vs_ms .desktop__only {
-  display: none;
-}
-@media screen and (min-width: 1024px) {
-  .nmosd__vs_ms .mobile__only {
-    display: none;
-  }
-  .nmosd__vs_ms .desktop__only {
-    display: block;
-  }
-}
 .nmosd__vs_ms.symptoms {
   background-color: #dfe5f2;
   padding-top: 60px;
@@ -2200,7 +2244,163 @@ h3 {
     flex-direction: row;
     row-gap: 0;
     -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
     justify-content: space-between;
   }
+}
+
+.cause__of_damage_intro_content,
+.cause__of_damage_signs_content,
+.cause__of_damage_behind_content,
+.attack__steps {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-bottom: 3.5rem;
+  margin-left: auto;
+  max-width: 320px;
+}
+@media screen and (min-width: 376px) {
+  .cause__of_damage_intro_content,
+.cause__of_damage_signs_content,
+.cause__of_damage_behind_content,
+.attack__steps {
+    max-width: 100%;
+  }
+}
+.cause__of_damage_intro_content .cause__of_damage_intro_content--title,
+.cause__of_damage_signs_content .cause__of_damage_intro_content--title,
+.cause__of_damage_behind_content .cause__of_damage_intro_content--title,
+.attack__steps .cause__of_damage_intro_content--title {
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+}
+.cause__of_damage_intro_content .cause__of_damage_signs_content--title,
+.cause__of_damage_intro_content .cause__of_damage_behind_content--title,
+.cause__of_damage_signs_content .cause__of_damage_signs_content--title,
+.cause__of_damage_signs_content .cause__of_damage_behind_content--title,
+.cause__of_damage_behind_content .cause__of_damage_signs_content--title,
+.cause__of_damage_behind_content .cause__of_damage_behind_content--title,
+.attack__steps .cause__of_damage_signs_content--title,
+.attack__steps .cause__of_damage_behind_content--title {
+  font-size: 28px;
+  line-height: 37.8px;
+  margin-bottom: 2rem;
+}
+.cause__of_damage_intro_content p,
+.cause__of_damage_signs_content p,
+.cause__of_damage_behind_content p,
+.attack__steps p {
+  margin-bottom: 1.5rem;
+}
+.cause__of_damage_intro_content .list--toggle .list__element,
+.cause__of_damage_signs_content .list--toggle .list__element,
+.cause__of_damage_behind_content .list--toggle .list__element,
+.attack__steps .list--toggle .list__element {
+  margin-bottom: 1rem;
+}
+
+.cause__of_damage .signs {
+  margin-bottom: 3.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .cause__of_damage_intro_content img.align-right {
+    position: relative;
+    float: right;
+    right: -2rem;
+    width: 376px;
+  }
+}
+
+.cause__of_damage_signs_content--title br {
+  display: none;
+}
+@media screen and (min-width: 1204px) {
+  .cause__of_damage_signs_content--title br {
+    display: block;
+  }
+}
+
+.cause__of_damage_behind_content--results_item {
+  display: grid;
+  grid-template-columns: 1fr;
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .cause__of_damage_behind_content--results_item {
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    -moz-column-gap: 3rem;
+    column-gap: 3rem;
+  }
+  .cause__of_damage_behind_content--results_item p {
+    margin-bottom: 0;
+  }
+}
+.cause__of_damage_behind_content--results_item img {
+  margin-bottom: 1rem;
+  width: 60px;
+}
+@media screen and (min-width: 768px) {
+  .cause__of_damage_behind_content--results_item img {
+    margin-bottom: 0;
+  }
+}
+
+.attack__steps {
+  background-color: rgba(96, 124, 190, 0.2);
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .attack__step_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(276px, 1fr));
+    align-items: baseline;
+  }
+}
+
+.attack__step_card {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 24px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 276px;
+}
+.attack__step_card:not(:last-of-type) {
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 1024px) {
+  .attack__step_card:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+}
+.attack__step_card--step {
+  grid-area: 1/1/2/2;
+}
+.attack__step_card--title {
+  grid-area: 1/2/2/3;
+  color: #2e5055;
+  display: flex;
+  align-self: center;
+  font-weight: bold;
+}
+.attack__step_card--text {
+  grid-area: 2/1/3/3;
+  margin-bottom: 0.5rem !important;
+}
+@media screen and (min-width: 1024px) {
+  .attack__step_card--text {
+    min-height: 135px;
+  }
+}
+.attack__step_card--image {
+  grid-area: 3/1/4/3;
 }/*# sourceMappingURL=style.css.map */

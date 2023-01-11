@@ -12,6 +12,21 @@
 @import 'components/footer';
 @import 'components/step-card';
 
+
+.desktop__only {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile__only {
+    display: none;
+  }
+
+  .desktop__only {
+    display: block;
+  }
+}
+
 .list {
   .list__element {
 
@@ -19,14 +34,78 @@
     align-items: baseline;
     justify-content: flex-start;
 
-    .list__element-marker {
+    .list__element-marker,
+    &::before {
       content: url("../assets//icons/list-dot.svg");
-
       margin-right: 1rem;
     }
 
     &:not(:last-of-type) {
       margin-bottom: .5rem;
+    }
+  }
+
+  &.list--toggle {
+
+    .list__element {
+      @include transition(display, 0.5s, ease-in-out);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .active {
+      display: flex;
+    }
+  }
+
+}
+
+.list--toggle_button {
+  color: $color-dark-green;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  height: 43px;
+  margin-top: 2rem;
+  min-width: 143px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: solid 1px $color-dark-green;
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+
+    &::before {
+      content: 'More';
+      margin-left: 0.25rem;
+      margin-right: 0.5rem;
+    }
+
+  }
+
+  .icon {
+    &::before {
+      content: url("../assets/icons/icon-plus.svg");
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  &.active {
+    .text {
+      &::before {
+        content: 'Less';
+      }
+    }
+
+    .icon {
+      &::before {
+        content: url("../assets/icons/icon-minus.svg");
+      }
     }
   }
 }
@@ -393,21 +472,6 @@
 }
 
 .nmosd__vs_ms {
-
-  .desktop__only {
-    display: none;
-  }
-
-  @media screen and (min-width: 1024px) {
-    .mobile__only {
-      display: none;
-    }
-
-    .desktop__only {
-      display: block;
-    }
-  }
-
   &.symptoms {
     background-color: $color-light-purple;
     padding-top: 60px;
@@ -938,6 +1002,7 @@
     .cards {
       flex-direction: row;
       row-gap: 0;
+      -moz-column-gap: 1rem;
       column-gap: 1rem;
 
       justify-content: space-between;
@@ -946,3 +1011,165 @@
 }
 
 // ========================== HOW DIAGNOSIS WORKS PAGE =====================================
+
+
+
+// ========================== A CAUSE OF DAMAGE PAGE =====================================
+
+.cause__of_damage_intro_content,
+.cause__of_damage_signs_content,
+.cause__of_damage_behind_content,
+.attack__steps {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-bottom: 3.5rem;
+  margin-left: auto;
+  max-width: 320px;
+
+  @media screen and (min-width: 376px) {
+    max-width: 100%;
+  }
+
+  .cause__of_damage_intro_content--title {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+
+  .cause__of_damage_signs_content--title,
+  .cause__of_damage_behind_content--title {
+    font-size: 28px;
+    line-height: 37.8px;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  .list--toggle .list__element {
+    margin-bottom: 1rem;
+  }
+
+}
+
+.cause__of_damage {
+  .signs {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.cause__of_damage_intro_content {
+  img.align-right {
+    @media screen and (min-width: 1024px) {
+      position: relative;
+      float: right;
+      right: -2rem;
+      width: 376px;
+    }
+  }
+}
+
+.cause__of_damage_signs_content--title {
+  br {
+    display: none;
+  }
+
+  @media screen and (min-width: 1204px) {
+    br {
+      display: block;
+    }
+  }
+}
+
+.cause__of_damage_behind_content--results_item {
+  display: grid;
+  grid-template-columns: 1fr;
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    -moz-column-gap: 3rem;
+    column-gap: 3rem;
+
+    p {
+      margin-bottom: 0;
+    }
+
+
+
+  }
+
+  img {
+    margin-bottom: 1rem;
+    width: 60px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+.attack__steps {
+  background-color: $color-light-blue;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.attack__step_cards {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(276px, 1fr));
+    align-items: baseline;
+  }
+}
+
+.attack__step_card {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 24px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 276px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 3rem;
+
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &--step {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  &--title {
+    grid-area: 1 / 2 / 2 / 3;
+    color: $color-dark-green;
+    display: flex;
+    align-self: center;
+    font-weight: bold;
+  }
+
+  &--text {
+    grid-area: 2 / 1 / 3 / 3;
+    margin-bottom: 0.5rem !important;
+
+    @media screen and (min-width: 1024px) {
+      min-height: 135px;
+    }
+
+  }
+
+  &--image {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+}
