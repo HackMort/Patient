@@ -265,7 +265,7 @@ button:-moz-focusring,
   font-family: poppins, Arial, Helvetica, sans-serif;
 }
 
-p a {
+a {
   font-size: inherit;
   font-weight: bold;
   color: #455782;
@@ -1097,7 +1097,7 @@ h3 {
 .end-cta {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -1116,7 +1116,8 @@ h3 {
 @media screen and (min-width: 1024px) {
   .end-cta {
     flex-direction: row;
-    max-width: 54rem;
+    justify-content: center;
+    max-width: 60rem;
     margin: 0 auto;
   }
 }
@@ -1272,17 +1273,17 @@ h3 {
 
 .list--toggle_button {
   border: 1px solid #2e5055;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   color: #2e5055;
   cursor: pointer;
   font-weight: bold;
-  min-width: 143px;
+  min-width: 8.9375rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
-  padding: 12px 16px;
-  height: 43px;
+  padding: 0.75rem 1rem;
+  height: 2.6875rem;
 }
 .list--toggle_button .text::before {
   content: "More";
@@ -1324,6 +1325,18 @@ h3 {
   .section-wrapper.section-wrapper--small {
     max-width: 61.875rem;
   }
+}
+
+.resource-placeholder {
+  width: 11.1875rem;
+  height: 14.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #e9e9e9;
+  text-align: center;
+  outline: 1px solid #000000;
 }
 
 .home__nmosd-info {
@@ -2436,6 +2449,76 @@ h3 {
 }
 .attack__step_card--image {
   grid-area: 3/1/4/3;
+}
+
+.living-with-nmosd__tips .living-with-nmosd__tips-header {
+  margin-bottom: 2rem;
+}
+.living-with-nmosd__tips .living-with-nmosd__tips-header .living-with-nmosd__title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.living-with-nmosd__tips .living-with-nmosd__tips-header .living-with-nmosd__description {
+  text-align: center;
+}
+.living-with-nmosd__tips .tips .tip {
+  padding: 2rem 0;
+  border-bottom: 2px solid #607cbe;
+}
+.living-with-nmosd__tips .tips .tip .tip__image img {
+  width: 9.9375rem;
+}
+.living-with-nmosd__tips .tips .tip .tip__title {
+  margin: 0.5rem 0 2rem 0;
+  max-width: 95%;
+}
+.living-with-nmosd__tips .tips .tip:first-of-type {
+  padding-top: 0;
+}
+@media screen and (min-width: 768px) {
+  .living-with-nmosd__tips {
+    margin-top: 2.5rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  .living-with-nmosd__tips .tips .tip {
+    display: flex;
+  }
+  .living-with-nmosd__tips .tips .tip .tip__image {
+    flex: 0 0 auto;
+  }
+}
+
+.living-with-nmosd__children-book {
+  padding: 3.5rem 0;
+}
+.living-with-nmosd__children-book .book {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.living-with-nmosd__children-book .book .book__info .book__title {
+  margin-bottom: 1.5rem;
+}
+.living-with-nmosd__children-book .book .book__info .paragraph {
+  margin-bottom: 2.5rem;
+}
+.living-with-nmosd__children-book .book .book__info .book__order-link {
+  font-size: 1.125rem;
+  font-weight: bold;
+  max-width: 12.5rem;
+}
+@media screen and (min-width: 768px) {
+  .living-with-nmosd__children-book .book .book__info .book__order-link {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+  }
+}
+@media screen and (min-width: 768px) {
+  .living-with-nmosd__children-book .book {
+    flex-direction: row;
+  }
 }
 
 .talking__to_doctor.intro {
