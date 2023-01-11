@@ -41,7 +41,50 @@
         &:not(:last-of-type) {
             margin-bottom: .5rem;
         }
+
+        &.hidden {
+            display: none;
+        }
+
     }
+}
+
+.list--toggle_button {
+    border: 1px solid $color-dark-green;
+    border-radius: 4px;
+    color: $color-dark-green;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 143px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 12px 16px;
+    height: 43px;
+
+    .text::before {
+        content: 'More';
+        margin-left: .25rem;
+    }
+
+    .icon::before {
+        content: url('../assets/icons/icon-plus.svg');
+        position: relative;
+        top: 3px;
+        margin-left: .25rem;
+    }
+
+    &.active {
+        .text::before {
+            content: 'Less';
+        }
+
+        .icon::before {
+            content: url('../assets/icons/icon-minus.svg');
+        }
+    }
+
 }
 
 .section-wrapper {
