@@ -265,7 +265,7 @@ button:-moz-focusring,
   font-family: poppins, Arial, Helvetica, sans-serif;
 }
 
-a {
+section a {
   font-size: inherit;
   font-weight: bold;
   color: #455782;
