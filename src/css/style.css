@@ -2272,6 +2272,13 @@ h3 {
   margin-bottom: 1.5rem;
 }
 
+.accessibility__content {
+  margin: 2.5rem 0;
+}
+.accessibility__content .paragraph:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
 .cause__of_damage_intro_content,
 .cause__of_damage_signs_content,
 .cause__of_damage_behind_content,
