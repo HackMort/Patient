@@ -1055,6 +1055,7 @@ h3 {
 }
 .button.button--white {
   background-color: #607cbe;
+  text-decoration: none;
 }
 .button.button--white .button__label {
   color: #455782;
