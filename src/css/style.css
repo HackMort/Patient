@@ -410,6 +410,7 @@ h3 {
 .header .top__bar--links_item a {
   text-decoration: underline;
   padding-bottom: 8px;
+  font-size: 0.875rem;
 }
 .header .top__bar--links_item.attend_event {
   background-color: #e4d8cf;
@@ -432,6 +433,7 @@ h3 {
   align-items: center;
   font-weight: 600;
   padding-bottom: 0;
+  font-size: 0.875rem;
 }
 .header .top__bar--links_item.attend_event img {
   display: inline-block;
@@ -1055,6 +1057,7 @@ h3 {
 }
 .button.button--white {
   background-color: #607cbe;
+  text-decoration: none;
 }
 .button.button--white .button__label {
   color: #455782;
@@ -2708,6 +2711,11 @@ h3 {
 
 .pre__footer.pre__footer--resources .waves__callout {
   height: 29.9375rem;
+}
+@media screen and (min-width: 1024px) {
+  .pre__footer.pre__footer--resources .waves__callout .end-cta .end-cta__text {
+    text-align: left;
+  }
 }
 
 .site__map {

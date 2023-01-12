@@ -1583,6 +1583,16 @@
     .waves__callout {
         height: 29.9375rem;
     }
+
+    @media screen and (min-width: 1024px) {
+        .waves__callout {
+            .end-cta {
+                .end-cta__text {
+                    text-align: left;
+                }
+            }
+        }
+    }
 }
 
 // ========================== RESOURCES PAGE =====================================
