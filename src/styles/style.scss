@@ -150,6 +150,17 @@
             height: 1.25rem;
         }
     }
+
+    &.link--inline {
+        display: inline-block;
+        position: relative;
+        line-height: 1.5;
+
+        &::after {
+            display: inline-block;
+            position: absolute;
+        }
+    }
 }
 
 // ========================== HOME PAGE =====================================
@@ -1417,6 +1428,8 @@
 // ========================== RESOURCES PAGE =====================================
 .resources__books-and-guides {
 
+    margin-bottom: 3.5rem;
+
     .books-and-guides__title {
         margin-bottom: 2.5rem;
     }
@@ -1435,18 +1448,131 @@
                 margin-bottom: 1.5rem;
             }
 
-            .resource__image {
-                margin-bottom: 2.5rem;
-                padding-left: 1.375rem;
-            }
-
             .resource__content {
-                .paragraph {
+                .resource__image {
+                    margin-bottom: 2.5rem;
+                    padding-left: 1.375rem;
+                }
+
+                .resource__description {
                     margin-bottom: 1.5rem;
                 }
 
                 .link {
                     max-width: 14rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .books-and-guides {
+            flex-direction: row;
+
+            .resource {
+                flex: 1;
+
+                .resource__content {
+                    position: relative;
+                    height: 27.9619rem;
+
+                    .link {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        margin-top: 3.5rem;
+
+        .books-and-guides {
+            justify-content: space-between;
+
+            .resource {
+                .resource__content {
+                    display: flex;
+                    height: auto;
+
+                    gap: 1.5rem;
+
+                    .link {
+                        position: initial;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .books-and-guides {
+            .resource {
+                .resource__content {
+                    gap: 2.9375rem;
+                }
+            }
+        }
+    }
+}
+
+.resources__helpful-websites {
+
+    margin-bottom: 5rem;
+
+    .helpful-websites__title {
+        margin-bottom: 2.5rem;
+    }
+
+    .websites {
+
+        .website {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+
+            &:not(:last-of-type) {
+                margin-bottom: 2.5rem;
+            }
+
+            .website__logo {
+
+                flex: 1 0 auto;
+
+                img {
+                    width: 12.5rem;
+                }
+            }
+
+            .website__info {
+                display: flex;
+                flex-direction: column;
+
+                .website__info-title {
+                    color: $color-dark-green;
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+
+                .website__info-description {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .websites {
+            .website {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 1rem;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 4rem;
                 }
             }
         }
