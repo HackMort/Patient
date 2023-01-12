@@ -1339,6 +1339,25 @@ h3 {
   outline: 1px solid #000000;
 }
 
+.link.link--external {
+  display: inline-flex;
+  align-items: center;
+}
+.link.link--external::after {
+  content: url("../assets/img/icon-external-link.svg");
+  margin-left: 0.25rem;
+  height: 1.3125rem;
+}
+.link.link--download {
+  display: inline-flex;
+  align-items: center;
+}
+.link.link--download::after {
+  content: url("../assets/icons/download-icon.svg");
+  margin-left: 0.25rem;
+  height: 1.25rem;
+}
+
 .home__nmosd-info {
   margin-top: 1.5rem;
 }
@@ -2567,4 +2586,32 @@ h3 {
 }
 .talking__to_doctor_signs_content .list {
   margin-bottom: 2rem;
+}
+
+.resources__books-and-guides .books-and-guides__title {
+  margin-bottom: 2.5rem;
+}
+.resources__books-and-guides .books-and-guides {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.resources__books-and-guides .books-and-guides .resource .resource__title {
+  color: #2e5055;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.resources__books-and-guides .books-and-guides .resource .resource__image {
+  margin-bottom: 2.5rem;
+  padding-left: 1.375rem;
+}
+.resources__books-and-guides .books-and-guides .resource .resource__content .paragraph {
+  margin-bottom: 1.5rem;
+}
+.resources__books-and-guides .books-and-guides .resource .resource__content .link {
+  max-width: 14rem;
+}
+
+.pre__footer.pre__footer--resources .waves__callout {
+  height: 29.9375rem;
 }/*# sourceMappingURL=style.css.map */

@@ -125,6 +125,33 @@
     outline: 1px solid $color-black;
 }
 
+.link {
+
+    &.link--external {
+
+        display: inline-flex;
+        align-items: center;
+
+        &::after {
+            content: url("../assets/img/icon-external-link.svg");
+            margin-left: .25rem;
+            height: 1.3125rem;
+        }
+    }
+
+    &.link--download {
+
+        display: inline-flex;
+        align-items: center;
+
+        &::after {
+            content: url("../assets/icons/download-icon.svg");
+            margin-left: .25rem;
+            height: 1.25rem;
+        }
+    }
+}
+
 // ========================== HOME PAGE =====================================
 
 // NMOSD Info Section
@@ -1236,7 +1263,7 @@
             text-align: center;
             margin-bottom: 1rem;
         }
-    
+
         .living-with-nmosd__description {
             text-align: center;
         }
@@ -1321,6 +1348,7 @@
         }
     }
 }
+
 // ========================== LIVING WITH NMOSD PAGE =====================================
 
 
@@ -1380,3 +1408,53 @@
         margin-bottom: 2rem;
     }
 }
+
+// ========================== TALKING TO YOUR DOCTOR PAGE =====================================
+
+
+// ========================== RESOURCES PAGE =====================================
+.resources__books-and-guides {
+
+    .books-and-guides__title {
+        margin-bottom: 2.5rem;
+    }
+
+    .books-and-guides {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .resource {
+
+            .resource__title {
+                color: $color-dark-green;
+                font-weight: bold;
+
+                margin-bottom: 1.5rem;
+            }
+
+            .resource__image {
+                margin-bottom: 2.5rem;
+                padding-left: 1.375rem;
+            }
+
+            .resource__content {
+                .paragraph {
+                    margin-bottom: 1.5rem;
+                }
+
+                .link {
+                    max-width: 14rem;
+                }
+            }
+        }
+    }
+}
+
+.pre__footer.pre__footer--resources {
+    .waves__callout {
+        height: 29.9375rem;
+    }
+}
+
+// ========================== RESOURCES PAGE =====================================
