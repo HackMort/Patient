@@ -410,6 +410,7 @@ h3 {
 .header .top__bar--links_item a {
   text-decoration: underline;
   padding-bottom: 8px;
+  font-size: 0.875rem;
 }
 .header .top__bar--links_item.attend_event {
   background-color: #e4d8cf;
@@ -432,6 +433,7 @@ h3 {
   align-items: center;
   font-weight: 600;
   padding-bottom: 0;
+  font-size: 0.875rem;
 }
 .header .top__bar--links_item.attend_event img {
   display: inline-block;
@@ -1338,6 +1340,34 @@ h3 {
   background-color: #e9e9e9;
   text-align: center;
   outline: 1px solid #000000;
+}
+
+.link.link--external {
+  display: inline-flex;
+  align-items: center;
+}
+.link.link--external::after {
+  content: url("../assets/img/icon-external-link.svg");
+  margin-left: 0.25rem;
+  height: 1.3125rem;
+}
+.link.link--download {
+  display: inline-flex;
+  align-items: center;
+}
+.link.link--download::after {
+  content: url("../assets/icons/download-icon.svg");
+  margin-left: 0.25rem;
+  height: 1.25rem;
+}
+.link.link--inline {
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+}
+.link.link--inline::after {
+  display: inline-block;
+  position: absolute;
 }
 
 .home__nmosd-info {
@@ -2568,6 +2598,124 @@ h3 {
 }
 .talking__to_doctor_signs_content .list {
   margin-bottom: 2rem;
+}
+
+.resources__books-and-guides {
+  margin-bottom: 3.5rem;
+}
+.resources__books-and-guides .books-and-guides__title {
+  margin-bottom: 2.5rem;
+}
+.resources__books-and-guides .books-and-guides {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.resources__books-and-guides .books-and-guides .resource .resource__title {
+  color: #2e5055;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.resources__books-and-guides .books-and-guides .resource .resource__content .resource__image {
+  margin-bottom: 2.5rem;
+  padding-left: 1.375rem;
+}
+.resources__books-and-guides .books-and-guides .resource .resource__content .resource__description {
+  margin-bottom: 1.5rem;
+}
+.resources__books-and-guides .books-and-guides .resource .resource__content .link {
+  max-width: 14rem;
+}
+@media screen and (min-width: 768px) {
+  .resources__books-and-guides .books-and-guides {
+    flex-direction: row;
+  }
+  .resources__books-and-guides .books-and-guides .resource {
+    flex: 1;
+  }
+  .resources__books-and-guides .books-and-guides .resource .resource__content {
+    position: relative;
+    height: 27.9619rem;
+  }
+  .resources__books-and-guides .books-and-guides .resource .resource__content .link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .resources__books-and-guides {
+    margin-top: 3.5rem;
+  }
+  .resources__books-and-guides .books-and-guides {
+    justify-content: space-between;
+  }
+  .resources__books-and-guides .books-and-guides .resource .resource__content {
+    display: flex;
+    height: auto;
+    gap: 1.5rem;
+  }
+  .resources__books-and-guides .books-and-guides .resource .resource__content .link {
+    position: initial;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .resources__books-and-guides .books-and-guides .resource .resource__content {
+    gap: 2.9375rem;
+  }
+}
+
+.resources__helpful-websites {
+  margin-bottom: 5rem;
+}
+.resources__helpful-websites .helpful-websites__title {
+  margin-bottom: 2.5rem;
+}
+.resources__helpful-websites .websites .website {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.resources__helpful-websites .websites .website:not(:last-of-type) {
+  margin-bottom: 2.5rem;
+}
+.resources__helpful-websites .websites .website .website__logo {
+  flex: 1 0 auto;
+}
+.resources__helpful-websites .websites .website .website__logo img {
+  width: 12.5rem;
+}
+.resources__helpful-websites .websites .website .website__info {
+  display: flex;
+  flex-direction: column;
+}
+.resources__helpful-websites .websites .website .website__info .website__info-title {
+  color: #2e5055;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.resources__helpful-websites .websites .website .website__info .website__info-description {
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .resources__helpful-websites .websites .website {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .resources__helpful-websites .websites .website:not(:last-of-type) {
+    margin-bottom: 4rem;
+  }
+}
+
+.pre__footer.pre__footer--resources .waves__callout {
+  height: 29.9375rem;
+}
+@media screen and (min-width: 1024px) {
+  .pre__footer.pre__footer--resources .waves__callout .end-cta .end-cta__text {
+    text-align: left;
+  }
 }
 
 .site__map {
