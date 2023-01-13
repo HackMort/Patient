@@ -11,6 +11,7 @@
 @import 'components/end-cta';
 @import 'components/footer';
 @import 'components/step-card';
+@import 'components/form';
 
 
 .desktop__only {
@@ -1653,3 +1654,17 @@
 }
 
 // ========================== SITE MAP PAGE =====================================
+
+// ========================== GET NEWSLETTER PAGE =====================================
+.get-newsletter__form {
+    margin-bottom: 3.5rem;
+    
+    .form-label {
+        margin-bottom: 2rem;
+    }
+
+    .form__control {
+        margin-bottom: 2rem;
+    }
+}
+// ========================== GET NEWSLETTER PAGE =====================================

@@ -48,7 +48,7 @@ a {
   background-color: transparent;
 }
 
-p a {
+p a, label a {
   display: inline;
 }
 
@@ -1245,6 +1245,145 @@ h3 {
 }
 .step-card .step-card__content .step-card__text {
   text-align: center;
+}
+
+input {
+  width: 100%;
+}
+input[type=checkbox], input[type=radio] {
+  color: currentColor;
+  width: 2.6875rem;
+  height: 2.6875rem;
+  border: 1px solid #305b78;
+  transform: translateY(-0.075em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+input[type=radio] {
+  border-radius: 50%;
+}
+input[type=radio]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #305b78;
+  background-color: CanvasText;
+}
+input[type=radio]:checked::before {
+  transform: scale(2);
+}
+input[type=checkbox]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  -webkit-clip-path: polygon(7.36% 53.62%, 1.75% 63.5%, 48.5% 95.5%, 97.25% 14%, 87.5% 7%, 44.25% 79.25%);
+          clip-path: polygon(7.36% 53.62%, 1.75% 63.5%, 48.5% 95.5%, 97.25% 14%, 87.5% 7%, 44.25% 79.25%);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #305b78;
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+input[type=checkbox]:checked::before {
+  transform: scale(3);
+}
+
+.form.form--invalid .form-label {
+  color: #de0000;
+  font-weight: bold;
+}
+.form.form--invalid .form-label::before {
+  content: "*";
+  display: inline-block;
+}
+.form .form__control {
+  display: block;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+.form .form__control * {
+  color: #000000;
+}
+.form .form__control-label {
+  margin-bottom: 0.25rem;
+}
+.form .form__control-legend {
+  margin-bottom: 1rem;
+}
+.form .form__control-input {
+  height: 2.6875rem;
+  border-radius: 0.5rem;
+  border: 1px solid #305b78;
+  padding: 0.5rem 1rem;
+}
+.form .form__control-error {
+  position: absolute;
+  color: #de0000;
+  font-weight: bold;
+  font-style: italic;
+  padding-top: 0.25rem;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+.form .radios .form__control-radio:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+.form .form__control-radio {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.form .form__control-radio:has(input[type=radio]:checked) {
+  font-weight: bold;
+}
+.form .form__control-checkbox {
+  display: flex;
+  gap: 1rem;
+}
+.form .form__control-checkbox:has(input[type=checkbox]:checked) {
+  font-weight: bold;
+}
+.form .form__control-checkbox a {
+  color: #2e5055;
+}
+.form .form__submit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+.form .form__control.form__control--invalid {
+  color: #de0000;
+  font-weight: bold;
+}
+.form .form__control.form__control--invalid input {
+  border-color: #de0000;
+}
+.form .form__control.form__control--invalid .form__control-label::before,
+.form .form__control.form__control--invalid .form__control-checkbox span::before {
+  content: "*";
+  display: inline-block;
+}
+.form .form__control.form__control--invalid .form__control-radio,
+.form .form__control.form__control--invalid .form__control-legend,
+.form .form__control.form__control--invalid .form__control-label,
+.form .form__control.form__control--invalid .form__control-checkbox span {
+  color: #de0000;
+  font-weight: bold;
+}
+.form .form__control.form__control--invalid .form__control-checkbox span {
+  position: relative;
+}
+.form .form__control.form__control--invalid .form__control-checkbox span::before {
+  position: absolute;
+  left: -0.5625rem;
+}
+.form .form__control.form__control--invalid .form__control-error {
+  opacity: 1;
 }
 
 .desktop__only {
@@ -2756,4 +2895,14 @@ h3 {
 }
 .site__map .list__element::before {
   content: "";
+}
+
+.get-newsletter__form {
+  margin-bottom: 3.5rem;
+}
+.get-newsletter__form .form-label {
+  margin-bottom: 2rem;
+}
+.get-newsletter__form .form__control {
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=style.css.map */
