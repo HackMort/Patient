@@ -262,3 +262,36 @@ if (listToggles && listToggles.length > 0) {
     }
   });
 }
+
+
+// Modal Functionality only to links with .link--external class
+const externalLinks = document.querySelectorAll('.link--external');
+if (externalLinks && externalLinks.length > 0) {
+  externalLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      const externaLModal = document.getElementById('externalModal');
+      const resourceButton = externaLModal.querySelector('.button--resource');
+      resourceButton.setAttribute('href', href);
+      const stayButton = externaLModal.querySelector('.button--stay');
+      Fancybox.show([
+        {
+          src: externalModal,
+          type: 'inline',
+        }],
+        {
+          on: {
+            closing: () => {
+              console.log('closing');
+              resourceButton.setAttribute('href', '');
+            }
+          }
+        }
+      )
+      stayButton.addEventListener('click', () => {
+        Fancybox.close();
+      });
+    });
+  });
+}
