@@ -1247,6 +1247,50 @@ h3 {
   text-align: center;
 }
 
+.fancybox__backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.external__modal {
+  border-radius: 12px;
+  box-shadow: 0 6px 4px 0 rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(to left, #ecefef, #fff 39%);
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 80%;
+  min-height: 253px;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .external__modal {
+    max-width: 888px;
+  }
+}
+.external__modal .carousel__button {
+  display: none;
+}
+.external__modal--title {
+  text-align: center;
+}
+.external__modal--links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 567px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .external__modal--links {
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+.external__modal--links button {
+  margin-right: 2rem;
+}
+
 .desktop__only {
   display: none;
 }
