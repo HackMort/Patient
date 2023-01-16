@@ -3,6 +3,7 @@
 
 .hero {
   background-color: $color-light-green;
+  background-image: url('/assets/img/hero-tile-bg.jpg');
   color: $color-black;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -171,6 +172,7 @@
 
   &.hero-waves--primary {
     background-image: url('/assets/vectors/waves/hero-waves.png');
+    background-image: url('/assets/img/3-waves.svg');
     background-size: cover;
     background-position: 78% 0%;
     background-repeat: no-repeat;

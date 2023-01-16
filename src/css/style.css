@@ -371,6 +371,7 @@ h3 {
 */
 .header {
   background-color: #b4d6bd;
+  background-image: url("/assets/img/hero-tile-bg.jpg");
   padding-bottom: 1rem;
 }
 .header__wrapper {
@@ -787,6 +788,7 @@ h3 {
 */
 .hero {
   background-color: #b4d6bd;
+  background-image: url("/assets/img/hero-tile-bg.jpg");
   color: #000000;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -934,6 +936,7 @@ h3 {
 }
 .hero-waves.hero-waves--primary {
   background-image: url("/assets/vectors/waves/hero-waves.png");
+  background-image: url("/assets/img/3-waves.svg");
   background-size: cover;
   background-position: 78% 0%;
   background-repeat: no-repeat;
