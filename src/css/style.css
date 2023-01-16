@@ -1258,8 +1258,9 @@ h3 {
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 80%;
+  max-width: 90%;
   min-height: 253px;
+  padding: 56px 25px;
   width: 100%;
 }
 @media screen and (min-width: 1024px) {
@@ -1271,13 +1272,13 @@ h3 {
   display: none;
 }
 .external__modal--title {
+  margin-bottom: 2rem;
   text-align: center;
 }
 .external__modal--links {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 567px;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -1285,10 +1286,43 @@ h3 {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    max-width: 640px;
   }
 }
+.external__modal--links .button {
+  height: auto;
+  min-height: 43px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 301px;
+}
+@media screen and (min-width: 768px) {
+  .external__modal--links .button {
+    height: 2.6875rem;
+    min-height: auto;
+  }
+  .external__modal--links .button--continue {
+    margin-left: 0;
+    max-width: 234px;
+  }
+}
+@media screen and (min-width: 424px) {
+  .external__modal--links .button br {
+    display: none;
+  }
+}
+.external__modal--links .button__label {
+  justify-content: flex-start;
+  text-align: left;
+  white-space: inherit;
+}
 .external__modal--links button {
-  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .external__modal--links button {
+    margin-bottom: 0;
+  }
 }
 
 .desktop__only {
