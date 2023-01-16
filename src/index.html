@@ -18,9 +18,8 @@
 
     <link rel="apple-touch-icon" href="./icon.png">
     <!-- Place favicon.ico in the root directory -->
-
-    <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="stylesheet" href="/css/fancybox.css">
+    <link rel="stylesheet" href="/css/style.css">
     <meta name="theme-color" content="#fafafa">
   </head>
 
@@ -284,7 +283,30 @@
         </div>
       </div>
     </footer>
-    <script src="./js/main.js" type="module"></script>
+    <!-- Exit Modal -->
+    <div id="exitModal" class="exit__modal">
+      <h3 class="exit__modal--title">You are now leaving the NMOSD site. <br /> Do you wish to continue?</h3>
+      <div class="exit__modal--links">
+        <button class="button button--default button--stay">
+          <span class="button__label">
+            Stay on the <br /> NMOSD Site
+          </span>
+          <span class="button__icon">
+            <img src="../assets/icons/play--white.svg" alt="Button icon">
+          </span>
+        </button>
+        <a target="_blank" class="button button--default button--continue">
+          <span class="button__label">
+            Continue
+          </span>
+          <span class="button__icon">
+            <img src="../assets/icons/play--white.svg" alt="Button icon">
+          </span>
+        </a>
+      </div>
+    </div>
+    <script src="/js/utils/fancybox-v4.0.31.js"></script>
+    <script src="/js/main.js" type="module"></script>
   </body>
 
 </html>

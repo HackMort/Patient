@@ -271,9 +271,9 @@ if (externalLinks && externalLinks.length > 0) {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const href = link.getAttribute('href');
-      const externalModal = document.getElementById('externalModal');
-      const continueButton = externalModal.querySelector('.button--continue');
-      const stayButton = externalModal.querySelector('.button--stay');
+      const exitModal = document.getElementById('exitModal');
+      const continueButton = exitModal.querySelector('.button--continue');
+      const stayButton = exitModal.querySelector('.button--stay');
       continueButton.setAttribute('href', href);
       stayButton.addEventListener('click', () => {
         Fancybox.close();
@@ -287,7 +287,7 @@ if (externalLinks && externalLinks.length > 0) {
       }
       Fancybox.show([
         {
-          src: externalModal,
+          src: exitModal,
           type: 'inline',
           autoFocus: false,
         }],

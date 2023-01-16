@@ -1251,7 +1251,7 @@ h3 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.external__modal {
+.exit__modal {
   border-radius: 12px;
   box-shadow: 0 6px 4px 0 rgba(0, 0, 0, 0.25);
   background-image: linear-gradient(to left, #ecefef, #fff 39%);
@@ -1264,32 +1264,32 @@ h3 {
   width: 100%;
 }
 @media screen and (min-width: 1024px) {
-  .external__modal {
+  .exit__modal {
     max-width: 888px;
   }
 }
-.external__modal .carousel__button {
+.exit__modal .carousel__button {
   display: none;
 }
-.external__modal--title {
+.exit__modal--title {
   margin-bottom: 2rem;
   text-align: center;
 }
-.external__modal--links {
+.exit__modal--links {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .external__modal--links {
+  .exit__modal--links {
     align-items: center;
     justify-content: center;
     flex-direction: row;
     max-width: 640px;
   }
 }
-.external__modal--links .button {
+.exit__modal--links .button {
   height: auto;
   min-height: 43px;
   margin-left: auto;
@@ -1297,30 +1297,30 @@ h3 {
   max-width: 301px;
 }
 @media screen and (min-width: 768px) {
-  .external__modal--links .button {
+  .exit__modal--links .button {
     height: 2.6875rem;
     min-height: auto;
   }
-  .external__modal--links .button--continue {
+  .exit__modal--links .button--continue {
     margin-left: 0;
     max-width: 234px;
   }
 }
 @media screen and (min-width: 424px) {
-  .external__modal--links .button br {
+  .exit__modal--links .button br {
     display: none;
   }
 }
-.external__modal--links .button__label {
+.exit__modal--links .button__label {
   justify-content: flex-start;
   text-align: left;
   white-space: inherit;
 }
-.external__modal--links button {
+.exit__modal--links button {
   margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  .external__modal--links button {
+  .exit__modal--links button {
     margin-bottom: 0;
   }
 }
