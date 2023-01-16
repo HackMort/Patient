@@ -44,8 +44,8 @@ const body = document.querySelector('body');
 const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 document.addEventListener("DOMContentLoaded", () => {
   const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop();
-  const host = window.location.host;
-  console.log('Host: ', host);
+  // const host = window.location.host;
+  // console.log('Host: ', host);
   if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
     window.location.href = '/validate.html';
   }
@@ -260,5 +260,45 @@ if (listToggles && listToggles.length > 0) {
         button.classList.toggle('active');
       });
     }
+  });
+}
+
+
+// Modal Functionality only all links with target="_blank" are affected
+const externalLinks = document.querySelectorAll('a[target="_blank"]');
+if (externalLinks && externalLinks.length > 0) {
+  externalLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      const exitModal = document.getElementById('exitModal');
+      const continueButton = exitModal.querySelector('.button--continue');
+      const stayButton = exitModal.querySelector('.button--stay');
+      continueButton.setAttribute('href', href);
+      stayButton.addEventListener('click', () => {
+        Fancybox.close();
+      });
+      if (link.classList.contains('button--continue')) {
+        stayButton.click();
+        setTimeout(() => {
+          window.open(href, '_blank');
+        }, 100);
+        return;
+      }
+      Fancybox.show([
+        {
+          src: exitModal,
+          type: 'inline',
+          autoFocus: false,
+        }],
+        {
+          on: {
+            closing: () => {
+              continueButton.setAttribute('href', '');
+            }
+          }
+        }
+      );
+    });
   });
 }

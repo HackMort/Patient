@@ -1250,6 +1250,84 @@ h3 {
   text-align: center;
 }
 
+.fancybox__backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.exit__modal {
+  border-radius: 12px;
+  box-shadow: 0 6px 4px 0 rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(to left, #ecefef, #fff 39%);
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 90%;
+  min-height: 253px;
+  padding: 56px 25px;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .exit__modal {
+    max-width: 888px;
+  }
+}
+.exit__modal .carousel__button {
+  display: none;
+}
+.exit__modal--title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.exit__modal--links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .exit__modal--links {
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 640px;
+  }
+}
+.exit__modal--links .button {
+  height: auto;
+  min-height: 43px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 301px;
+}
+@media screen and (min-width: 768px) {
+  .exit__modal--links .button {
+    height: 2.6875rem;
+    min-height: auto;
+  }
+  .exit__modal--links .button--continue {
+    margin-left: 0;
+    max-width: 234px;
+  }
+}
+@media screen and (min-width: 424px) {
+  .exit__modal--links .button br {
+    display: none;
+  }
+}
+.exit__modal--links .button__label {
+  justify-content: flex-start;
+  text-align: left;
+  white-space: inherit;
+}
+.exit__modal--links button {
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .exit__modal--links button {
+    margin-bottom: 0;
+  }
+}
+
 .desktop__only {
   display: none;
 }
