@@ -1431,6 +1431,7 @@ input[type=checkbox]:checked::before {
 }
 .form .form__control-radio .form__control-label {
   margin: 0;
+  cursor: pointer;
 }
 .form .form__control-radio input[type=radio]:checked + label,
 .form .form__control-radio input[type=radio]:checked + label ul {
@@ -1442,6 +1443,7 @@ input[type=checkbox]:checked::before {
 }
 .form .form__control-checkbox .form__control-label {
   margin: 0;
+  cursor: pointer;
 }
 .form .form__control-checkbox input[type=checkbox]:checked + label {
   font-weight: bold;

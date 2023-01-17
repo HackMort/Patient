@@ -127,15 +127,15 @@
                     <div class="form__control" data-field-index="0" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="first-name">First Name</label>
                         <input class="form__control-input" type="text" id="first-name" name="first-name" required
-                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\'\- ]{1,50}$"
-                            onblur="validateFormControl(event)">
+                            aria-required="true" maxlength="50" pattern="^[a-zA-Z.'\- ]{1,50}$"
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your first name</p>
                     </div>
                     <div class="form__control" data-field-index="1" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="last-name">Last Name</label>
                         <input class="form__control-input" type="text" id="last-name" name="last-name" required
-                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\'\- ]{1,50}$"
-                            onblur="validateFormControl(event)">
+                            aria-required="true" maxlength="50" pattern="^[a-zA-Z.'\- ]{1,50}$"
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your last name</p>
                     </div>
                     <div class="form__control" data-field-index="2" data-required="true" data-is-valid="false">
@@ -143,14 +143,14 @@
                         <input class="form__control-input" type="text" id="email" name="email" required
                             aria-required="true" maxlength="100"
                             pattern="^[a-zA-Z0-9._-]{1,100}@[a-zA-Z0-9]+\.[a-zA-Z]{2,10}$"
-                            onblur="validateFormControl(event)">
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter a valid email address</p>
                     </div>
                     <div class="form__control" data-field-index="3" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="zip-code">Zip code</label>
                         <input data-mask="true" data-mask-pattern="00000" class="form__control-input" type="text"
                             id="zip-code" name="zip-code" required aria-required="true"
-                            pattern="^[0-9]{1,5}$" onblur="validateFormControl(event)">
+                            pattern="^[0-9]{1,5}$" onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your 5-digit ZIP code</p>
                     </div>
                     <div class="form__control" data-field-index="4" data-required="true" data-is-valid="false">
@@ -159,27 +159,27 @@
                         <fieldset class="radios">
                             <div class="form__control-radio">
                                 <input id="non-nmosds" type="radio" name="description" required aria-required="true"
-                                    onblur="validateFormControl(event)">
+                                    onblur="validateFormControl(event)" onchange="validateFormControl(event)">
                                 <label class="form__control-label" for="non-nmosds"> I do not have an NMOSD diagnosis,
                                     but think I might have
                                     NMOSD</label>
                             </div>
                             <div class="form__control-radio">
                                 <input id="nmosd-treatment" type="radio" name="description" required
-                                    aria-required="true" onblur="validateFormControl(event)">
+                                    aria-required="true" onblur="validateFormControl(event)" onchange="validateFormControl(event)">
                                 <label class="form__control-label" for="nmosd-treatment">I have NMOSD, and am currently
                                     on a treatment</label>
                             </div>
                             <div class="form__control-radio">
-                                <input type="radio" name="description" required aria-required="true"
-                                    onblur="validateFormControl(event)">
+                                <input id="nmosd-no-treatment" type="radio" name="description" required aria-required="true"
+                                    onblur="validateFormControl(event)" onchange="validateFormControl(event)">
                                 <label class="form__control-label" for="nmosd-no-treatment">I have NMOSD, and am not
                                     currently on a
                                     treatment</label>
                             </div>
                             <div class="form__control-radio">
                                 <input id="caregiver" type="radio" name="description" required aria-required="true"
-                                    onblur="validateFormControl(event)">
+                                    onblur="validateFormControl(event)" onchange="validateFormControl(event)">
                                 <label class="form__control-label" for="caregiver">I am a caregiver</label>
                             </div>
                         </fieldset>
@@ -189,7 +189,7 @@
                     <div class="form__control" data-field-index="5" data-required="true" data-is-valid="false">
                         <div class="form__control-checkbox">
                             <input id="terms-and-conditions" type="checkbox" name="terms" required aria-required="true"
-                                onblur="validateFormControl(event)">
+                                onblur="validateFormControl(event)" onchange="validateFormControl(event)">
                             <label class="form__control-label" for="terms-and-conditions">
                                 By checking this box and submitting this form, I give <a
                                     href="https://alexion.com/Legal#privacynotice" target="_blank">Alexion</a>
