@@ -209,11 +209,14 @@ hr {
 // CTA Section
 .home__cta {
 
+    background: linear-gradient(180deg, $color-white 0%, $color-light-beige 40%);
+
     .video {
         height: 32.4375rem;
         position: relative;
 
         background-image: url('../assets/img/tmp-home-cta.png');
+        background-image: url('../assets/img/home-cta.webp');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 46% 0%;
@@ -256,7 +259,7 @@ hr {
     }
 
     .cta {
-        background-color: $color-light-beige;
+        // background-color: $color-light-beige;
         padding-bottom: 4rem;
         padding-top: 1rem;
 
@@ -538,8 +541,21 @@ hr {
                 font-size: smaller;
             }
 
+            &.paragraph.sup--cross::before {
+                content: "†";
+                font-size: 0.625rem;
+            }
+
+            &.paragraph.sup--crosses::before {
+                content: "‡";
+                font-size: 0.625rem;
+            }
+
+
+
             &.paragraph.paragraph--14 {
                 line-height: 1.25;
+                margin-bottom: 0.5rem;
             }
 
         }
@@ -670,7 +686,7 @@ hr {
 }
 
 .about-nmosd__symptoms {
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
 
     .all__symptoms--content {
         border-radius: .625rem;
@@ -706,6 +722,8 @@ hr {
     }
 
     .all__symptoms--content_text {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
         text-align: left;
     }
 
@@ -730,8 +748,8 @@ hr {
     }
 
     .all__symptoms--content_list_item .text {
-        font-size: 18px;
-        line-height: 27px;
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
         font-weight: bold;
         max-width: 294px;
     }
@@ -901,7 +919,7 @@ hr {
     left: auto;
     top: auto;
     box-shadow: none;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     transform: none;
 }
 
@@ -970,7 +988,7 @@ hr {
     }
 
     .about__nmosd .intro__content {
-        max-width: 58.25rem;
+        // max-width: 58.25rem;
         margin: 0 auto;
     }
 
@@ -1666,6 +1684,7 @@ hr {
     margin-bottom: 3.5rem;
 
     .form {
+
         .form__control:nth-child(2),
         .form__control:nth-child(3),
         .form__control:nth-child(4) {
@@ -1673,7 +1692,7 @@ hr {
             max-width: 26.5625rem;
         }
 
-        @media screen and (min-width: 426px)  {
+        @media screen and (min-width: 426px) {
             .form__control:nth-child(5) {
                 width: 100%;
                 max-width: 9.375rem;
@@ -1681,6 +1700,7 @@ hr {
         }
     }
 }
+
 // ========================== GET NEWSLETTER PAGE =====================================
 
 // ========================== CHILDREN'S BOOK PAGE =====================================
@@ -1716,7 +1736,7 @@ hr {
             flex-direction: row;
             gap: 2rem;
             justify-content: space-between;
-            
+
             .make-memory__content {
                 order: initial;
                 margin: 0;
@@ -1724,7 +1744,7 @@ hr {
 
             .make-memory__image {
                 margin: 0;
-                
+
             }
         }
     }
@@ -1738,6 +1758,7 @@ hr {
     }
 
     .form {
+
         .form__control[data-field-index="0"],
         .form__control[data-field-index="1"],
         .form__control[data-field-index="2"],
@@ -1748,7 +1769,7 @@ hr {
             max-width: 26.5625rem;
         }
 
-        @media screen and (min-width: 426px)  {
+        @media screen and (min-width: 426px) {
             .form__control[data-field-index="6"] {
                 width: 100%;
                 max-width: 4.375rem;
@@ -1761,4 +1782,5 @@ hr {
         }
     }
 }
+
 // ========================== CHILDREN'S BOOK PAGE =====================================

@@ -1,5 +1,6 @@
+@charset "UTF-8";
 :root {
-  --black: #393939;
+  --black: #000000;
   --primary-font: Helvetica, Arial, sans-serif;
   --secondary-font: Verdana;
 }
@@ -371,6 +372,7 @@ h3 {
 */
 .header {
   background-color: #b4d6bd;
+  background-image: url("/assets/img/hero-tile-bg.jpg");
   padding-bottom: 1rem;
 }
 .header__wrapper {
@@ -787,10 +789,10 @@ h3 {
 */
 .hero {
   background-color: #b4d6bd;
+  background-image: url("/assets/img/hero-tile-bg.jpg");
   color: #000000;
   font-size: 0.875rem;
   line-height: 1.5;
-  padding-top: 1rem;
   padding-bottom: 2rem;
 }
 .hero .wrapper {
@@ -813,7 +815,6 @@ h3 {
 }
 .hero .wrapper .hero__media {
   order: 2;
-  margin-top: 2.5rem;
 }
 @media screen and (min-width: 1024px) {
   .hero .wrapper {
@@ -868,8 +869,8 @@ h3 {
 .hero__content--subtitle {
   font-size: 2rem;
   line-height: 2.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .hero__content--subtitle {
@@ -933,16 +934,17 @@ h3 {
   background-color: #ffffff;
 }
 .hero-waves.hero-waves--primary {
-  background-image: url("/assets/vectors/waves/hero-waves.png");
+  background-image: url("/assets/vectors/waves/3_Waves.webp");
   background-size: cover;
   background-position: 78% 0%;
   background-repeat: no-repeat;
 }
 .hero-waves.hero-waves--secondary {
-  background-image: url("/assets/vectors/waves/hero-2-waves.png");
+  background-image: url("/assets/vectors/waves/2_Waves@2x.webp");
   background-size: cover;
   background-position: 78% 0%;
   background-repeat: no-repeat;
+  height: 9rem;
 }
 @media screen and (min-width: 1200px) {
   .hero-waves.hero-waves--primary {
@@ -1089,6 +1091,11 @@ h3 {
 .icon-card .icon-card__content .icon-card__amount {
   font-size: 3.125em;
   color: #2e5055;
+  position: relative;
+}
+.icon-card .icon-card__content .icon-card__amount.amount--symbol::before {
+  content: "~";
+  display: inline;
 }
 .icon-card .icon-card__content .icon-card__title {
   color: #2e5055;
@@ -1648,10 +1655,14 @@ hr {
   }
 }
 
+.home__cta {
+  background: linear-gradient(180deg, #ffffff 0%, #e4d8cf 40%);
+}
 .home__cta .video {
   height: 32.4375rem;
   position: relative;
   background-image: url("../assets/img/tmp-home-cta.png");
+  background-image: url("../assets/img/home-cta.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 46% 0%;
@@ -1685,7 +1696,6 @@ hr {
   margin: 0 auto;
 }
 .home__cta .cta {
-  background-color: #e4d8cf;
   padding-bottom: 4rem;
   padding-top: 1rem;
   position: relative;
@@ -2103,8 +2113,17 @@ hr {
   line-height: 1;
   font-size: smaller;
 }
+.nmosd__vs_ms .nmosd__vs_ms_intro_content p.paragraph.sup--cross::before {
+  content: "†";
+  font-size: 0.625rem;
+}
+.nmosd__vs_ms .nmosd__vs_ms_intro_content p.paragraph.sup--crosses::before {
+  content: "‡";
+  font-size: 0.625rem;
+}
 .nmosd__vs_ms .nmosd__vs_ms_intro_content p.paragraph.paragraph--14 {
   line-height: 1.25;
+  margin-bottom: 0.5rem;
 }
 .nmosd__vs_ms .nmosd__vs_ms_intro_content--title {
   font-size: 24px;
@@ -2209,7 +2228,7 @@ hr {
 }
 
 .about-nmosd__symptoms {
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
 }
 .about-nmosd__symptoms .all__symptoms--content {
   border-radius: 0.625rem;
@@ -2230,6 +2249,8 @@ hr {
   text-align: center;
 }
 .about-nmosd__symptoms .all__symptoms--content_text {
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
   text-align: left;
 }
 .about-nmosd__symptoms .all__symptoms--content_columns {
@@ -2251,8 +2272,8 @@ hr {
   align-items: center;
 }
 .about-nmosd__symptoms .all__symptoms--content_list_item .text {
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
   font-weight: bold;
   max-width: 294px;
 }
@@ -2410,7 +2431,6 @@ hr {
   left: auto;
   top: auto;
   box-shadow: none;
-  margin-bottom: 2rem;
   transform: none;
 }
 
@@ -2476,7 +2496,6 @@ hr {
     grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
   }
   .about__nmosd .intro__content {
-    max-width: 58.25rem;
     margin: 0 auto;
   }
   .about-nmosd__symptoms .all__symptoms--content {
