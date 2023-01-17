@@ -204,12 +204,14 @@
       }
 
       &.attend_event a {
-        background-color: #eee;
+        background-color: $color-yellow;
         border-bottom-right-radius: 10px;
-        color: $color-new-blue;
+        color: $color-new-ada-blue;
         display: flex;
         align-items: center;
         padding-left: 0.75rem;
+
+        font-weight: bold;
 
         img {
           margin-left: 0.5rem;

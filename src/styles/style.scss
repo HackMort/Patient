@@ -1357,6 +1357,8 @@ hr {
         flex-direction: column;
         gap: 3rem;
 
+        margin-bottom: 2rem;
+
         .book__info {
 
             .book__title {
@@ -1435,6 +1437,7 @@ hr {
 
         h3 {
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
     }
 }
