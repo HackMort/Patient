@@ -72,41 +72,36 @@
     }
 
     &.button--default {
-        background-color: $color-blue;
+        background-color: $color-purple;
 
         .button__label {
             color: $color-white;
-            background-color: $color-ada-blue;
+            background-color: $color-dark-purple;
         }
 
-        &:hover,
-        &:active {
-            background-color: $color-dark-blue;
-
+        &:hover {
             .button__label {
-                background-color: $color-dark-ada-blue;
+                text-decoration: underline;
             }
+        }
+
+        &:active {
+            outline: 2px solid $color-dark-purple;
         }
     }
 
     &.button--white {
-        background-color: $color-blue;
+        background-color: $color-purple;
         text-decoration: none;
 
         .button__label {
-            color: $color-ada-blue;
+            color: $color-purple;
             background-color: $color-white;
         }
 
         &:hover,
         &:active {
-            background-color: $color-dark-blue;
-        }
-    }
-
-    &:hover {
-        .button__label {
-            text-decoration: underline;
+            background-color: $color-dark-purple;
         }
     }
 }

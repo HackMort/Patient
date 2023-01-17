@@ -4,7 +4,7 @@
 .nmosd__symptoms {
   position: relative;
   background: $color-white;
-  border: solid 4px $color-blue;
+  border: solid 4px $color-new-blue;
   border-radius: 16px;
   display: grid;
   grid-template-columns: 1fr;
@@ -69,8 +69,8 @@
 }
 
 .nmosd__buttons li.active .button {
-  background: $color-ada-blue;
-  border-color: $color-ada-blue;
+  background: $color-dark-purple;
+  border-color: $color-dark-purple;
   box-shadow: none;
   color: $color-white;
   font-weight: 700;
@@ -78,11 +78,11 @@
 
 .nmosd__buttons .button {
   background-color: $color-white;
-  border: solid 4px $color-blue;
+  border: solid 4px $color-dark-purple;
   border-radius: 4px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  color: $color-blue;
+  color: $color-dark-purple;
   font-size: 24px;
   line-height: 32px;
   display: flex;
@@ -130,7 +130,7 @@
 }
 
 .big__circle {
-  background: $color-light-green;
+  background: $color-yellow;
   border-radius: 50%;
   color: $color-white;
   font-weight: bold;
@@ -146,7 +146,7 @@
 
 .big__circle span {
   display: block;
-  color: $color-dark-green;
+  color: $color-new-blue;
   max-width: 180px;
   transition: all 0.3s ease-in-out;
 }
