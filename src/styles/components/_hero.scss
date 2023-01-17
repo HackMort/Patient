@@ -7,7 +7,7 @@
   color: $color-black;
   font-size: 0.875rem;
   line-height: 1.5;
-  padding-top: 1rem;
+  // padding-top: 1rem;
   padding-bottom: 2rem;
 
   .wrapper {
@@ -31,7 +31,7 @@
 
     .hero__media {
       order: 2;
-      margin-top: 2.5rem;
+      // margin-top: 2.5rem;
     }
 
     @media screen and (min-width: 1024px) {
@@ -94,8 +94,8 @@
     &--subtitle {
       font-size: 2rem;
       line-height: 2.5rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
 
       @media screen and (min-width: 768px) {
         font-size: 2.5rem;
@@ -173,6 +173,7 @@
   &.hero-waves--primary {
     background-image: url('/assets/vectors/waves/hero-waves.png');
     background-image: url('/assets/img/3-waves.svg');
+    background-image: url('/assets/vectors/waves/3_Waves.webp');
     background-size: cover;
     background-position: 78% 0%;
     background-repeat: no-repeat;

@@ -1,5 +1,5 @@
 :root {
-  --black: #393939;
+  --black: #000000;
   --primary-font: Helvetica, Arial, sans-serif;
   --secondary-font: Verdana;
 }
@@ -792,7 +792,6 @@ h3 {
   color: #000000;
   font-size: 0.875rem;
   line-height: 1.5;
-  padding-top: 1rem;
   padding-bottom: 2rem;
 }
 .hero .wrapper {
@@ -815,7 +814,6 @@ h3 {
 }
 .hero .wrapper .hero__media {
   order: 2;
-  margin-top: 2.5rem;
 }
 @media screen and (min-width: 1024px) {
   .hero .wrapper {
@@ -870,8 +868,8 @@ h3 {
 .hero__content--subtitle {
   font-size: 2rem;
   line-height: 2.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .hero__content--subtitle {
@@ -937,6 +935,7 @@ h3 {
 .hero-waves.hero-waves--primary {
   background-image: url("/assets/vectors/waves/hero-waves.png");
   background-image: url("/assets/img/3-waves.svg");
+  background-image: url("/assets/vectors/waves/3_Waves.webp");
   background-size: cover;
   background-position: 78% 0%;
   background-repeat: no-repeat;
@@ -1092,6 +1091,11 @@ h3 {
 .icon-card .icon-card__content .icon-card__amount {
   font-size: 3.125em;
   color: #2e5055;
+  position: relative;
+}
+.icon-card .icon-card__content .icon-card__amount.amount--symbol::before {
+  content: "~";
+  display: inline;
 }
 .icon-card .icon-card__content .icon-card__title {
   color: #2e5055;
@@ -1478,10 +1482,14 @@ h3 {
   }
 }
 
+.home__cta {
+  background: linear-gradient(180deg, #ffffff 0%, #e4d8cf 40%);
+}
 .home__cta .video {
   height: 32.4375rem;
   position: relative;
   background-image: url("../assets/img/tmp-home-cta.png");
+  background-image: url("../assets/img/home-cta.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 46% 0%;
@@ -1515,7 +1523,6 @@ h3 {
   margin: 0 auto;
 }
 .home__cta .cta {
-  background-color: #e4d8cf;
   padding-bottom: 4rem;
   padding-top: 1rem;
   position: relative;
@@ -2039,7 +2046,7 @@ h3 {
 }
 
 .about-nmosd__symptoms {
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
 }
 .about-nmosd__symptoms .all__symptoms--content {
   border-radius: 0.625rem;
@@ -2060,6 +2067,8 @@ h3 {
   text-align: center;
 }
 .about-nmosd__symptoms .all__symptoms--content_text {
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
   text-align: left;
 }
 .about-nmosd__symptoms .all__symptoms--content_columns {
@@ -2081,8 +2090,8 @@ h3 {
   align-items: center;
 }
 .about-nmosd__symptoms .all__symptoms--content_list_item .text {
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
   font-weight: bold;
   max-width: 294px;
 }
@@ -2240,7 +2249,6 @@ h3 {
   left: auto;
   top: auto;
   box-shadow: none;
-  margin-bottom: 2rem;
   transform: none;
 }
 
@@ -2306,7 +2314,6 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
   }
   .about__nmosd .intro__content {
-    max-width: 58.25rem;
     margin: 0 auto;
   }
   .about-nmosd__symptoms .all__symptoms--content {
