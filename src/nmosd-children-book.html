@@ -150,21 +150,21 @@
                         <input class="form__control-input" type="text" id="email" name="email" required
                             aria-required="true" maxlength="100"
                             pattern="^[a-zA-Z0-9._-]{1,100}@[a-zA-Z0-9]+\.[a-zA-Z]{2,10}$"
-                            onblur="validateFormControl(event)">
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter a valid email address</p>
                     </div>
                     <div class="form__control" data-field-index="1" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="first-name">First Name</label>
                         <input class="form__control-input" type="text" id="first-name" name="first-name" required
-                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\'\- ]{1,50}$"
-                            onblur="validateFormControl(event)">
+                            aria-required="true" maxlength="50" pattern="^[a-zA-Z.'\- ]{1,50}$"
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your first name</p>
                     </div>
                     <div class="form__control" data-field-index="2" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="last-name">Last Name</label>
                         <input class="form__control-input" type="text" id="last-name" name="last-name" required
-                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\'\- ]{1,50}$"
-                            onblur="validateFormControl(event)">
+                            aria-required="true" maxlength="50" pattern="^[a-zA-Z.'\- ]{1,50}$"
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your last name</p>
                     </div>
 
@@ -173,23 +173,23 @@
                     <div class="form__control" data-field-index="3" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="delivery-address">Delivery Address</label>
                         <input class="form__control-input" type="text" id="delivery-address" name="delivery-address"
-                            required aria-required="true" maxlength="100" pattern="^[a-zA-Z0-9\.\#\'\- ]{1,100}$"
-                            onblur="validateFormControl(event)">
+                            required aria-required="true" maxlength="100" pattern="^[a-zA-Z0-9.#'\- ]{1,100}$"
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your delivery address</p>
                     </div>
 
                     <div class="form__control" data-field-index="4" data-required="false" data-is-valid="false">
                         <label class="form__control-label" for="suite-apt">Suite/Apt (Optional)</label>
                         <input class="form__control-input" type="text" id="suite-apt" name="suite-apt" required
-                            aria-required="true" maxlength="100" pattern="^[a-zA-Z0-9\.\#\'\- ]{1,100}$"
-                            onblur="validateFormControl(event)">
+                            aria-required="true" maxlength="100" pattern="^[a-zA-Z0-9.#'\- ]{1,100}$"
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                     </div>
 
                     <div class="form__control" data-field-index="5" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="city">City</label>
                         <input class="form__control-input" type="text" id="city" name="city" required
-                            aria-required="true" maxlength="100" pattern="^[a-zA-Z\.\'\- ]{1,100}$"
-                            onblur="validateFormControl(event)">
+                            aria-required="true" maxlength="100" pattern="^[a-zA-Z.'\- ]{1,100}$"
+                            onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your city</p>
                     </div>
 
@@ -197,7 +197,7 @@
                         <label class="form__control-label" for="state">State</label>
                         <input data-mask="true" data-mask-pattern="aa" class="form__control-input" type="text"
                             id="state" name="state" required aria-required="true"
-                            pattern="^[a-zA-Z]{1,2}$" onblur="validateFormControl(event)">
+                            pattern="^[a-zA-Z]{1,2}$" onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your state</p>
                     </div>
 
@@ -205,7 +205,7 @@
                         <label class="form__control-label" for="zip-code">Zip code</label>
                         <input data-mask="true" data-mask-pattern="00000" class="form__control-input" type="text"
                             id="zip-code" name="zip-code" required aria-required="true"
-                            pattern="^[0-9]{1,5}$" onblur="validateFormControl(event)">
+                            pattern="^[0-9]{1,5}$" onblur="validateFormControl(event)" oninput="validateFormControl(event)">
                         <p class="form__control-error">Please enter your 5-digit ZIP code</p>
                     </div>
 
@@ -217,14 +217,14 @@
                         <fieldset class="radios">
                             <div class="form__control-radio">
                                 <input id="patient" type="radio" name="i-am" required aria-required="true"
-                                    onblur="validateFormControl(event)">
+                                    onblur="validateFormControl(event)" onchange="validateFormControl(event)" >
                                 <label class="form__control-label" for="patient">
                                     Patient
                                 </label>
                             </div>
                             <div class="form__control-radio">
                                 <input id="caregiver" type="radio" name="i-am" required aria-required="true"
-                                    onblur="validateFormControl(event)">
+                                    onblur="validateFormControl(event)" onchange="validateFormControl(event)">
                                 <label class="form__control-label" for="caregiver">
                                     Caregiver
                                 </label>
@@ -236,7 +236,7 @@
                     <div class="form__control" data-field-index="9" data-required="true" data-is-valid="false">
                         <div class="form__control-checkbox">
                             <input id="terms-and-conditions" type="checkbox" name="terms" required aria-required="true"
-                                onblur="validateFormControl(event)">
+                                onblur="validateFormControl(event)" onchange="validateFormControl(event)">
                             <label class="form__control-label" for="terms-and-conditions">
                                 By checking this box and submitting this form, I can confirm and agree to the following:
                                 <ul class="list">
