@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --black: #000000;
   --primary-font: Helvetica, Arial, sans-serif;
@@ -2112,8 +2113,17 @@ hr {
   line-height: 1;
   font-size: smaller;
 }
+.nmosd__vs_ms .nmosd__vs_ms_intro_content p.paragraph.sup--cross::before {
+  content: "†";
+  font-size: 0.625rem;
+}
+.nmosd__vs_ms .nmosd__vs_ms_intro_content p.paragraph.sup--crosses::before {
+  content: "‡";
+  font-size: 0.625rem;
+}
 .nmosd__vs_ms .nmosd__vs_ms_intro_content p.paragraph.paragraph--14 {
   line-height: 1.25;
+  margin-bottom: 0.5rem;
 }
 .nmosd__vs_ms .nmosd__vs_ms_intro_content--title {
   font-size: 24px;
