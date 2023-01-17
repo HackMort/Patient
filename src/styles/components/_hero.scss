@@ -2,7 +2,7 @@
 @import '../settings/mixins';
 
 .hero {
-  background-color: $color-light-green;
+  background-color: $color-light-purple;
   background-image: url('/assets/img/hero-tile-bg.jpg');
   color: $color-black;
   font-size: 0.875rem;
@@ -85,7 +85,7 @@
     }
 
     &--title {
-      color: $color-dark-green;
+      color: $color-new-blue;
       font-size: 1rem;
       font-weight: normal;
       line-height: 1.75rem;
@@ -138,7 +138,7 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        background-color: $color-dark-green;
+        background-color: $color-new-blue;
         border: none;
         cursor: pointer;
         height: 1.5rem;
