@@ -609,7 +609,7 @@ h3 {
 }
 @media screen and (min-width: 1200px) {
   .header__nav--menu_item.has--dropdown .sub__menu a:hover, .header__nav--menu_item.has--dropdown .sub__menu a:focus, .header__nav--menu_item.has--dropdown .sub__menu a:active {
-    background-color: #daebde;
+    background-color: #ebeff2;
     color: #305b78;
   }
 }
