@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
     window.location.href = '/validate.html';
   }
+
   // Validate Form
   const form = document.querySelector('.form__validate');
   if (form) {

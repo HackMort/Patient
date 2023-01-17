@@ -202,11 +202,14 @@
 // CTA Section
 .home__cta {
 
+    background: linear-gradient(180deg, $color-white 0%, $color-light-beige 40%);
+
     .video {
         height: 32.4375rem;
         position: relative;
 
         background-image: url('../assets/img/tmp-home-cta.png');
+        background-image: url('../assets/img/home-cta.webp');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 46% 0%;
@@ -249,7 +252,7 @@
     }
 
     .cta {
-        background-color: $color-light-beige;
+        // background-color: $color-light-beige;
         padding-bottom: 4rem;
         padding-top: 1rem;
 
@@ -663,7 +666,7 @@
 }
 
 .about-nmosd__symptoms {
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
 
     .all__symptoms--content {
         border-radius: .625rem;
@@ -699,6 +702,8 @@
     }
 
     .all__symptoms--content_text {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
         text-align: left;
     }
 
@@ -723,8 +728,8 @@
     }
 
     .all__symptoms--content_list_item .text {
-        font-size: 18px;
-        line-height: 27px;
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
         font-weight: bold;
         max-width: 294px;
     }
@@ -894,7 +899,7 @@
     left: auto;
     top: auto;
     box-shadow: none;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     transform: none;
 }
 
@@ -963,7 +968,7 @@
     }
 
     .about__nmosd .intro__content {
-        max-width: 58.25rem;
+        // max-width: 58.25rem;
         margin: 0 auto;
     }
 
