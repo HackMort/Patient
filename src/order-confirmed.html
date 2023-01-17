@@ -107,119 +107,40 @@
             <section class="hero">
                 <div class="section-wrapper wrapper">
                     <div class="hero__content">
-                        <h1 class="hero__content--title">Get the Newsletter</h1>
+                        <h1 class="hero__content--title">NMOSD Children’s Book</h1>
                         <h2 class="hero__content--subtitle">
-                            Sign up for a monthly digital newsletter highlighting resources, events, and stories from
-                            across the NMOSD community
+                            We received your request!
                         </h2>
-                        <p class="hero__content--text">
-                            NMOSD, neuromyelitis optica spectrum disorder.
-                        </p>
                     </div>
                 </div>
             </section>
             <div class="hero-waves hero-waves--secondary"></div>
 
-            <section class="get-newsletter__form">
+            <section class="order__confirmed">
                 <section class="section-wrapper section-wrapper--small">
-
-                    <form action="" method="post" class="form" novalidate>
-                        <p class="paragraph form-label">All fields are required.</p>
-                        <div class="form__control" data-field-index="0" data-required="true" data-is-valid="false">
-                            <label class="form__control-label" for="first-name">First Name</label>
-                            <input class="form__control-input" type="text" id="first-name" name="first-name" required
-                                aria-required="true" maxlength="50" pattern="^[a-zA-Z.'\- ]{1,50}$"
-                                onblur="validateFormControl(event)" oninput="validateFormControl(event)">
-                            <p class="form__control-error">Please enter your first name</p>
-                        </div>
-                        <div class="form__control" data-field-index="1" data-required="true" data-is-valid="false">
-                            <label class="form__control-label" for="last-name">Last Name</label>
-                            <input class="form__control-input" type="text" id="last-name" name="last-name" required
-                                aria-required="true" maxlength="50" pattern="^[a-zA-Z.'\- ]{1,50}$"
-                                onblur="validateFormControl(event)" oninput="validateFormControl(event)">
-                            <p class="form__control-error">Please enter your last name</p>
-                        </div>
-                        <div class="form__control" data-field-index="2" data-required="true" data-is-valid="false">
-                            <label class="form__control-label" for="email">Email Address</label>
-                            <input class="form__control-input" type="text" id="email" name="email" required
-                                aria-required="true" maxlength="100"
-                                pattern="^[a-zA-Z0-9._-]{1,100}@[a-zA-Z0-9]+\.[a-zA-Z]{2,10}$"
-                                onblur="validateFormControl(event)" oninput="validateFormControl(event)">
-                            <p class="form__control-error">Please enter a valid email address</p>
-                        </div>
-                        <div class="form__control" data-field-index="3" data-required="true" data-is-valid="false">
-                            <label class="form__control-label" for="zip-code">Zip code</label>
-                            <input data-mask="true" data-mask-pattern="00000" class="form__control-input" type="text"
-                                id="zip-code" name="zip-code" required aria-required="true" pattern="^[0-9]{1,5}$"
-                                onblur="validateFormControl(event)" oninput="validateFormControl(event)">
-                            <p class="form__control-error">Please enter your 5-digit ZIP code</p>
-                        </div>
-                        <div class="form__control" data-field-index="4" data-required="true" data-is-valid="false">
-                            <legend class="form__control-legend">Which of the following best describes you:</legend>
-
-                            <fieldset class="radios">
-                                <div class="form__control-radio">
-                                    <input id="non-nmosds" type="radio" name="description" required aria-required="true"
-                                        onblur="validateFormControl(event)" onchange="validateFormControl(event)">
-                                    <label class="form__control-label" for="non-nmosds"> I do not have an NMOSD
-                                        diagnosis,
-                                        but think I might have
-                                        NMOSD</label>
-                                </div>
-                                <div class="form__control-radio">
-                                    <input id="nmosd-treatment" type="radio" name="description" required
-                                        aria-required="true" onblur="validateFormControl(event)"
-                                        onchange="validateFormControl(event)">
-                                    <label class="form__control-label" for="nmosd-treatment">I have NMOSD, and am
-                                        currently
-                                        on a treatment</label>
-                                </div>
-                                <div class="form__control-radio">
-                                    <input id="nmosd-no-treatment" type="radio" name="description" required
-                                        aria-required="true" onblur="validateFormControl(event)"
-                                        onchange="validateFormControl(event)">
-                                    <label class="form__control-label" for="nmosd-no-treatment">I have NMOSD, and am not
-                                        currently on a
-                                        treatment</label>
-                                </div>
-                                <div class="form__control-radio">
-                                    <input id="caregiver" type="radio" name="description" required aria-required="true"
-                                        onblur="validateFormControl(event)" onchange="validateFormControl(event)">
-                                    <label class="form__control-label" for="caregiver">I am a caregiver</label>
-                                </div>
-                            </fieldset>
-
-                            <p class="form__control-error">Please make a selection</p>
-                        </div>
-                        <div class="form__control" data-field-index="5" data-required="true" data-is-valid="false">
-                            <div class="form__control-checkbox">
-                                <input id="terms-and-conditions" type="checkbox" name="terms" required
-                                    aria-required="true" onblur="validateFormControl(event)"
-                                    onchange="validateFormControl(event)">
-                                <label class="form__control-label" for="terms-and-conditions">
-                                    By checking this box and submitting this form, I give <a
-                                        href="https://alexion.com/Legal#privacynotice" target="_blank">Alexion</a>
-                                    permission to provide promotional information to me or otherwise contact me about
-                                    Alexion products, services, programs, or other topics that Alexion thinks may
-                                    interest me. I have read and understand the <a
-                                        href="https://alexion.com/Legal#privacynotice" target="_blank">Alexion Privacy
-                                        Notice</a>.
-                                </label>
-                            </div>
-                            <p class="form__control-error">Please select the checkbox</p>
-                        </div>
-
-                        <div class="form__submit">
-                            <button class="button button--default" type="submit" disabled>
-                                <span class="button__label">
-                                    Sign Me Up
-                                </span>
-                                <span class="button__icon">
-                                    <img src="../assets/icons/play--white.svg" alt="Button icon">
-                                </span>
-                            </button>
-                        </div>
-                    </form>
+                    <p style="font-size: 18px; line-height: 27px;">Thank you for requesting Let's Make a Memory, a book
+                        to help explain
+                        NMOSD to children. Please expect more details in your inbox at <span
+                            style="color: #ed50ca;">dev@devteam.com</span> in the next few days.</p>
+                    <div class="thank__you--links" style="display: flex; margin-top: 3rem; margin-bottom: 3.5rem;">
+                        <a class="button button--default" target="_blank" href="https://alexionnmosdevents.com/"
+                            style="max-width: 245px; margin-right: 2rem;">
+                            <span class="button__label">
+                                Attend an Event
+                            </span>
+                            <span class="button__icon">
+                                <img src="../assets/icons/play--white.svg" alt="Attend an Event">
+                            </span>
+                        </a>
+                        <a class="button button--default" href="/" style="max-width: 245px;">
+                            <span class="button__label">
+                                Home
+                            </span>
+                            <span class="button__icon">
+                                <img src="../assets/icons/play--white.svg" alt="Home">
+                            </span>
+                        </a>
+                    </div>
                 </section>
             </section>
 
@@ -282,19 +203,6 @@
         <script src="https://unpkg.com/imask"></script>
         <script src="/js/utils/fancybox-v4.0.31.js"></script>
         <script src="/js/main.js"></script>
-
-        <script>
-            const form = document.querySelector('.form');
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setTimeout(() => {
-                    window.location.href = '/thank-you.html';
-                }, 1000);
-            });
-        </script>
-
-
     </body>
 
 </html>

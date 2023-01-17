@@ -348,6 +348,16 @@
         <script src="https://unpkg.com/imask"></script>
         <script src="/js/utils/fancybox-v4.0.31.js"></script>
         <script src="./js/main.js"></script>
+        <script>
+            const form = document.querySelector('.form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setTimeout(() => {
+                    window.location.href = 'order-confirmed.html'
+                }, 1000);
+            });
+        </script>
     </body>
 
 </html>
