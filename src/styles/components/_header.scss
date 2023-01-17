@@ -2,7 +2,7 @@
 @import '../settings/mixins';
 
 .header {
-  background-color: $color-light-green;
+  background-color: $color-light-purple;
   background-image: url('/assets/img/hero-tile-bg.jpg');
 
   padding-bottom: 1rem;
@@ -20,7 +20,7 @@
   }
 
   .top__bar {
-    background-color: $color-dark-green;
+    background-color: $color-new-blue;
     display: none;
     height: 32px;
     width: 100%;
@@ -48,12 +48,12 @@
         }
 
         &.attend_event {
-          background-color: $color-light-beige;
-          border: solid 1px $color-dark-green;
+          background-color: $color-yellow;
+          border: solid 1px $color-new-blue;
           border-bottom-right-radius: 1rem;
           border-bottom-left-radius: 1rem;
           box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.25);
-          color: $color-dark-green;
+          color: $color-new-blue;
           display: flex;
           align-items: center;
           font-size: 14px;
@@ -125,7 +125,7 @@
     }
 
     &_item {
-      background-color: $color-dark-green;
+      background-color: $color-new-blue;
       min-height: 68px;
       padding-right: 0.75rem;
       padding-left: 0.75rem;
@@ -135,7 +135,7 @@
       @media screen and (min-width: 1200px) {
         &.current-menu-item>a {
           font-weight: bold;
-          border-bottom: 2px solid $color-dark-green;
+          border-bottom: 2px solid $color-new-blue;
           margin-top: -12px;
           padding-bottom: 5px;
         }
@@ -149,7 +149,7 @@
           font-weight: bold;
 
           @media screen and (min-width: 1200px) {
-            border-bottom: 2px solid $color-dark-green;
+            border-bottom: 2px solid $color-new-blue;
             margin-top: -12px;
             padding-bottom: 5px;
           }
@@ -159,7 +159,7 @@
       a {
         position: relative;
         border-bottom: 2px solid transparent;
-        color: $color-light-green;
+        color: $color-light-purple;
         cursor: pointer;
         display: inline-block;
         font-size: 1rem;
@@ -193,7 +193,7 @@
       }
 
       &:nth-last-child(2) a {
-        border-top: 1px solid $color-light-green;
+        border-top: 1px solid $color-light-purple;
         display: block;
         max-width: 265px;
       }
@@ -204,12 +204,14 @@
       }
 
       &.attend_event a {
-        background-color: #eee;
+        background-color: $color-yellow;
         border-bottom-right-radius: 10px;
-        color: $color-dark-green;
+        color: $color-new-ada-blue;
         display: flex;
         align-items: center;
         padding-left: 0.75rem;
+
+        font-weight: bold;
 
         img {
           margin-left: 0.5rem;
@@ -235,13 +237,13 @@
             display: inline-block;
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
-            border-top: 5px solid $color-light-green;
+            border-top: 5px solid $color-light-purple;
             height: 0;
             margin-left: 0.75rem;
             width: 0;
 
             @media screen and (min-width: 1200px) {
-              border-top: 5px solid $color-dark-green;
+              border-top: 5px solid $color-new-blue;
             }
           }
         }
@@ -262,20 +264,20 @@
             &:hover,
             &:focus,
             &:active {
-              background-color: $color-light-green;
+              background-color: $color-light-purple;
               border-radius: 4px;
-              color: $color-dark-green;
+              color: $color-new-blue;
               font-weight: bold;
 
               @media screen and (min-width: 1200px) {
                 background-color: $color-soft-green;
-                color: $color-dark-green;
+                color: $color-new-blue;
               }
 
             }
 
             @media screen and (min-width: 1200px) {
-              background-color: $color-dark-green;
+              background-color: $color-new-blue;
               border: 0;
               border-radius: 4px;
               box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
@@ -283,7 +285,7 @@
               -moz-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
               -ms-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
               -o-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
-              color: $color-light-green;
+              color: $color-light-purple;
               font-weight: bold;
               height: auto;
               line-height: 0.85;
@@ -312,13 +314,13 @@
             font-weight: bold;
 
             @media screen and (min-width: 1200px) {
-              border-bottom: 2px solid $color-dark-green;
+              border-bottom: 2px solid $color-new-blue;
               margin-top: -12px;
               padding-bottom: 5px;
             }
 
             &::before {
-              border-color: $color-light-green;
+              border-color: $color-light-purple;
 
               @media screen and (min-width: 1200px) {
                 border: 0;
@@ -327,10 +329,10 @@
 
             &::after {
               border-top: 5px solid transparent;
-              border-bottom: 5px solid $color-light-green;
+              border-bottom: 5px solid $color-light-purple;
 
               @media screen and (min-width: 1200px) {
-                border-bottom: 5px solid $color-dark-green;
+                border-bottom: 5px solid $color-new-blue;
               }
             }
           }
@@ -364,7 +366,7 @@
       }
 
       &_item a {
-        color: $color-dark-green;
+        color: $color-new-blue;
         font-size: 14px;
         font-weight: normal;
         min-height: auto;
@@ -393,7 +395,7 @@
       margin-bottom: 0.25rem;
       margin-right: auto;
       margin-left: auto;
-      background-color: $color-dark-green;
+      background-color: $color-new-blue;
     }
 
     @media screen and (min-width: 1200px) {
@@ -440,12 +442,12 @@
   }
 
   .header__nav--toggle {
-    color: $color-light-green;
+    color: $color-light-purple;
     position: relative;
     z-index: 3;
 
     .bar {
-      background-color: $color-light-green;
+      background-color: $color-light-purple;
 
       &:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);

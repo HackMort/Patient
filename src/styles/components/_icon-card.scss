@@ -21,7 +21,7 @@
 
         .icon-card__amount {
             font-size: 3.125em;
-            color: $color-dark-green;
+            color: $color-new-blue;
             position: relative;
 
             &.amount--symbol::before {
@@ -32,7 +32,7 @@
         }
 
         .icon-card__title {
-            color: $color-dark-green;
+            color: $color-new-blue;
             font-size: 1.5em;
             line-height: 1.35;
             margin-bottom: .5rem;
