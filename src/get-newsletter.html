@@ -127,14 +127,14 @@
                     <div class="form__control" data-field-index="0" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="first-name">First Name</label>
                         <input class="form__control-input" type="text" id="first-name" name="first-name" required
-                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\s.'-]{1,50}$"
+                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\'\- ]{1,50}$"
                             onblur="validateFormControl(event)">
                         <p class="form__control-error">Please enter your first name</p>
                     </div>
                     <div class="form__control" data-field-index="1" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="last-name">Last Name</label>
                         <input class="form__control-input" type="text" id="last-name" name="last-name" required
-                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\s.'-]{1,50}$"
+                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\'\- ]{1,50}$"
                             onblur="validateFormControl(event)">
                         <p class="form__control-error">Please enter your last name</p>
                     </div>
@@ -148,10 +148,10 @@
                     </div>
                     <div class="form__control" data-field-index="3" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="zip-code">Zip code</label>
-                        <input data-mask="true" data-mask-pattern="0000" class="form__control-input" type="text"
-                            id="zip-code" name="zip-code" required aria-required="true" maxlength="5"
+                        <input data-mask="true" data-mask-pattern="00000" class="form__control-input" type="text"
+                            id="zip-code" name="zip-code" required aria-required="true"
                             pattern="^[0-9]{1,5}$" onblur="validateFormControl(event)">
-                        <p class="form__control-error">Please enter a valid email address</p>
+                        <p class="form__control-error">Please enter your 5-digit ZIP code</p>
                     </div>
                     <div class="form__control" data-field-index="4" data-required="true" data-is-valid="false">
                         <legend class="form__control-legend">Which of the following best describes you:</legend>

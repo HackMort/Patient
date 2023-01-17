@@ -14,6 +14,12 @@
 @import 'components/modal';
 @import 'components/form';
 
+hr {
+    height: 2px;
+    width: 100%;
+    border-top: 2px solid $color-new-blue;
+}
+
 .desktop__only {
     display: none;
 }
@@ -1658,14 +1664,6 @@
 // ========================== GET NEWSLETTER PAGE =====================================
 .get-newsletter__form {
     margin-bottom: 3.5rem;
-    
-    .form-label {
-        margin-bottom: 2rem;
-    }
-
-    .form__control {
-        margin-bottom: 2rem;
-    }
 
     .form {
         .form__control:nth-child(2),
@@ -1684,3 +1682,83 @@
     }
 }
 // ========================== GET NEWSLETTER PAGE =====================================
+
+// ========================== CHILDREN'S BOOK PAGE =====================================
+.nmosd-children-book__memory {
+
+    margin-bottom: 3.5rem;
+
+    .make-memory {
+        display: flex;
+        flex-direction: column;
+
+        .make-memory__content {
+            order: 2;
+
+            h3 {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .make-memory__image {
+
+            margin-bottom: 2rem;
+            padding: .5rem 0;
+
+            .resource-placeholder {
+                margin-left: 1.375rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .make-memory {
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: space-between;
+            
+            .make-memory__content {
+                order: initial;
+                margin: 0;
+            }
+
+            .make-memory__image {
+                margin: 0;
+                
+            }
+        }
+    }
+}
+
+.nmosd-children-book__order-copy-form {
+    margin-bottom: 3.5rem;
+
+    .nmosd-children-book__order-copy-form__title {
+        margin-bottom: 1rem;
+    }
+
+    .form {
+        .form__control[data-field-index="0"],
+        .form__control[data-field-index="1"],
+        .form__control[data-field-index="2"],
+        .form__control[data-field-index="3"],
+        .form__control[data-field-index="4"],
+        .form__control[data-field-index="5"] {
+            width: 100%;
+            max-width: 26.5625rem;
+        }
+
+        @media screen and (min-width: 426px)  {
+            .form__control[data-field-index="6"] {
+                width: 100%;
+                max-width: 4.375rem;
+            }
+
+            .form__control[data-field-index="7"] {
+                width: 100%;
+                max-width: 9.375rem;
+            }
+        }
+    }
+}
+// ========================== CHILDREN'S BOOK PAGE =====================================
