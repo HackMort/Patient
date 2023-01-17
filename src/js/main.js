@@ -39,7 +39,6 @@ function numberIncrementAnimation(element, start, end, duration, increment) {
     }, step);
 }
 
-
 /**
  * This function validate form control
  * @param event {FocusEvent} - The event object that was triggered.
@@ -129,12 +128,14 @@ function validateFormControl(event) {
         }
     }
 
-    for (let i = 0; i < controls.length; i++) {
-        const previousControl = controls[i];
-        const { fieldIndex, required, isValid } = previousControl.dataset;
+    if (event.type === 'blur') {
+        for (let i = 0; i < controls.length; i++) {
+            const previousControl = controls[i];
+            const { fieldIndex, required, isValid } = previousControl.dataset;
 
-        if ((+fieldIndex < controlIndex) && !(isValid === 'true') && (required === 'true')) {
-            previousControl.classList.add('form__control--invalid')
+            if ((+fieldIndex < controlIndex) && !(isValid === 'true') && (required === 'true')) {
+                previousControl.classList.add('form__control--invalid')
+            }
         }
     }
 
@@ -145,27 +146,26 @@ function validateFormControl(event) {
 const body = document.querySelector('body');
 const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 document.addEventListener("DOMContentLoaded", () => {
-  const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop();
-  // const host = window.location.host;
-  // console.log('Host: ', host);
-  if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
-    window.location.href = '/validate.html';
-  }
-
-  // Validate Form
-  const form = document.querySelector('.form__validate');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const accessCode = form.querySelector('input[name="access-code"]').value;
-      if (accessCode === 'P4Ti3Nt2023') {
-        document.cookie = `accessCookie=${accessCode};max-age=604800`; // 1 week
-        window.location.href = '/';
-      } else {
-        alert('Invalid Access Code');
-      }
-    });
-  }
+    const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop();
+    // const host = window.location.host;
+    // console.log('Host: ', host);
+    if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
+        window.location.href = '/validate.html';
+    }
+    // Validate Form
+    const form = document.querySelector('.form__validate');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const accessCode = form.querySelector('input[name="access-code"]').value;
+            if (accessCode === 'P4Ti3Nt2023') {
+                document.cookie = `accessCookie=${accessCode};max-age=604800`; // 1 week
+                window.location.href = '/';
+            } else {
+                alert('Invalid Access Code');
+            }
+        });
+    }
 
     if (toggleMenuBtn) {
         toggleMenuBtn.addEventListener('click', () => {
@@ -370,40 +370,40 @@ if (listToggles && listToggles.length > 0) {
 // Modal Functionality only all links with target="_blank" are affected
 const externalLinks = document.querySelectorAll('a[target="_blank"]');
 if (externalLinks && externalLinks.length > 0) {
-  externalLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const href = link.getAttribute('href');
-      const exitModal = document.getElementById('exitModal');
-      const continueButton = exitModal.querySelector('.button--continue');
-      const stayButton = exitModal.querySelector('.button--stay');
-      continueButton.setAttribute('href', href);
-      stayButton.addEventListener('click', () => {
-        Fancybox.close();
-      });
-      if (link.classList.contains('button--continue')) {
-        stayButton.click();
-        setTimeout(() => {
-          window.open(href, '_blank');
-        }, 100);
-        return;
-      }
-      Fancybox.show([
-        {
-          src: exitModal,
-          type: 'inline',
-          autoFocus: false,
-        }],
-        {
-          on: {
-            closing: () => {
-              continueButton.setAttribute('href', '');
+    externalLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            const exitModal = document.getElementById('exitModal');
+            const continueButton = exitModal.querySelector('.button--continue');
+            const stayButton = exitModal.querySelector('.button--stay');
+            continueButton.setAttribute('href', href);
+            stayButton.addEventListener('click', () => {
+                Fancybox.close();
+            });
+            if (link.classList.contains('button--continue')) {
+                stayButton.click();
+                setTimeout(() => {
+                    window.open(href, '_blank');
+                }, 100);
+                return;
             }
-          }
-        }
-      );
+            Fancybox.show([
+                {
+                    src: exitModal,
+                    type: 'inline',
+                    autoFocus: false,
+                }],
+                {
+                    on: {
+                        closing: () => {
+                            continueButton.setAttribute('href', '');
+                        }
+                    }
+                }
+            );
+        });
     });
-  });
 }
 
 // Form control mask
@@ -418,3 +418,5 @@ inputsWithMask.forEach((input) => {
         placeholderChar: '_'
     });
 })
+
+// 
