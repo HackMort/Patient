@@ -933,18 +933,17 @@ h3 {
   background-color: #ffffff;
 }
 .hero-waves.hero-waves--primary {
-  background-image: url("/assets/vectors/waves/hero-waves.png");
-  background-image: url("/assets/img/3-waves.svg");
   background-image: url("/assets/vectors/waves/3_Waves.webp");
   background-size: cover;
   background-position: 78% 0%;
   background-repeat: no-repeat;
 }
 .hero-waves.hero-waves--secondary {
-  background-image: url("/assets/vectors/waves/hero-2-waves.png");
+  background-image: url("/assets/vectors/waves/2_Waves@2x.webp");
   background-size: cover;
   background-position: 78% 0%;
   background-repeat: no-repeat;
+  height: 9rem;
 }
 @media screen and (min-width: 1200px) {
   .hero-waves.hero-waves--primary {
