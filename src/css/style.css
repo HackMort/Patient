@@ -1372,7 +1372,16 @@ input[type=checkbox]:checked::before {
   font-style: italic;
   padding-top: 0.25rem;
   opacity: 0;
+  width: 100%;
+  left: 0;
   transition: opacity 100ms ease-in-out;
+}
+@media screen and (min-width: 425px) {
+  .form .form__control-error {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
 }
 .form .radios .form__control-radio:not(:last-of-type) {
   margin-bottom: 1rem;
@@ -1382,14 +1391,20 @@ input[type=checkbox]:checked::before {
   gap: 1rem;
   align-items: center;
 }
-.form .form__control-radio:has(input[type=radio]:checked) {
+.form .form__control-radio .form__control-label {
+  margin: 0;
+}
+.form .form__control-radio input[type=radio]:checked + label {
   font-weight: bold;
 }
 .form .form__control-checkbox {
   display: flex;
   gap: 1rem;
 }
-.form .form__control-checkbox:has(input[type=checkbox]:checked) {
+.form .form__control-checkbox .form__control-label {
+  margin: 0;
+}
+.form .form__control-checkbox input[type=checkbox]:checked + label {
   font-weight: bold;
 }
 .form .form__control-checkbox a {
@@ -1400,34 +1415,36 @@ input[type=checkbox]:checked::before {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
-.form .form__control.form__control--invalid {
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] input:required:invalid + .form__control-error {
+  opacity: 1;
+}
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] .form__control-legend,
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] > .form__control-label {
   color: #de0000;
   font-weight: bold;
 }
-.form .form__control.form__control--invalid input {
-  border-color: #de0000;
-}
-.form .form__control.form__control--invalid .form__control-label::before,
-.form .form__control.form__control--invalid .form__control-checkbox span::before {
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] .form__control-legend::before,
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] > .form__control-label::before {
   content: "*";
   display: inline-block;
 }
-.form .form__control.form__control--invalid .form__control-radio,
-.form .form__control.form__control--invalid .form__control-legend,
-.form .form__control.form__control--invalid .form__control-label,
-.form .form__control.form__control--invalid .form__control-checkbox span {
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] .form__control-radio input:required:invalid,
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] .form__control-checkbox input:required:invalid {
+  border-color: #de0000;
+}
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] .form__control-radio input:required:invalid + .form__control-label,
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] .form__control-checkbox input:required:invalid + .form__control-label {
   color: #de0000;
   font-weight: bold;
 }
-.form .form__control.form__control--invalid .form__control-checkbox span {
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] .form__control-checkbox input:required:invalid + .form__control-label {
   position: relative;
 }
-.form .form__control.form__control--invalid .form__control-checkbox span::before {
+.form .form__control.form__control--invalid[data-required=true][data-is-valid=false] .form__control-checkbox input:required:invalid + .form__control-label::before {
   position: absolute;
   left: -0.5625rem;
-}
-.form .form__control.form__control--invalid .form__control-error {
-  opacity: 1;
+  content: "*";
+  display: inline-block;
 }
 
 .desktop__only {
@@ -2949,4 +2966,16 @@ input[type=checkbox]:checked::before {
 }
 .get-newsletter__form .form__control {
   margin-bottom: 2rem;
+}
+.get-newsletter__form .form .form__control:nth-child(2),
+.get-newsletter__form .form .form__control:nth-child(3),
+.get-newsletter__form .form .form__control:nth-child(4) {
+  width: 100%;
+  max-width: 26.5625rem;
+}
+@media screen and (min-width: 426px) {
+  .get-newsletter__form .form .form__control:nth-child(5) {
+    width: 100%;
+    max-width: 9.375rem;
+  }
 }/*# sourceMappingURL=style.css.map */

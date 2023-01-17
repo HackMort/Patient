@@ -26,121 +26,223 @@
  * @param increment {number} - The amount to increment the number by.
  */
 function numberIncrementAnimation(element, start, end, duration, increment) {
-  let current = start;
-  const range = end - start;
-  increment = end > start ? increment : (increment * -1);
-  const step = Math.abs(Math.floor(duration / range));
-  const timer = setInterval(() => {
-    current += increment;
-    element.textContent = new Intl.NumberFormat().format(current);
-    if (current == end) {
-      clearInterval(timer);
+    let current = start;
+    const range = end - start;
+    increment = end > start ? increment : (increment * -1);
+    const step = Math.abs(Math.floor(duration / range));
+    const timer = setInterval(() => {
+        current += increment;
+        element.textContent = new Intl.NumberFormat().format(current);
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, step);
+}
+
+
+/**
+ * This function validate form control
+ * @param event {FocusEvent} - The event object that was triggered.
+ */
+function validateFormControl(event) {
+    const parentClassName = 'form__control';
+    const formClassName = 'form';
+
+    /**
+     * If the parent element of the child element has the class name, return the parent
+     * element, otherwise, call the function again with the parent element as the child
+     * element.
+     * @param child {HTMLElement} - the child element that you want to find the parent of
+     * @param className {string} - The class name of the parent element you're looking for.
+     * @returns {HTMLElement} The parent element of the child element.
+     */
+    const getParent = function (child, className) {
+
+        const parent = child.parentElement;
+        const isControlParent = parent.classList.contains(className);
+
+        if ((parent === null) || isControlParent) {
+            return parent;
+        } else {
+            return getParent(parent, className);
+        }
     }
-  }, step);
+
+    /**
+     * If any of the radio buttons in the group are checked, return true.
+     * @param name {string} - The name of the radio group.
+     * @returns {boolean} A boolean value.
+     */
+    const radioGroupIsValid = function (name) {
+        let radioGroup = document.getElementsByName(`input[type="radio"][name=${name}]`);
+        let isValid = false;
+        for (let i = 0; i < radioGroup.length; i++) {
+            if (radioGroup[i].checked) {
+                isValid = true;
+                break;
+            }
+        }
+
+        return isValid;
+    }
+
+    const control = event.target;
+    const parent = getParent(control, parentClassName);
+    const controlIndex = +parent.dataset.fieldIndex;
+    const form = getParent(parent, formClassName);
+    const submitButton = form.querySelector("[type='submit']");
+    const controls = Array.from(form.querySelectorAll('.' + parentClassName));
+
+    /**
+     * If the form is valid, remove the disabled attribute from the submit button,
+     * otherwise add the disabled attribute to the submit button
+     */
+    const toggleSubmitButtonState = function () {
+        if (form && form.checkValidity()) {
+            submitButton && submitButton.removeAttribute('disabled');
+            form.classList.remove('form--invalid');
+        } else {
+            submitButton && submitButton.setAttribute('disabled', 'true');
+            form.classList.add('form--invalid');
+        }
+    }
+
+    toggleSubmitButtonState();
+
+    if (control.type === "radio" && !control.checked) {
+        const groupIsValid = radioGroupIsValid(control.name);
+
+        if (groupIsValid) {
+            parent.classList.remove('form__control--invalid');
+            parent.dataset.isValid = 'true'
+        } else {
+            parent.classList.add('form__control--invalid');
+            parent.dataset.isValid = 'false'
+        }
+    } else {
+        if (control.checkValidity()) {
+            parent.classList.remove('form__control--invalid');
+            parent.dataset.isValid = 'true'
+        } else {
+            parent.classList.add('form__control--invalid');
+            parent.dataset.isValid = 'false'
+        }
+    }
+
+    for (let i = 0; i < controls.length; i++) {
+        const previousControl = controls[i];
+        const { fieldIndex, required, isValid } = previousControl.dataset;
+
+        if ((+fieldIndex < controlIndex) && !(isValid === 'true') && (required === 'true')) {
+            previousControl.classList.add('form__control--invalid')
+        }
+    }
+
+    toggleSubmitButtonState();
 }
 
 /* Toggle Menu Stuff */
 const body = document.querySelector('body');
 const toggleMenuBtn = document.querySelector('.header__nav--toggle');
 document.addEventListener("DOMContentLoaded", () => {
-  const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop();
-  const host = window.location.host;
-  console.log('Host: ', host);
-  if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
-    window.location.href = '/validate.html';
-  }
-  // Validate Form
-  const form = document.querySelector('.form__validate');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const accessCode = form.querySelector('input[name="access-code"]').value;
-      if (accessCode === 'P4Ti3Nt2023') {
-        document.cookie = `accessCookie=${accessCode};max-age=604800`; // 1 week
-        window.location.href = '/';
-      } else {
-        alert('Invalid Access Code');
-      }
-    });
-  }
-
-  if (toggleMenuBtn) {
-    toggleMenuBtn.addEventListener('click', () => {
-      toggleMenu();
-    });
-  }
-  toggleSubmenu();
-
-  // set active class on menu item depending on page
-  const menuItems = document.querySelectorAll('.header__nav--menu_item');
-  if (menuItems && menuItems.length > 0) {
-    menuItems.forEach((item) => {
-      const link = item.querySelector('a');
-      if (link && link.href === window.location.href) {
-        item.classList.add('current-menu-item');
-      }
-      if (item.classList.contains('has--dropdown')) {
-        const subMenuItems = item.querySelectorAll('.sub__menu_item a');
-        if (subMenuItems && subMenuItems.length > 0) {
-          subMenuItems.forEach((subItem) => {
-            if (subItem.href === window.location.href) {
-              item.classList.add('current-menu-item');
+    const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop();
+    const host = window.location.host;
+    console.log('Host: ', host);
+    if (!accessCookie && accessCookie !== 'accessCookie=P4Ti3Nt2023' && window.location.pathname !== '/validate.html') {
+        window.location.href = '/validate.html';
+    }
+    // Validate Form
+    const form = document.querySelector('.form__validate');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const accessCode = form.querySelector('input[name="access-code"]').value;
+            if (accessCode === 'P4Ti3Nt2023') {
+                document.cookie = `accessCookie=${accessCode};max-age=604800`; // 1 week
+                window.location.href = '/';
+            } else {
+                alert('Invalid Access Code');
             }
-          });
-        }
-      }
-    })
-  }
+        });
+    }
+
+    if (toggleMenuBtn) {
+        toggleMenuBtn.addEventListener('click', () => {
+            toggleMenu();
+        });
+    }
+    toggleSubmenu();
+
+    // set active class on menu item depending on page
+    const menuItems = document.querySelectorAll('.header__nav--menu_item');
+    if (menuItems && menuItems.length > 0) {
+        menuItems.forEach((item) => {
+            const link = item.querySelector('a');
+            if (link && link.href === window.location.href) {
+                item.classList.add('current-menu-item');
+            }
+            if (item.classList.contains('has--dropdown')) {
+                const subMenuItems = item.querySelectorAll('.sub__menu_item a');
+                if (subMenuItems && subMenuItems.length > 0) {
+                    subMenuItems.forEach((subItem) => {
+                        if (subItem.href === window.location.href) {
+                            item.classList.add('current-menu-item');
+                        }
+                    });
+                }
+            }
+        })
+    }
 
 });
 
 function toggleMenu() {
-  const toggleTextSpan = document.querySelector('.nav__toggle--text');
-  const overlayDiv = document.querySelector('.overlay');
-  if (overlayDiv) {
-    overlayDiv.remove();
-  }
-  const overlay = document.createElement('div');
-  toggleTextSpan.innerHTML === 'Menu' ? toggleTextSpan.innerHTML = 'Close' : toggleTextSpan.innerHTML = 'Menu';
-  overlay.classList.add('overlay');
-  body.prepend(overlay);
-  body.classList.toggle('mobile__nav--open');
-  overlay.addEventListener('click', () => {
-    toggleMenu();
-  });
+    const toggleTextSpan = document.querySelector('.nav__toggle--text');
+    const overlayDiv = document.querySelector('.overlay');
+    if (overlayDiv) {
+        overlayDiv.remove();
+    }
+    const overlay = document.createElement('div');
+    toggleTextSpan.innerHTML === 'Menu' ? toggleTextSpan.innerHTML = 'Close' : toggleTextSpan.innerHTML = 'Menu';
+    overlay.classList.add('overlay');
+    body.prepend(overlay);
+    body.classList.toggle('mobile__nav--open');
+    overlay.addEventListener('click', () => {
+        toggleMenu();
+    });
 }
 
 // Submenu Functionality 
 function toggleSubmenu() {
-  const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
-  if (subMenuItems && subMenuItems.length > 0) {
-    subMenuItems.forEach((item) => {
-      const anchor = item.querySelector('a');
-      const mediaQuery = window.matchMedia('(min-width: 1200px)');
-      if (mediaQuery.matches) {
-        item.addEventListener('mouseenter', () => {
-          item.classList.add('active');
+    const subMenuItems = document.querySelectorAll('.header__nav--menu_item.has--dropdown');
+    if (subMenuItems && subMenuItems.length > 0) {
+        subMenuItems.forEach((item) => {
+            const anchor = item.querySelector('a');
+            const mediaQuery = window.matchMedia('(min-width: 1200px)');
+            if (mediaQuery.matches) {
+                item.addEventListener('mouseenter', () => {
+                    item.classList.add('active');
+                });
+                item.addEventListener('mouseleave', () => {
+                    item.classList.remove('active');
+                });
+            }
+            else {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    item.classList.toggle('active');
+                });
+            }
+            mediaQuery.addEventListener('change', (e) => {
+                if (e.matches) {
+                    body.classList.remove('mobile__nav--open');
+                    subMenuItems.forEach((item) => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
         });
-        item.addEventListener('mouseleave', () => {
-          item.classList.remove('active');
-        });
-      }
-      else {
-        anchor.addEventListener('click', (e) => {
-          e.preventDefault();
-          item.classList.toggle('active');
-        });
-      }
-      mediaQuery.addEventListener('change', (e) => {
-        if (e.matches) {
-          body.classList.remove('mobile__nav--open');
-          subMenuItems.forEach((item) => {
-            item.classList.remove('active');
-          });
-        }
-      });
-    });
-  }
+    }
 }
 
 
@@ -148,43 +250,43 @@ function toggleSubmenu() {
 const elements = document.querySelectorAll('.icon-card .icon-card__amount');
 
 if (elements && elements.length > 0) {
-  elements.forEach((element) => {
-    try {
-      const start = 0;
+    elements.forEach((element) => {
+        try {
+            const start = 0;
 
-      const dataEnd = element.getAttribute('data-end');
-      const dataDuration = element.getAttribute('data-duration');
-      const dataIncrement = element.getAttribute('data-increment');
+            const dataEnd = element.getAttribute('data-end');
+            const dataDuration = element.getAttribute('data-duration');
+            const dataIncrement = element.getAttribute('data-increment');
 
-      const observe = (dataEnd !== null) && (dataDuration !== null) && (dataIncrement !== null);
+            const observe = (dataEnd !== null) && (dataDuration !== null) && (dataIncrement !== null);
 
-      if (observe) {
+            if (observe) {
 
-        const end = parseInt(dataEnd);
-        const duration = parseInt(dataDuration);
-        const increment = parseInt(dataIncrement);
+                const end = parseInt(dataEnd);
+                const duration = parseInt(dataDuration);
+                const increment = parseInt(dataIncrement);
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            let animated = false;
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        let animated = false;
 
-            if (element.getAttribute('data-animated')) {
-              animated = element.getAttribute('data-animated').toString() === 'true' || false;
+                        if (element.getAttribute('data-animated')) {
+                            animated = element.getAttribute('data-animated').toString() === 'true' || false;
+                        }
+
+                        if (!animated && entry.isIntersecting) {
+                            numberIncrementAnimation(element, start, end, duration, increment);
+                            element.setAttribute('data-animated', 'true');
+                        }
+                    })
+                }, { threshold: .5 });
+
+                observer.observe(element);
             }
-
-            if (!animated && entry.isIntersecting) {
-              numberIncrementAnimation(element, start, end, duration, increment);
-              element.setAttribute('data-animated', 'true');
-            }
-          })
-        }, { threshold: .5 });
-
-        observer.observe(element);
-      }
-    } catch (error) {
-      console.log(`Number animation error: `, error)
-    }
-  })
+        } catch (error) {
+            console.log(`Number animation error: `, error)
+        }
+    })
 }
 // NUMBER COUNTER ANIMATION
 
@@ -192,106 +294,119 @@ if (elements && elements.length > 0) {
 // Wistia Video Sample
 
 document.addEventListener("DOMContentLoaded", () => {
-  const wrapper = document.querySelector('.wistia_embed');
-  const button = document.querySelector('.video__control');
-  const playIcon = document.querySelector('.control--icon.play');
-  const pauseIcon = document.querySelector('.control--icon.pause');
-  let video;
+    const wrapper = document.querySelector('.wistia_embed');
+    const button = document.querySelector('.video__control');
+    const playIcon = document.querySelector('.control--icon.play');
+    const pauseIcon = document.querySelector('.control--icon.pause');
+    let video;
 
-  const setPlayButtonState = function () {
-    playIcon.style.display = 'none';
-    pauseIcon.style.display = 'block';
-  }
-
-  const setPauseButtonState = function () {
-    pauseIcon.style.display = 'none';
-    playIcon.style.display = 'block';
-  }
-
-  window._wq = window._wq || [];
-
-  _wq.push({
-    id: 'wistia-747xnmy4p8-1', onReady: function (v) {
-      video = v;
-      const isPlaying = video.state() === 'playing';
-
-      if (isPlaying) {
-        setPauseButtonState()
-      } else {
-        setPlayButtonState()
-      }
+    const setPlayButtonState = function () {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
     }
-  });
 
-  // Add listener
-  if (button) {
-    button.addEventListener('click', function () {
-      const isPlaying = video.state() === 'playing';
+    const setPauseButtonState = function () {
+        pauseIcon.style.display = 'none';
+        playIcon.style.display = 'block';
+    }
 
-      if (isPlaying) {
-        video.pause()
-        setPauseButtonState()
-      } else {
-        video.play()
-        setPlayButtonState()
-      }
-    })
-  }
+    window._wq = window._wq || [];
+
+    _wq.push({
+        id: 'wistia-747xnmy4p8-1', onReady: function (v) {
+            video = v;
+            const isPlaying = video.state() === 'playing';
+
+            if (isPlaying) {
+                setPauseButtonState()
+            } else {
+                setPlayButtonState()
+            }
+        }
+    });
+
+    // Add listener
+    if (button) {
+        button.addEventListener('click', function () {
+            const isPlaying = video.state() === 'playing';
+
+            if (isPlaying) {
+                video.pause()
+                setPauseButtonState()
+            } else {
+                video.play()
+                setPlayButtonState()
+            }
+        })
+    }
 })
 
 // list--toggle functionality only 2 list items are visible (Show More / Show Less)
 const listToggles = document.querySelectorAll('.list--toggle');
 if (listToggles && listToggles.length > 0) {
-  listToggles.forEach((listToggle) => {
-    const listItems = listToggle.querySelectorAll('.list__element');
-    if (listItems && listItems.length > 2) {
-      listItems.forEach((item, index) => {
-        if (index > 1) {
-          item.classList.add('hidden');
+    listToggles.forEach((listToggle) => {
+        const listItems = listToggle.querySelectorAll('.list__element');
+        if (listItems && listItems.length > 2) {
+            listItems.forEach((item, index) => {
+                if (index > 1) {
+                    item.classList.add('hidden');
+                }
+            });
+            const button = listToggle.querySelector('.list--toggle_button');
+            button.addEventListener('click', () => {
+                listItems.forEach((item, index) => {
+                    if (index > 1) {
+                        item.classList.toggle('hidden');
+                    }
+                });
+                button.classList.toggle('active');
+            });
         }
-      });
-      const button = listToggle.querySelector('.list--toggle_button');
-      button.addEventListener('click', () => {
-        listItems.forEach((item, index) => {
-          if (index > 1) {
-            item.classList.toggle('hidden');
-          }
-        });
-        button.classList.toggle('active');
-      });
-    }
-  });
+    });
 }
 
 
 // Modal Functionality only to links with .link--external class
 const externalLinks = document.querySelectorAll('.link--external');
 if (externalLinks && externalLinks.length > 0) {
-  externalLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const href = link.getAttribute('href');
-      const externaLModal = document.getElementById('externalModal');
-      const resourceButton = externaLModal.querySelector('.button--resource');
-      resourceButton.setAttribute('href', href);
-      const stayButton = externaLModal.querySelector('.button--stay');
-      Fancybox.show([
-        {
-          src: externalModal,
-          type: 'inline',
-        }],
-        {
-          on: {
-            closing: () => {
-              console.log('closing');
-              resourceButton.setAttribute('href', '');
-            }
-          }
-        }
-      )
-      stayButton.addEventListener('click', () => {
-        Fancybox.close();
-      });
+    externalLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            const externaLModal = document.getElementById('externalModal');
+            const resourceButton = externaLModal.querySelector('.button--resource');
+            resourceButton.setAttribute('href', href);
+            const stayButton = externaLModal.querySelector('.button--stay');
+            Fancybox.show([
+                {
+                    src: externalModal,
+                    type: 'inline',
+                }],
+                {
+                    on: {
+                        closing: () => {
+                            console.log('closing');
+                            resourceButton.setAttribute('href', '');
+                        }
+                    }
+                }
+            )
+            stayButton.addEventListener('click', () => {
+                Fancybox.close();
+            });
+        });
     });
-  });
 }
+
+// Form control mask
+const inputsWithMask = Array.from(document.querySelectorAll('input[type="text"][data-mask="true"]'));
+
+inputsWithMask.forEach((input) => {
+    const { maskPattern } = input.dataset;
+
+    IMask(input, {
+        mask: maskPattern,
+        lazy: false,
+        placeholderChar: '_'
+    });
+})

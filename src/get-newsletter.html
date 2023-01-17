@@ -120,69 +120,90 @@
 
         <section class="get-newsletter__form">
             <section class="section-wrapper section-wrapper--small">
-                
-                <form action="" class="form">
+
+                <form action="" method="post" class="form" novalidate>
                     <p class="paragraph form-label">All fields are required.</p>
-                    <div class="form__control">
+                    <div class="form__control" data-field-index="0" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="first-name">First Name</label>
-                        <input class="form__control-input" type="text" id="first-name" name="first-name">
+                        <input class="form__control-input" type="text" id="first-name" name="first-name" required
+                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\s.'-]{1,50}$"
+                            onblur="validateFormControl(event)">
                         <p class="form__control-error">Please enter your first name</p>
                     </div>
-                    <div class="form__control">
+                    <div class="form__control" data-field-index="1" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="last-name">Last Name</label>
-                        <input class="form__control-input" type="text" id="last-name" name="last-name">
+                        <input class="form__control-input" type="text" id="last-name" name="last-name" required
+                            aria-required="true" maxlength="50" pattern="^[a-zA-Z\s.'-]{1,50}$"
+                            onblur="validateFormControl(event)">
                         <p class="form__control-error">Please enter your last name</p>
                     </div>
-                    <div class="form__control">
+                    <div class="form__control" data-field-index="2" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="email">Email Address</label>
-                        <input class="form__control-input" type="text" id="email" name="email">
+                        <input class="form__control-input" type="text" id="email" name="email" required
+                            aria-required="true" maxlength="100"
+                            pattern="^[a-zA-Z0-9._-]{1,100}@[a-zA-Z0-9]+\.[a-zA-Z]{2,10}$"
+                            onblur="validateFormControl(event)">
                         <p class="form__control-error">Please enter a valid email address</p>
                     </div>
-                    <div class="form__control">
+                    <div class="form__control" data-field-index="3" data-required="true" data-is-valid="false">
                         <label class="form__control-label" for="zip-code">Zip code</label>
-                        <input class="form__control-input" type="text" id="zip-code" name="zip-code">
+                        <input data-mask="true" data-mask-pattern="0000" class="form__control-input" type="text"
+                            id="zip-code" name="zip-code" required aria-required="true" maxlength="5"
+                            pattern="^[0-9]{1,5}$" onblur="validateFormControl(event)">
                         <p class="form__control-error">Please enter a valid email address</p>
                     </div>
-                    <div class="form__control">
+                    <div class="form__control" data-field-index="4" data-required="true" data-is-valid="false">
                         <legend class="form__control-legend">Which of the following best describes you:</legend>
 
-                        <div class="radios">
-                            <label class="form__control-radio">
-                                <input type="radio" name="description">
-                                I do not have an NMOSD diagnosis, but think I might have NMOSD
-                            </label>
-                            <label class="form__control-radio">
-                                <input type="radio" name="description">
-                                I have NMOSD, and am currently on a treatment
-                            </label>
-                            <label class="form__control-radio">
-                                <input type="radio" name="description">
-                                I have NMOSD, and am not currently on a treatment
-                            </label>
-                            <label class="form__control-radio">
-                                <input type="radio" name="description">
-                                I am a caregiver
-                            </label>
-                        </div>
+                        <fieldset class="radios">
+                            <div class="form__control-radio">
+                                <input id="non-nmosds" type="radio" name="description" required aria-required="true"
+                                    onblur="validateFormControl(event)">
+                                <label class="form__control-label" for="non-nmosds"> I do not have an NMOSD diagnosis,
+                                    but think I might have
+                                    NMOSD</label>
+                            </div>
+                            <div class="form__control-radio">
+                                <input id="nmosd-treatment" type="radio" name="description" required
+                                    aria-required="true" onblur="validateFormControl(event)">
+                                <label class="form__control-label" for="nmosd-treatment">I have NMOSD, and am currently
+                                    on a treatment</label>
+                            </div>
+                            <div class="form__control-radio">
+                                <input type="radio" name="description" required aria-required="true"
+                                    onblur="validateFormControl(event)">
+                                <label class="form__control-label" for="nmosd-no-treatment">I have NMOSD, and am not
+                                    currently on a
+                                    treatment</label>
+                            </div>
+                            <div class="form__control-radio">
+                                <input id="caregiver" type="radio" name="description" required aria-required="true"
+                                    onblur="validateFormControl(event)">
+                                <label class="form__control-label" for="caregiver">I am a caregiver</label>
+                            </div>
+                        </fieldset>
 
                         <p class="form__control-error">Please make a selection</p>
                     </div>
-                    <div class="form__control">
-                        <label class="form__control-checkbox">
-                            <input type="checkbox" name="description">
-                            <span>
+                    <div class="form__control" data-field-index="5" data-required="true" data-is-valid="false">
+                        <div class="form__control-checkbox">
+                            <input id="terms-and-conditions" type="checkbox" name="terms" required aria-required="true"
+                                onblur="validateFormControl(event)">
+                            <label class="form__control-label" for="terms-and-conditions">
                                 By checking this box and submitting this form, I give <a
                                     href="https://alexion.com/Legal#privacynotice" target="_blank">Alexion</a>
-                                permission to provide promotional information to me or otherwise contact me about 
-                                Alexion products, services, programs, or other topics that Alexion thinks may 
-                                interest me. I have read and understand the Alexion Privacy Notice.
-                            </span>
-                        </label>
+                                permission to provide promotional information to me or otherwise contact me about
+                                Alexion products, services, programs, or other topics that Alexion thinks may
+                                interest me. I have read and understand the <a
+                                    href="https://alexion.com/Legal#privacynotice" target="_blank">Alexion Privacy
+                                    Notice</a>.
+                            </label>
+                        </div>
                         <p class="form__control-error">Please select the checkbox</p>
                     </div>
 
                     <div class="form__submit">
-                        <button class="button button--default" type="submit">
+                        <button class="button button--default" type="submit" disabled>
                             <span class="button__label">
                                 Sign Me Up
                             </span>
@@ -229,7 +250,8 @@
             </div>
         </div>
     </footer>
-    <script src="./js/main.js" type="module"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

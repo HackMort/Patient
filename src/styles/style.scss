@@ -1666,5 +1666,21 @@
     .form__control {
         margin-bottom: 2rem;
     }
+
+    .form {
+        .form__control:nth-child(2),
+        .form__control:nth-child(3),
+        .form__control:nth-child(4) {
+            width: 100%;
+            max-width: 26.5625rem;
+        }
+
+        @media screen and (min-width: 426px)  {
+            .form__control:nth-child(5) {
+                width: 100%;
+                max-width: 9.375rem;
+            }
+        }
+    }
 }
 // ========================== GET NEWSLETTER PAGE =====================================
