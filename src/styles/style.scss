@@ -241,7 +241,10 @@ hr {
             height: 100%;
             width: 100%;
 
+            -o-object-fit: cover;
+
             object-fit: cover;
+            -o-object-position: 45% 50%;
             object-position: 45% 50%;
 
             transform: scale(1.2);
@@ -250,6 +253,7 @@ hr {
 
         @media screen and (min-width: 768px) {
             .image__background {
+                -o-object-position: initial;
                 object-position: initial;
             }
         }
@@ -264,12 +268,14 @@ hr {
 
         @media screen and (min-width: 1366px) {
             .image__background {
+                -o-object-fit: fill;
                 object-fit: fill;
             }
         }
 
         @media screen and (min-width: 1630px) {
             .image__background {
+                -o-object-fit: fill;
                 object-fit: fill;
             }
         }
@@ -1066,6 +1072,7 @@ hr {
     }
 
     .list--toggle .list__element {
+        font-size: 1.125rem;
         margin-bottom: 1rem;
     }
 
@@ -1157,12 +1164,18 @@ hr {
     grid-row-gap: 24px;
     margin-right: auto;
     margin-left: auto;
-    max-width: 276px;
+
 
     &:not(:last-of-type) {
         margin-bottom: 3rem;
 
+        @media screen and (min-width: 768px) {
+            margin-right: 2rem;
+            max-width: 276px;
+        }
+
         @media screen and (min-width: 1024px) {
+            margin-right: auto;
             margin-bottom: 0;
         }
     }
@@ -1191,6 +1204,15 @@ hr {
 
     &--image {
         grid-area: 3 / 1 / 4 / 3;
+
+        margin: 0 auto;
+        max-width: 276px;
+
+        @media screen and (min-width: 1024px) {
+            margin: 0;
+            // max-width: 100%;
+        }
+
     }
 }
 
@@ -1593,6 +1615,7 @@ hr {
 
 // ========================== GET NEWSLETTER PAGE =====================================
 .get-newsletter__form {
+    margin-top: 3rem;
     margin-bottom: 3.5rem;
 
     .form {
@@ -1618,6 +1641,7 @@ hr {
 // ========================== CHILDREN'S BOOK PAGE =====================================
 .nmosd-children-book__memory {
 
+    margin-top: 3rem;
     margin-bottom: 3.5rem;
 
     .make-memory {

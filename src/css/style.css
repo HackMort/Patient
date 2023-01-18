@@ -1733,15 +1733,15 @@ hr {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: 45% 50%;
-     object-position: 45% 50%;
+  object-position: 45% 50%;
   transform: scale(1.2);
 }
 @media screen and (min-width: 768px) {
   .home__cta .image .image__background {
     -o-object-position: initial;
-       object-position: initial;
+    object-position: initial;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1755,13 +1755,13 @@ hr {
 @media screen and (min-width: 1366px) {
   .home__cta .image .image__background {
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 }
 @media screen and (min-width: 1630px) {
   .home__cta .image .image__background {
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 }
 @media screen and (min-width: 1630px) {
@@ -2625,6 +2625,7 @@ hr {
 .cause__of_damage_signs_content .list--toggle .list__element,
 .cause__of_damage_behind_content .list--toggle .list__element,
 .attack__steps .list--toggle .list__element {
+  font-size: 1.125rem;
   margin-bottom: 1rem;
 }
 
@@ -2702,13 +2703,19 @@ hr {
   grid-row-gap: 24px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 276px;
 }
 .attack__step_card:not(:last-of-type) {
   margin-bottom: 3rem;
 }
+@media screen and (min-width: 768px) {
+  .attack__step_card:not(:last-of-type) {
+    margin-right: 2rem;
+    max-width: 276px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .attack__step_card:not(:last-of-type) {
+    margin-right: auto;
     margin-bottom: 0;
   }
 }
@@ -2733,6 +2740,13 @@ hr {
 }
 .attack__step_card--image {
   grid-area: 3/1/4/3;
+  margin: 0 auto;
+  max-width: 276px;
+}
+@media screen and (min-width: 1024px) {
+  .attack__step_card--image {
+    margin: 0;
+  }
 }
 
 .living-with-nmosd__tips .living-with-nmosd__tips-header {
@@ -3014,6 +3028,7 @@ hr {
 }
 
 .get-newsletter__form {
+  margin-top: 3rem;
   margin-bottom: 3.5rem;
 }
 .get-newsletter__form .form .form__control:nth-child(2),
@@ -3030,6 +3045,7 @@ hr {
 }
 
 .nmosd-children-book__memory {
+  margin-top: 3rem;
   margin-bottom: 3.5rem;
 }
 .nmosd-children-book__memory .make-memory {
