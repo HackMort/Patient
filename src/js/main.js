@@ -220,28 +220,44 @@ function toggleSubmenu() {
         subMenuItems.forEach((item) => {
             const anchor = item.querySelector('a');
             const mediaQuery = window.matchMedia('(min-width: 1200px)');
-            if (mediaQuery.matches) {
-                item.addEventListener('mouseenter', () => {
-                    item.classList.add('active');
-                });
-                item.addEventListener('mouseleave', () => {
+            // if (mediaQuery.matches) {
+            //     item.addEventListener('mouseenter', () => {
+            //         item.classList.add('active');
+            //     });
+            //     item.addEventListener('mouseleave', () => {
+            //         item.classList.remove('active');
+            //     });
+            // }
+            // else {
+            // anchor.addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     item.classList.toggle('active');
+            // });
+            // }
+            // mediaQuery.addEventListener('change', (e) => {
+            //     if (e.matches) {
+            //         body.classList.remove('mobile__nav--open');
+            //         subMenuItems.forEach((item) => {
+            //             item.classList.remove('active');
+            //         });
+            //     }
+            // });
+
+            // show menu if the user clicks on the menu item
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                item.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (e.target !== item && !item.contains(e.target)) {
                     item.classList.remove('active');
-                });
-            }
-            else {
-                anchor.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    item.classList.toggle('active');
-                });
-            }
-            mediaQuery.addEventListener('change', (e) => {
-                if (e.matches) {
-                    body.classList.remove('mobile__nav--open');
-                    subMenuItems.forEach((item) => {
-                        item.classList.remove('active');
-                    });
                 }
             });
+            // Just in case we need this later 
+            // item.addEventListener('mouseleave', () => {
+            //     item.classList.remove('active');
+            // });
         });
     }
 }
