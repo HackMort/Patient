@@ -1,0 +1,60 @@
+.validate__section {
+  background-color: #9f6bad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.validate__section--title {
+  color: #321739;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.validate__section label {
+  color: #321739;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.validate__section input[type="text"]:focus-visible {
+  outline: 1px solid #783b89;
+}
+
+.validate__section input[type="text"] {
+  background-color: #FFFFFF;
+  border: 1px solid #783b89;
+  border-radius: 5px;
+  height: 40px;
+  margin-top: 5px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.validate__section input[type="submit"] {
+  background-color: #783b89;
+  border: 1px solid #783b89;
+  border-radius: 5px;
+  box-shadow: 0 2px 0 #321739;
+  color: #FFFFFF;
+  display: block;
+  font-weight: bold;
+  height: 40px;
+  margin-top: 1rem;
+  padding: 0 10px;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+  width: 150px;
+}
+
+.validate__section input[type="submit"]:hover {
+  border-color: #783b89;
+  background-color: #783b89;
+}
