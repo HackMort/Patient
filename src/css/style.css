@@ -935,7 +935,7 @@ h3 {
   background-color: #ffffff;
 }
 .hero-waves.hero-waves--primary {
-  background-image: url("/assets/vectors/waves/3_Waves.webp");
+  background-image: url("/assets/vectors/waves/3_Waves@3x.png");
   background-size: cover;
   background-position: 78% 0%;
   background-repeat: no-repeat;
@@ -981,7 +981,7 @@ h3 {
   }
 }
 .hero-waves.hero-waves--secondary {
-  background-image: url("/assets/vectors/waves/2_Waves@2x.webp");
+  background-image: url("/assets/vectors/waves/2_Waves@2x.png");
   background-size: cover;
   background-position: 78% 0%;
   background-repeat: no-repeat;
@@ -1054,6 +1054,7 @@ h3 {
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
   transition: all 100ms ease;
 }
 .button:disabled, .button[disabled] {
@@ -3086,5 +3087,38 @@ hr {
   .nmosd-children-book__order-copy-form .form .form__control[data-field-index="7"] {
     width: 100%;
     max-width: 9.375rem;
+  }
+}
+
+.thank__you {
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+}
+.thank__you .email--color {
+  color: #ed50ca;
+}
+.thank__you--links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+}
+.thank__you--links .button {
+  max-width: 265px;
+}
+.thank__you--links .button:first-of-type {
+  margin-bottom: 1.5rem;
+}
+.thank__you--links .button:last-of-type {
+  max-width: 150px;
+}
+@media screen and (min-width: 768px) {
+  .thank__you--links {
+    flex-direction: row;
+  }
+  .thank__you--links .button:first-of-type {
+    margin-right: 1.5rem;
+    margin-bottom: 0;
   }
 }/*# sourceMappingURL=style.css.map */

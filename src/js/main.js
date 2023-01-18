@@ -32,8 +32,8 @@ function numberIncrementAnimation(element, start, end, duration, increment) {
     const step = Math.abs(Math.floor(duration / range));
     const timer = setInterval(() => {
         current += increment;
-        element.textContent = new Intl.NumberFormat().format(current);
-        if (current == end) {
+        element.textContent = new Intl.NumberFormat().format(current);//Quadratic easing
+        if (current === end) {
             clearInterval(timer);
         }
     }, step);
@@ -258,7 +258,6 @@ if (elements && elements.length > 0) {
             const dataEnd = element.getAttribute('data-end');
             const dataDuration = element.getAttribute('data-duration');
             const dataIncrement = element.getAttribute('data-increment');
-
             const observe = (dataEnd !== null) && (dataDuration !== null) && (dataIncrement !== null);
 
             if (observe) {
@@ -269,19 +268,14 @@ if (elements && elements.length > 0) {
 
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry) => {
-                        let animated = false;
-
-                        if (element.getAttribute('data-animated')) {
-                            animated = element.getAttribute('data-animated').toString() === 'true' || false;
-                        }
-
-                        if (!animated && entry.isIntersecting) {
+                        let animated = element.hasAttribute('data-animated') ? true : false;
+                        if (animated && entry.isIntersecting) {
                             numberIncrementAnimation(element, start, end, duration, increment);
-                            element.setAttribute('data-animated', 'true');
+                            observer.unobserve(element);
                         }
-                    })
-                }, { threshold: .5 });
 
+                    })
+                }, { threshold: 1 }); // Untill element is fully visible
                 observer.observe(element);
             }
         } catch (error) {
@@ -420,3 +414,21 @@ inputsWithMask.forEach((input) => {
 })
 
 // 
+
+
+// get all images with .gif extension
+const lazyImages = document.querySelectorAll('img[src$=".gif"]');
+if (lazyImages && lazyImages.length > 0) {
+    lazyImages.forEach((image) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const src = image.getAttribute('src');
+                    image.setAttribute('src', src);
+                    observer.unobserve(image);
+                }
+            });
+        }, { threshold: 1 });
+        observer.observe(image);
+    });
+}
