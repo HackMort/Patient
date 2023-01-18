@@ -1791,3 +1791,46 @@ hr {
 }
 
 // ========================== CHILDREN'S BOOK PAGE =====================================
+
+// ========================== THANK YOU & CONFIRMATION PAGES =====================================
+.thank__you {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
+
+    .email--color {
+        color: $color-pink;
+    }
+
+    &--links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+
+
+
+        .button {
+            max-width: 265px;
+        }
+
+        .button:first-of-type {
+            margin-bottom: 1.5rem;
+        }
+
+        .button:last-of-type {
+            max-width: 150px;
+        }
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+
+            .button:first-of-type {
+                margin-right: 1.5rem;
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+}

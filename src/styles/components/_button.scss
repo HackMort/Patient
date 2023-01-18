@@ -11,7 +11,7 @@
     flex-direction: row;
     align-items: center;
     cursor: pointer;
-
+    text-decoration: none;
     // transition: all 100ms ease;
     @include transition(all, 100ms, ease);
 
