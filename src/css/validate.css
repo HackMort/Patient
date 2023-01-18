@@ -1,3 +1,8 @@
+form {
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
 .validate__section {
   background-color: #9f6bad;
   display: flex;
