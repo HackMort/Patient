@@ -8,7 +8,7 @@
     font-size: 0.875rem;
     line-height: 1.5;
     // padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 
     .wrapper {
         display: grid;
@@ -204,6 +204,10 @@
 
         @media screen and (min-width: 2430px) {
             height: 28.875rem;
+        }
+
+        @media screen and (min-width: 2715px) {
+            height: 30.875rem;
         }
     }
 

@@ -794,7 +794,7 @@ h3 {
   color: #000000;
   font-size: 0.875rem;
   line-height: 1.5;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .hero .wrapper {
   display: grid;
@@ -973,6 +973,11 @@ h3 {
 @media screen and (min-width: 2430px) {
   .hero-waves.hero-waves--primary {
     height: 28.875rem;
+  }
+}
+@media screen and (min-width: 2715px) {
+  .hero-waves.hero-waves--primary {
+    height: 30.875rem;
   }
 }
 .hero-waves.hero-waves--secondary {
@@ -1702,33 +1707,71 @@ hr {
 .home__cta {
   background: linear-gradient(180deg, #ffffff 0%, #e4d8cf 40%);
 }
-.home__cta .video {
-  height: 32.4375rem;
-  position: relative;
-  background-image: url("../assets/img/tmp-home-cta.png");
-  background-image: url("../assets/img/home-cta.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 46% 0%;
-}
-.home__cta .video .section-wrapper {
+.home__cta .image {
+  height: 28rem;
   position: relative;
 }
-.home__cta .video .section-wrapper .video__cta {
+.home__cta .image .section-wrapper {
+  position: relative;
+}
+.home__cta .image .section-wrapper .image__cta {
   position: absolute;
   top: 55%;
   transform: translateY(-50%);
   width: 100%;
 }
-.home__cta .video .video__button-container {
+.home__cta .image .image__button-container {
   position: absolute;
   z-index: 2;
   bottom: 0.9375rem;
   right: 0;
 }
-.home__cta .end-cta--white {
-  padding: 0 2rem;
-  align-items: initial;
+.home__cta .image .image__background {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 45% 50%;
+     object-position: 45% 50%;
+  transform: scale(1.2);
+}
+@media screen and (min-width: 768px) {
+  .home__cta .image .image__background {
+    -o-object-position: initial;
+       object-position: initial;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home__cta .image {
+    height: 18.5625rem;
+  }
+  .home__cta .image .image__background {
+    transform: scale(1);
+  }
+}
+@media screen and (min-width: 1366px) {
+  .home__cta .image .image__background {
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+}
+@media screen and (min-width: 1630px) {
+  .home__cta .image .image__background {
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+}
+@media screen and (min-width: 1630px) {
+  .home__cta .image {
+    height: 21.5625rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .home__cta .image {
+    height: 26.5625rem;
+  }
 }
 .home__cta .end-cta--white .end-cta__text {
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -1739,9 +1782,14 @@ hr {
   max-width: 18.25rem;
   margin: 0 auto;
 }
+@media screen and (min-width: 375px) {
+  .home__cta .end-cta--white {
+    padding: 0 2rem;
+  }
+}
 .home__cta .cta {
   padding-bottom: 4rem;
-  padding-top: 1rem;
+  padding-top: 5rem;
   position: relative;
 }
 .home__cta .cta .cta__title,
@@ -1766,97 +1814,18 @@ hr {
   margin-bottom: 1rem;
   line-height: 1.33;
 }
+.home__cta .cta .cta__footer-text {
+  text-align: left;
+}
 .home__cta .cta .button__container {
   max-width: 15.875rem;
   margin: 0 auto;
-}
-.home__cta .cta .cta__wave {
-  background-color: transparent;
-  width: 100%;
-  display: block;
-  height: 5.625rem;
-  position: absolute;
-  left: 0;
-  bottom: 100%;
-  z-index: 0;
-  background-image: url("../assets/vectors/waves/home-cta-wave.svg");
-  background-repeat: no-repeat;
-  background-position: 17% 55%;
-  background-size: 600%;
-}
-@media screen and (min-width: 408px) {
-  .home__cta .video {
-    background-position: 44% 0%;
-  }
-  .home__cta .cta .cta__wave {
-    background-position: 16% 55%;
-  }
-}
-@media screen and (min-width: 408px) {
-  .home__cta .cta .cta__wave {
-    background-position: 13% 55%;
-    background-size: 400%;
-  }
-}
-@media screen and (min-width: 514px) {
-  .home__cta .video {
-    background-position: 43% 0%;
-  }
-  .home__cta .cta .cta__wave {
-    background-position: 10% 55%;
-    background-size: 386%;
-  }
-}
-@media screen and (min-width: 572px) {
-  .home__cta .video {
-    background-position: 39% 0%;
-  }
-  .home__cta .cta .cta__wave {
-    background-position: 9% 55%;
-    background-size: 338%;
-  }
-}
-@media screen and (min-width: 600px) {
-  .home__cta .cta .cta__wave {
-    background-position: 4% 55%;
-    background-size: 309%;
-  }
-}
-@media screen and (min-width: 640px) {
-  .home__cta .video {
-    background-position: 41% 0%;
-    background-size: 378%;
-  }
-  .home__cta .cta .cta__wave {
-    background-position: 92% 55%;
-    background-size: 272%;
-  }
-}
-@media screen and (min-width: 690px) {
-  .home__cta .video {
-    background-position: 39% 0%;
-    background-size: 355%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .home__cta .video {
-    background-position: 1% 3%;
-    background-size: 250%;
-    height: 25rem;
-  }
-  .home__cta .cta .cta__wave {
-    background-position: 54% 55%;
-    background-size: 180%;
-  }
-}
-@media screen and (min-width: 900px) {
-  .home__cta .video {
-    background-size: 213%;
-  }
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 1024px) {
   .home__cta .cta {
     padding-bottom: 2.625rem;
+    padding-top: 2rem;
   }
   .home__cta .end-cta--white {
     align-items: center;
@@ -1866,7 +1835,7 @@ hr {
     font-size: 1.5em;
     line-height: 1.35;
   }
-  .home__cta .video .end-cta__text {
+  .home__cta .image .end-cta__text {
     max-width: 39rem;
   }
   .home__cta .cta .cta__title {
@@ -1876,55 +1845,21 @@ hr {
     margin: 0;
   }
 }
-@media screen and (min-width: 1108px) {
-  .home__cta .video {
-    background-size: cover;
-    background-position: 1% 0%;
-  }
-  .home__cta .cta .cta__wave {
-    height: 7.25rem;
-    background-size: cover;
-    background-position: 0% 67%;
-  }
-}
 @media screen and (min-width: 1200px) {
-  .home__cta .cta .cta__wave {
-    height: 8.25rem;
-  }
-  .home__cta .video .video__button-container {
+  .home__cta .image .image__button-container {
     bottom: initial;
     top: 50%;
     transform: translateY(-50%);
-  }
-}
-@media screen and (min-width: 1440px) {
-  .home__cta .cta .cta__wave {
-    height: 10.25rem;
-    bottom: 98%;
   }
 }
 @media screen and (min-width: 1629px) {
   .home__cta .cta {
     padding-top: 3rem;
   }
-  .home__cta .cta .cta__wave {
-    height: 11.25rem;
-    bottom: 91%;
-  }
-}
-@media screen and (min-width: 1788px) {
-  .home__cta .cta .cta__wave {
-    height: 12.25rem;
-    bottom: 84%;
-  }
 }
 @media screen and (min-width: 2136px) {
   .home__cta .cta {
     padding-top: 5rem;
-  }
-  .home__cta .cta .cta__wave {
-    height: 14.25rem;
-    bottom: 78%;
   }
 }
 
