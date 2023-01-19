@@ -4,5 +4,9 @@
 node_modules
 dist
 .cache
+# all .DS_Store files
 .DS_Store
-.zip
+# all .zip files
+*.zip
+# all .log files
+*.log
