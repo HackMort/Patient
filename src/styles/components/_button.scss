@@ -77,6 +77,8 @@
         .button__label {
             color: $color-white;
             background-color: $color-dark-purple;
+
+            text-decoration: none;
         }
 
         &:hover {

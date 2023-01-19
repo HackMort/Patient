@@ -1102,6 +1102,7 @@ h3 {
 .button.button--default .button__label {
   color: #ffffff;
   background-color: #783b89;
+  text-decoration: none;
 }
 .button.button--default:hover .button__label {
   text-decoration: underline;
@@ -2444,11 +2445,15 @@ hr {
 }
 
 .waves__callout {
-  background-image: url("/assets/img/pre-footer-beige-waves.png");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  height: 17.9375rem;
+  height: 29rem;
+  position: relative;
+}
+.waves__callout .waves__callout-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-position: 40% 0%;
+     object-position: 40% 0%;
 }
 
 .waves__callout .section-wrapper {
@@ -2485,11 +2490,33 @@ hr {
   .about-nmosd__symptoms .all__symptoms--content_title {
     text-align: left;
   }
+  .waves__callout .waves__callout-image {
+    -o-object-position: initial;
+       object-position: initial;
+  }
   .waves__callout {
     height: 23.9375rem;
   }
   .waves__callout .section-wrapper .end-cta {
     bottom: 4rem;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .waves__callout {
+    height: 29rem;
+  }
+  .waves__callout .waves__callout-image {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media screen and (min-width: 2366px) {
+  .waves__callout {
+    height: 33rem;
+  }
+  .waves__callout .waves__callout-image {
+    -o-object-fit: fill;
+       object-fit: fill;
   }
 }
 .how-diagnosis-works__diagnosed {
