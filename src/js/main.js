@@ -30,7 +30,13 @@ function numberIncrementAnimation(element, end, duration) {
     // Use that to calculate how many frames we need to complete the animation
     const totalFrames = Math.round(duration / frameDuration);
     // An ease-out function that slows the count as it progresses
-    const easeOutQuad = x => Math.sqrt(1 - Math.pow(x - 1, 2));
+    let easeOutQuad;
+
+    if (end > 2000) {
+        easeOutQuad = x => 1 - Math.pow(1 - x, 8);
+    } else {
+        easeOutQuad = x => Math.sqrt(1 - Math.pow(x - 1, 2));
+    }
 
     let frame = 0;
     // Start the animation running 60 times per second
@@ -234,28 +240,44 @@ function toggleSubmenu() {
         subMenuItems.forEach((item) => {
             const anchor = item.querySelector('a');
             const mediaQuery = window.matchMedia('(min-width: 1200px)');
-            if (mediaQuery.matches) {
-                item.addEventListener('mouseenter', () => {
-                    item.classList.add('active');
-                });
-                item.addEventListener('mouseleave', () => {
+            // if (mediaQuery.matches) {
+            //     item.addEventListener('mouseenter', () => {
+            //         item.classList.add('active');
+            //     });
+            //     item.addEventListener('mouseleave', () => {
+            //         item.classList.remove('active');
+            //     });
+            // }
+            // else {
+            // anchor.addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     item.classList.toggle('active');
+            // });
+            // }
+            // mediaQuery.addEventListener('change', (e) => {
+            //     if (e.matches) {
+            //         body.classList.remove('mobile__nav--open');
+            //         subMenuItems.forEach((item) => {
+            //             item.classList.remove('active');
+            //         });
+            //     }
+            // });
+
+            // show menu if the user clicks on the menu item
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                item.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (e.target !== item && !item.contains(e.target)) {
                     item.classList.remove('active');
-                });
-            }
-            else {
-                anchor.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    item.classList.toggle('active');
-                });
-            }
-            mediaQuery.addEventListener('change', (e) => {
-                if (e.matches) {
-                    body.classList.remove('mobile__nav--open');
-                    subMenuItems.forEach((item) => {
-                        item.classList.remove('active');
-                    });
                 }
             });
+            // Just in case we need this later 
+            // item.addEventListener('mouseleave', () => {
+            //     item.classList.remove('active');
+            // });
         });
     }
 }
