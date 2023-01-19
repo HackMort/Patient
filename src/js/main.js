@@ -19,24 +19,38 @@
  * it in the element. The setInterval() method is called once, and it calls a
  * function that increments the number and displays it in the element. The function
  * is called repeatedly until the current number reaches the end number
- * @param element {Element} - The element that will be updated with the number.
- * @param start {number} - The starting number
+ * @param element {HTMLElement} - The element that will be updated with the number.
  * @param end {number} - The number to end at.
  * @param duration {number} - The total duration of the animation in milliseconds.
- * @param increment {number} - The amount to increment the number by.
  */
-function numberIncrementAnimation(element, start, end, duration, increment) {
-    let current = start;
-    const range = end - start;
-    increment = end > start ? increment : (increment * -1);
-    const step = Math.abs(Math.floor(duration / range));
-    const timer = setInterval(() => {
-        current += increment;
-        element.textContent = new Intl.NumberFormat().format(current);//Quadratic easing
-        if (current === end) {
-            clearInterval(timer);
+function numberIncrementAnimation(element, end, duration) {
+
+    // Calculate how long each ‘frame’ should last if we want to update the animation 60 times per second
+    const frameDuration = 1000 / 60;
+    // Use that to calculate how many frames we need to complete the animation
+    const totalFrames = Math.round(duration / frameDuration);
+    // An ease-out function that slows the count as it progresses
+    const easeOutQuad = x => Math.sqrt(1 - Math.pow(x - 1, 2));
+
+    let frame = 0;
+    // Start the animation running 60 times per second
+    const counter = setInterval(() => {
+        frame++;
+        // Calculate our progress as a value between 0 and 1
+        // Pass that value to our easing function to get our
+        // progress on a curve
+        const progress = easeOutQuad(frame / totalFrames);
+        // Use the progress value to calculate the current count
+        const value = Math.round(end * progress);
+
+        // If the current count has changed, update the element
+        element.textContent = new Intl.NumberFormat().format(value);
+
+        // If we’ve reached our last frame, stop the animation
+        if (frame === totalFrames) {
+            clearInterval(counter);
         }
-    }, step);
+    }, frameDuration);
 }
 
 /**
@@ -253,24 +267,17 @@ const elements = document.querySelectorAll('.icon-card .icon-card__amount');
 if (elements && elements.length > 0) {
     elements.forEach((element) => {
         try {
-            const start = 0;
+            const { end, duration } = element.dataset;
 
-            const dataEnd = element.getAttribute('data-end');
-            const dataDuration = element.getAttribute('data-duration');
-            const dataIncrement = element.getAttribute('data-increment');
-            const observe = (dataEnd !== null) && (dataDuration !== null) && (dataIncrement !== null);
+            const observe = (end !== undefined) && (duration !== undefined);
 
             if (observe) {
-
-                const end = parseInt(dataEnd);
-                const duration = parseInt(dataDuration);
-                const increment = parseInt(dataIncrement);
 
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry) => {
                         let animated = element.hasAttribute('data-animated') ? true : false;
                         if (animated && entry.isIntersecting) {
-                            numberIncrementAnimation(element, start, end, duration, increment);
+                            numberIncrementAnimation(element, end, duration);
                             observer.unobserve(element);
                         }
 
