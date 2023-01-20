@@ -1931,6 +1931,11 @@ hr {
   width: 100vw;
   z-index: 2;
 }
+@media screen and (min-width: 768px) {
+  .nmosd__buttons.sticky {
+    display: none !important;
+  }
+}
 
 .nmosd__buttons {
   position: absolute;
@@ -1943,7 +1948,6 @@ hr {
   list-style-type: none;
   margin-right: auto;
   margin-left: auto;
-  transition: all 0.2s ease-in-out;
   width: 100%;
 }
 
@@ -1971,7 +1975,6 @@ hr {
   align-items: center;
   height: 50px;
   gap: 8px;
-  transition: all 0.3s ease-in-out;
   width: 140px;
 }
 
