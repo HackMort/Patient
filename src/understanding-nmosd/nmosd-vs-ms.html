@@ -374,7 +374,21 @@
     </div>
     <script src="/js/utils/fancybox-v4.0.31.js"></script>
     <script src="/js/main.js" type="module"></script>
+    <!-- jquery cdn -->
     <script src="/js/utils/nmosd-vs-ms.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        console.log('DOM loaded');
+        $(document).on('click', '.nmosd__buttons.sticky .button', function (e) {
+          $('html, body').animate({
+            scrollTop: $('.nmosd__description').offset().top,
+          }, 2000, function () {
+            console.log('scrolling done');
+          });
+        });
+      });
+    </script>
   </body>
 
 </html>

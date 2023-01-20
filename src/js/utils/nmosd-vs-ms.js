@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const stickyButtons = document.querySelectorAll('.nmosd__buttons.sticky .button');
         stickyButtons.forEach((button) => {
           button.addEventListener('click', () => {
-            window.scrollTo({
-              top: nmosd__symptoms_offset - 100,
-              behavior: 'smooth'
-            });
+            // window.scrollTo({
+            //   top: nmosd__symptoms_offset - 100,
+            //   behavior: 'smooth'
+            // });
           });
         });
       }
