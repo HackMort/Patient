@@ -1993,7 +1993,8 @@ hr {
 
 .nmosd__symptoms_item_image {
   margin: 0 auto;
-  width: 80px;
+  width: auto;
+  height: 83px;
 }
 
 .nmosd__symptoms_item.active {
