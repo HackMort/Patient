@@ -51,6 +51,10 @@
   padding: 10px 0;
   width: 100vw;
   z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
 }
 
 .nmosd__buttons {
@@ -64,7 +68,7 @@
   list-style-type: none;
   margin-right: auto;
   margin-left: auto;
-  transition: all 0.2s ease-in-out;
+  // transition: all 0.2s ease-in-out;
   width: 100%;
 }
 
@@ -93,7 +97,7 @@
   height: 50px;
   gap: 8px;
   // padding: 12px 24px;
-  transition: all 0.3s ease-in-out;
+  // transition: all 0.3s ease-in-out;
   width: 140px;
 }
 
