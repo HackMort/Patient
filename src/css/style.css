@@ -3036,9 +3036,6 @@ hr {
   }
 }
 
-.pre__footer.pre__footer--resources .waves__callout {
-  height: 29.9375rem;
-}
 @media screen and (min-width: 1024px) {
   .pre__footer.pre__footer--resources .waves__callout .end-cta .end-cta__text {
     text-align: left;
