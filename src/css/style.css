@@ -2445,15 +2445,17 @@ hr {
 }
 
 .waves__callout {
-  height: 29rem;
+  height: 12rem;
   position: relative;
+  background-image: url("../assets/img/end-cta-tile-bg.png");
 }
-.waves__callout .waves__callout-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -o-object-position: 40% 0%;
-     object-position: 40% 0%;
+
+.waves__callout-image {
+  background-image: url("../assets/vectors/waves/end-cta-waves.png");
+  background-size: cover;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  height: 9rem;
 }
 
 .waves__callout .section-wrapper {
@@ -2490,33 +2492,8 @@ hr {
   .about-nmosd__symptoms .all__symptoms--content_title {
     text-align: left;
   }
-  .waves__callout .waves__callout-image {
-    -o-object-position: initial;
-       object-position: initial;
-  }
-  .waves__callout {
-    height: 23.9375rem;
-  }
   .waves__callout .section-wrapper .end-cta {
     bottom: 4rem;
-  }
-}
-@media screen and (min-width: 1366px) {
-  .waves__callout {
-    height: 29rem;
-  }
-  .waves__callout .waves__callout-image {
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-}
-@media screen and (min-width: 2366px) {
-  .waves__callout {
-    height: 33rem;
-  }
-  .waves__callout .waves__callout-image {
-    -o-object-fit: fill;
-       object-fit: fill;
   }
 }
 .how-diagnosis-works__diagnosed {
