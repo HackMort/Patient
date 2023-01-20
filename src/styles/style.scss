@@ -876,6 +876,46 @@ hr {
     background-position: 50% 0%;
     background-repeat: no-repeat;
     height: 9rem;
+
+    @media screen and (min-width: 858px) {
+        height: 11rem;
+    }
+
+    @media screen and (min-width: 1054px) {
+        height: 13rem;
+    }
+
+    @media screen and (min-width: 1244px) {
+        height: 15rem;
+    }
+
+    @media screen and (min-width: 1430px) {
+        height: 17rem;
+    }
+
+    @media screen and (min-width: 1629px) {
+        height: 19rem;
+    }
+
+    @media screen and (min-width: 1787px) {
+        height: 21rem;
+    }
+
+    @media screen and (min-width: 1990px) {
+        height: 23rem;
+    }
+
+    @media screen and (min-width: 2230px) {
+        height: 25rem;
+    }
+
+    @media screen and (min-width: 2453px) {
+        height: 27rem;
+    }
+
+    @media screen and (min-width: 2623px) {
+        height: 29rem;
+    }
 }
 
 .waves__callout .section-wrapper {
@@ -919,21 +959,8 @@ hr {
         text-align: left;
     }
 
-    .waves__callout-image {
-    }
-
     .waves__callout .section-wrapper .end-cta {
         bottom: 4rem;
-    }
-}
-
-@media screen and (min-width: 1366px) {
-    .waves__callout-image {
-    }
-}
-
-@media screen and (min-width: 2366px) {
-    .waves__callout-image {
     }
 }
 
