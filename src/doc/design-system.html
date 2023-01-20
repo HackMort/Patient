@@ -1,55 +1,264 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <title>Desing system</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <title>Desing system</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+        <meta property="og:title" content="">
+        <meta property="og:type" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
 
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="apple-touch-icon" href="../icon.png">
-    <link rel="stylesheet" href="../scss/style.scss">
-    <!-- Place favicon.ico in the root directory -->
+        <link rel="apple-touch-icon" href="../icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- Place favicon.ico in the root directory -->
 
-    <meta name="theme-color" content="#fafafa">
-</head>
+        <meta name="theme-color" content="#fafafa">
+    </head>
 
-<body>
+    <body>
 
-    <main>
-        <section class="design-system-section">
-            <h1 class="title">
-                Colors
-            </h1>
-        </section>
-    </main>
+        <main>
+            <section class="design-system-section">
+                <h1 class="title">
+                    Colors
+                </h1>
+                <div class="colors">
 
-    <script src="../js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="../js/plugins.js"></script>
-    <script src="../js/main.js"></script>
+                    <div class="color">
+                        <div class="color__box" style="background-color: #de0000;">
+                            <p class="color__hex" style="color: white;">#de0000</p>
+                        </div>
+                        <p class="color__variable">$color-red</p>
+                    </div>
+                    <div class="color">
+                        <div class="color__box" style="background-color: #2e5055;">
+                            <p class="color__hex" style="color: white;">#2e5055</p>
+                        </div>
+                        <p class="color__variable">$color-dark-green</p>
+                    </div>
+                    <div class="color">
+                        <div class="color__box" style="background-color: #e4d8cf;">
+                            <p class="color__hex">#e4d8cf</p>
+                        </div>
+                        <p class="color__variable">$color-light-beige</p>
+                    </div>
+                    <div class="color">
+                        <div class="color__box" style="background-color: #607cbe;">
+                            <p class="color__hex" style="color: white;">#607cbe</p>
+                        </div>
+                        <p class="color__variable">$color-blue</p>
+                    </div>
+                    <div class="color">
+                        <div class="color__box" style="background-color: #b4d6bd;">
+                            <p class="color__hex">#b4d6bd</p>
+                        </div>
+                        <p class="color__variable">$color-light-green</p>
+                    </div>
+                    <div class="color">
+                        <div class="color__box" style="background-color: #d8c6ba;">
+                            <p class="color__hex">#d8c6ba</p>
+                        </div>
+                        <p class="color__variable">$color-beige</p>
+                    </div>
+                    <div class="color">
+                        <div class="color__box" style="background-color: #455782;">
+                            <p class="color__hex" style="color: white;">#455782</p>
+                        </div>
+                        <p class="color__variable">$color-ada-blue</p>
+                    </div>
+                    <div class="color">
+                        <div class="color__box" style="background-color: rgba(96, 124, 190, 0.2);">
+                            <p class="color__hex">rgba(96, 124, 190, 0.2)</p>
+                        </div>
+                        <p class="color__variable">$color-light-blue</p>
+                    </div>
 
-    <style>
-        main {
-            max-width: 80vw;
-        }
+                </div>
+            </section>
 
-        .design-system-section .title {
-            font-size: 2em;
-        }
-    </style>
+            <hr>
 
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <!-- <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
-</body>
+            <section class="design-system-section">
+                <h1 class="title">
+                    Fonts
+                </h1>
+                <div class="fonts">
+                    <h1>H1 Title</h1>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="design-system-section">
+                <h1 class="title">
+                    Main button
+                </h1>
+                <div style="display: flex; gap: 1rem;">
+                    <!-- Default button -->
+                    <button class="button button--default">
+                        <span class="button__label">
+                            Button tag
+                        </span>
+                        <span class="button__icon">
+                            <img src="../assets/icons/play--white.svg" alt="Button icon">
+                        </span>
+                    </button>
+
+                    <a class="button button--default" disabled>
+                        <span class="button__label">
+                            Anchor tag
+                        </span>
+                        <span class="button__icon">
+                            <img src="../assets/icons/play--white.svg" alt="Button icon">
+                        </span>
+                    </a>
+                    <!-- Default button -->
+                    <!-- White button -->
+                    <button class="button button--white">
+                        <span class="button__label">
+                            A Cause of Damage
+                        </span>
+                        <span class="button__icon">
+                            <img src="../assets/icons/play--white.svg" alt="Button icon">
+                        </span>
+                    </button>
+
+                    <a class="button button--white" disabled>
+                        <span class="button__label">
+                            Anchor tag
+                        </span>
+                        <span class="button__icon">
+                            <img src="../assets/icons/play--white.svg" alt="Button icon">
+                        </span>
+                    </a>
+                    <!-- White button -->
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="desing-system-section">
+                <h1 class="title">
+                    Icon card
+                </h1>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div class="icon-card">
+                        <div class="icon-card__icon">
+                            <img src="../assets/icons/people-in-map.svg" alt="Info icon">
+                        </div>
+                        <div class="icon-card__content">
+                            <p class="icon-card__amount" data-animated="false" data-end="15000" data-duration="200"
+                                data-increment="50">0</p>
+                            <p class="icon-card__title">
+                                people in the US
+                            </p>
+                            <p class="paragraph paragraph--center">
+                                are estimated to be living with NMOSD
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="icon-card">
+                        <div class="icon-card__icon">
+                            <img src="../assets/icons/id-card.svg" alt="Info icon">
+                        </div>
+                        <div class="icon-card__content">
+                            <p class="icon-card__amount" data-animated="false" data-end="39" data-duration="200"
+                                data-increment="1">0</p>
+                            <p class="icon-card__title">
+                                years of age
+                            </p>
+                            <p class="paragraph paragraph--center">
+                                median age of onset of NMOSD
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="desing-system-section">
+                <h1 class="title">
+                    End CTA
+                </h1>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <!-- Default CTA -->
+                    <div class="end-cta">
+                        <p class="end-cta__text">Sign up for a monthly digital newsletter highlighting resources,
+                            events,
+                            and stories from across the NMOSD community</p>
+                        <div class="end-cta__button">
+                            <a class="button button--default">
+                                <span class="button__label">
+                                    Resources
+                                </span>
+                                <span class="button__icon">
+                                    <img src="../assets/icons/play--white.svg" alt="Button icon">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Default CTA -->
+                </div>
+            </section>
+
+            <hr>
+        </main>
+        <script src="/js/main.js"></script>
+        <style>
+            main {
+                max-width: 70vw;
+                margin: 2rem auto;
+
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .title {
+                font-size: 2em;
+                margin-bottom: 3rem;
+            }
+
+            .colors {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                flex-wrap: wrap;
+
+                transition: all 100ms ease-in-out;
+            }
+
+            .color {
+                width: 6.25rem;
+            }
+
+            .color__box {
+                width: 6.25rem;
+                height: 4.375rem;
+                padding: .2rem;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin-bottom: .5rem;
+            }
+
+            .color__hex {
+                margin: auto;
+                font-size: .75em;
+            }
+
+            .color__variable {
+                font-size: .75em;
+            }
+        </style>
+    </body>
 
 </html>

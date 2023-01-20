@@ -1,0 +1,103 @@
+@import './variables';
+
+@font-face {
+    font-family: poppins;
+    src: url("../../assets/fonts/poppins/poppins-regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url("../../assets/fonts/poppins/poppins-medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url("../../assets/fonts/poppins/poppins-semibold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url("../../assets/fonts/poppins/poppins-bold.ttf");
+    font-weight: bold;
+}
+
+*,
+*::before,
+*::after {
+    font-family: poppins, Arial, Helvetica, sans-serif;
+}
+
+section a {
+    font-size: inherit;
+    font-weight: bold;
+
+    color: $color-new-blue;
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: left;
+    color: $color-new-blue;
+    letter-spacing: normal;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1.25;
+
+
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1.35;
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.35;
+}
+
+.paragraph {
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    font-size: 1.125em;
+    line-height: 1.5;
+    color: $color-black;
+
+    &.paragraph--center {
+        text-align: center;
+    }
+
+    &.paragraph--16 {
+        font-size: 1em;
+        line-height: 1.75px;
+    }
+
+    &.paragraph--14 {
+        font-size: .875em;
+        line-height: 1.35;
+    }
+
+    &.paragraph--12 {
+        font-size: .75em;
+        line-height: normal;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h2 {
+        font-size: 2em;
+    }
+}

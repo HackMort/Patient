@@ -1,0 +1,1807 @@
+@import 'settings/reset';
+@import 'settings/variables';
+@import 'settings/fonts';
+@import 'settings/mixins';
+@import 'settings/layout';
+@import 'components/header';
+@import 'components/hero';
+@import 'components/video-container';
+@import 'components/button';
+@import 'components/icon-card';
+@import 'components/end-cta';
+@import 'components/footer';
+@import 'components/step-card';
+@import 'components/modal';
+@import 'components/form';
+
+hr {
+    height: 2px;
+    width: 100%;
+    border-top: 2px solid $color-new-blue;
+}
+
+.desktop__only {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .mobile__only {
+        display: none;
+    }
+
+    .desktop__only {
+        display: block;
+    }
+}
+
+.list {
+    .list__element {
+
+        display: flex;
+        align-items: baseline;
+
+        &::before {
+            content: url("../assets/icons/list-dot.svg");
+            margin-right: 1rem;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: .5rem;
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+    }
+}
+
+.list--toggle_button {
+    border: 1px solid $color-new-blue;
+    border-radius: .25rem;
+    color: $color-new-blue;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 8.9375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: .75rem 1rem;
+    height: 2.6875rem;
+
+    .text::before {
+        content: 'More';
+        margin-left: .25rem;
+    }
+
+    .icon::before {
+        content: url('../assets/icons/icon-plus.svg');
+        position: relative;
+        top: 3px;
+        margin-left: .25rem;
+    }
+
+    &.active {
+        .text::before {
+            content: 'Less';
+        }
+
+        .icon::before {
+            content: url('../assets/icons/icon-minus.svg');
+        }
+    }
+
+}
+
+.section-wrapper {
+    max-width: calc(100% - 2.75rem);
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    @media screen and (min-width: 402px) {
+        width: calc(100% - 3.75rem);
+    }
+
+    @media screen and (min-width: 448px) {
+        width: calc(100% - 5.75rem);
+    }
+
+    @media screen and (min-width: 1024px) {
+        max-width: 74.625rem;
+
+        &.section-wrapper--small {
+            max-width: 61.875rem;
+        }
+    }
+}
+
+.resource-placeholder {
+    width: 11.1875rem;
+    height: 14.375rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: .5rem;
+    background-color: $color-gray;
+    text-align: center;
+
+    outline: 1px solid $color-black;
+}
+
+.link {
+
+    &.link--external {
+
+        display: inline-flex;
+        align-items: center;
+
+        &::after {
+            content: url("../assets/img/icon-external-link.svg");
+            margin-left: .25rem;
+            height: 1.3125rem;
+        }
+    }
+
+    &.link--download {
+
+        display: inline-flex;
+        align-items: center;
+
+        &::after {
+            content: url("../assets/icons/download-icon.svg");
+            margin-left: .25rem;
+            height: 1.25rem;
+        }
+    }
+
+    &.link--inline {
+        display: inline-block;
+        position: relative;
+        line-height: 1.5;
+
+        &::after {
+            display: inline-block;
+            position: absolute;
+        }
+    }
+}
+
+// ========================== HOME PAGE =====================================
+
+// NMOSD Info Section
+.home__nmosd-info {
+    margin-top: 1.5rem;
+
+    .nmosd-info__title {
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+
+    .icon-card__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media screen and (min-width: 768px) {
+        .icon-card__container {
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+
+    @media screen and (min-width: 1086px) {
+        .nmosd-info__description {
+            max-width: 62.125rem;
+            margin: 0 auto;
+        }
+    }
+}
+
+// NMOSD Info Section
+
+// CTA Section
+.home__cta {
+
+    background: linear-gradient(180deg, $color-white 0%, $color-light-beige 40%);
+
+    .image {
+        height: 28rem;
+        position: relative;
+
+        .section-wrapper {
+            position: relative;
+
+            .image__cta {
+                position: absolute;
+                top: 55%;
+                transform: translateY(-50%);
+
+                width: 100%;
+            }
+        }
+
+        .image__button-container {
+            position: absolute;
+            z-index: 2;
+            bottom: .9375rem;
+            right: 0;
+        }
+
+        .image__background {
+            position: absolute;
+            top: 0;
+
+            height: 100%;
+            width: 100%;
+
+            -o-object-fit: cover;
+
+            object-fit: cover;
+            -o-object-position: 45% 50%;
+            object-position: 45% 50%;
+
+            transform: scale(1.2);
+
+        }
+
+        @media screen and (min-width: 768px) {
+            .image__background {
+                -o-object-position: initial;
+                object-position: initial;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            height: 18.5625rem;
+
+            .image__background {
+                transform: scale(1);
+            }
+        }
+
+        @media screen and (min-width: 1366px) {
+            .image__background {
+                -o-object-fit: fill;
+                object-fit: fill;
+            }
+        }
+
+        @media screen and (min-width: 1630px) {
+            .image__background {
+                -o-object-fit: fill;
+                object-fit: fill;
+            }
+        }
+
+        @media screen and (min-width: 1630px) {
+            height: 21.5625rem;
+        }
+
+        @media screen and (min-width: 2560px) {
+            height: 26.5625rem;
+        }
+    }
+
+    .end-cta--white {
+
+        .end-cta__text {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 4px 4px rgba(0, 0, 0, 0.25);
+            text-align: left;
+        }
+
+        .end-cta__button {
+            width: 100%;
+            max-width: 18.25rem;
+
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 375px) {
+            padding: 0 2rem;
+        }
+    }
+
+    .cta {
+        padding-bottom: 4rem;
+        padding-top: 5rem;
+
+        position: relative;
+
+        .cta__title,
+        .cta__subtitle,
+        .paragraph {
+            text-align: center;
+        }
+
+        .cta__title {
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta__subtitle {
+            margin-bottom: .5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            line-height: 1.4;
+            color: $color-new-blue;
+        }
+
+        .paragraph {
+            margin-bottom: 1rem;
+            line-height: 1.33;
+        }
+
+        .cta__footer-text {
+            text-align: left;
+        }
+
+        .button__container {
+            max-width: 15.875rem;
+            margin: 0 auto;
+            margin-bottom: 1.5rem;
+        }
+
+    }
+
+    @media screen and (min-width: 1024px) {
+        .cta {
+            padding-bottom: 2.625rem;
+            padding-top: 2rem;
+        }
+
+        .end-cta--white {
+            align-items: center;
+            padding: 0;
+        }
+
+        .cta .cta__subtitle {
+            font-size: 1.5em;
+            line-height: 1.35;
+        }
+
+        .image .end-cta__text {
+            max-width: 39rem;
+        }
+
+        .cta .cta__title {
+            max-width: 58.25rem;
+        }
+
+        .end-cta--white .end-cta__button {
+            margin: 0;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .image .image__button-container {
+            bottom: initial;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    @media screen and (min-width: 1629px) {
+        .cta {
+            padding-top: 3rem;
+        }
+    }
+
+    @media screen and (min-width: 2136px) {
+        .cta {
+            padding-top: 5rem;
+        }
+    }
+}
+
+// CTA Section
+
+// ========================== HOME PAGE =====================================
+
+
+// ========================== NMOSD vs MS PAGE =====================================
+
+
+@import './components/nmosd_vs_ms';
+
+.nmosd_vs_ms__hero {
+    @media screen and (max-width: 640px) {
+        .wrapper {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+        }
+    }
+}
+
+.nmosd__vs_ms {
+    &.symptoms {
+        background-color: $color-bright-gray;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-bottom: 3.5rem;
+    }
+
+    .nmosd__vs_ms_intro_content {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 2rem;
+        margin-bottom: 3.5rem;
+
+        p {
+            margin-bottom: 1.5rem;
+
+            &.paragraph.sup {
+                position: relative;
+            }
+
+            &.paragraph.sup::before {
+                content: "*";
+                position: absolute;
+                left: -6px;
+                top: 2px;
+                line-height: 1;
+                font-size: smaller;
+            }
+
+            &.paragraph.sup--cross::before {
+                content: "†";
+                font-size: 0.625rem;
+            }
+
+            &.paragraph.sup--crosses::before {
+                content: "‡";
+                font-size: 0.625rem;
+            }
+
+
+
+            &.paragraph.paragraph--14 {
+                line-height: 1.25;
+                margin-bottom: 0.5rem;
+            }
+
+        }
+    }
+
+    .nmosd__vs_ms_intro_content--title {
+        font-size: 24px;
+        margin-bottom: 1.5rem;
+    }
+
+    .card__icons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(261px, 1fr));
+        place-content: center;
+        margin: 0 auto;
+        max-width: 691px;
+        width: 100%;
+
+        .card__icons_column:first-of-type {
+            border-bottom: 2px solid $color-new-blue;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        @media screen and (min-width: 676px) {
+            margin: 3.5rem auto;
+
+            .card__icons_column:first-of-type {
+                border-bottom: 0;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .card__icons_column:first-of-type {
+                border-right: 2px solid $color-new-blue;
+            }
+        }
+
+        .icon-card {
+            display: grid;
+            grid-template-columns: 128px 138px;
+            grid-template-rows: 1fr -webkit-min-content;
+            grid-template-rows: 1fr min-content;
+            grid-column-gap: 5px;
+            grid-row-gap: 17px;
+            align-items: center;
+            margin: 0 auto;
+
+            @media screen and (min-width: 768px) {
+                grid-column-gap: 22px;
+                border-bottom: 0;
+                padding-top: 0;
+            }
+        }
+
+        .icon-card__icon {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .icon-card__content {
+            grid-area: 1 / 2 / 2 / 3;
+            text-align: left;
+
+            .icon-card__title {
+                font-size: 18px;
+                line-height: 1.5;
+                margin-bottom: 0;
+            }
+        }
+
+        .icon-card__description {
+            grid-area: 2 / 1 / 3 / 3;
+
+            .paragraph {
+                color: $color-new-blue;
+                font-size: 18px;
+                line-height: 1.5;
+            }
+        }
+
+        .icon-card__amount {
+            position: relative;
+            display: inline-block;
+            font-size: 50px;
+            line-height: 33px;
+            margin-bottom: 5px;
+
+            &::after {
+                content: '%';
+                position: absolute;
+                top: -10px;
+                left: 100%;
+                font-size: .5em;
+            }
+        }
+    }
+
+}
+
+// ========================== NMOSD vs MS PAGE =====================================
+
+//#########################################################################################
+
+// ========================== ABOUT PAGE =====================================
+
+.about__nmosd {
+    margin: 2.5rem 0;
+
+    .intro .wrapper {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .intro__content--title {
+        margin-bottom: 1.5rem;
+    }
+
+    .intro__content p:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+
+    .intro__content small {
+        font-size: 0.875rem;
+        line-height: 1.125rem;
+    }
+}
+
+.about-nmosd__symptoms {
+    margin-bottom: 5rem;
+
+    .all__symptoms--content {
+        border-radius: .625rem;
+        box-shadow: 0 .3125rem .75rem 0 rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-grow: 0;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        padding-right: 1.75rem;
+        padding-bottom: 3.5rem;
+        padding-left: 1.75rem;
+
+        position: relative;
+
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   bottom: 0;
+        //   right: 0;
+
+        //   width: 87.4px;
+        //   height: 74.3px;
+        //   margin: 572.7px 0 0 1106.6px;
+        //   background-image: linear-gradient(142deg, #ebebeb 24%, #e6e6e6 33%, #d8d8d8 43%, #cdcdcd 49%, #b4b4b4 56%, #b6b6b6 58%, #bfbfbf 59%, #cdcdcd 60%);
+        // }
+    }
+
+    .all__symptoms--content_title {
+        text-align: center;
+    }
+
+    .all__symptoms--content_text {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+        text-align: left;
+    }
+
+    .all__symptoms--content_columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-column-gap: 130px;
+        grid-row-gap: 2rem;
+        place-content: space-between;
+        margin: 3rem auto;
+        max-width: 888px;
+        width: 100%;
+    }
+
+    .all__symptoms--content_list_item {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        grid-column-gap: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        align-items: center;
+    }
+
+    .all__symptoms--content_list_item .text {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+        font-weight: bold;
+        max-width: 294px;
+    }
+
+    .all__symptoms--content_list_item:first-of-type {
+        margin-top: 0;
+    }
+
+    .all__symptoms--content_list_item:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.icon__callout {
+    position: relative;
+}
+
+.icon__callout--inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    color: $color-new-blue;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: center;
+    gap: 24px;
+    padding: 40px 48px;
+    border-radius: 12px;
+    border: solid 4px $color-yellow;
+    box-shadow: 10px 10px 0px $color-yellow;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.nmosd__by_the_numbers {
+    background-color: rgba(96, 124, 190, 0.2);
+    margin-top: 4rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+
+    margin-bottom: 0;
+
+    .nmosd__by_the_numbers--title {
+        font-size: 2rem;
+        line-height: 2.68rem;
+        margin-bottom: 2.25rem;
+        text-align: center;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(319px, 1fr));
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
+        place-items: stretch;
+    }
+
+    .cards .icon-card {
+        position: relative;
+        background-image: linear-gradient(to bottom, #fff 33%, #e2e9ec 100%);
+        border-radius: 10px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 410px;
+        max-width: 480px;
+        width: 100%;
+    }
+
+    .cards .icon-card::after {
+        content: '';
+        position: absolute;
+        bottom: 2rem;
+        right: .875rem;
+        width: 1.5rem;
+        height: 14.5rem;
+        transform: rotate(348deg);
+        -webkit-filter: blur(24px);
+        filter: blur(24px);
+        background-color: rgba(96, 124, 190, 0.9);
+        z-index: -1;
+    }
+
+    .cards .icon-card .icon-card__title {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.card__callouts_section_title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.icon__card_callouts {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 85px;
+    margin-top: 130px;
+}
+
+.icon__card_callout_columns {
+    max-width: 480px;
+    width: 100%;
+}
+
+.icon__card_callout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 72px 40px 40px;
+    border-radius: 12px;
+    border: solid 3px $color-yellow;
+    background-color: #fff;
+    min-height: 185px;
+    position: relative;
+    margin-bottom: 2rem;
+    /* max-width: 480px; */
+    /* width: 100%; */
+}
+
+.icon__card_callout_icon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 128px;
+    height: 128px;
+    padding: 0;
+    border-radius: 150px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.icon__card_callout_icon img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
+
+.icon__card_callout.unstyled {
+    background: none;
+    border: 0;
+    padding-top: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.icon__card_callout.unstyled .icon__card_callout_icon {
+    position: relative;
+    left: auto;
+    top: auto;
+    box-shadow: none;
+    // margin-bottom: 2rem;
+    transform: none;
+}
+
+.icon__card_callout_content--heading {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.icon__card_callout_content {
+    font-size: 18px;
+    line-height: 24px;
+    color: #2e5055;
+    text-align: center;
+}
+
+.icon__card_callout_content p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 785px;
+}
+
+.icon__card_callout_content p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.card_callouts_section {
+    padding-top: 60px;
+    margin-bottom: 0;
+}
+
+.waves__callout {
+    height: 12rem;
+    position: relative;
+
+    background-image: url("../assets/img/end-cta-tile-bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.waves__callout-image {
+    background-image: url("../assets/vectors/waves/end-cta-waves.png");
+    background-size: cover;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    height: 9rem;
+
+    @media screen and (min-width: 858px) {
+        height: 11rem;
+    }
+
+    @media screen and (min-width: 1054px) {
+        height: 13rem;
+    }
+
+    @media screen and (min-width: 1244px) {
+        height: 15rem;
+    }
+
+    @media screen and (min-width: 1430px) {
+        height: 17rem;
+    }
+
+    @media screen and (min-width: 1629px) {
+        height: 19rem;
+    }
+
+    @media screen and (min-width: 1787px) {
+        height: 21rem;
+    }
+
+    @media screen and (min-width: 1990px) {
+        height: 23rem;
+    }
+
+    @media screen and (min-width: 2230px) {
+        height: 25rem;
+    }
+
+    @media screen and (min-width: 2453px) {
+        height: 27rem;
+    }
+
+    @media screen and (min-width: 2623px) {
+        height: 29rem;
+    }
+}
+
+.waves__callout .section-wrapper {
+    position: relative;
+}
+
+.waves__callout .section-wrapper .end-cta {
+    position: absolute;
+    bottom: 2rem;
+
+    left: 0;
+    right: 0;
+}
+
+.section__callout {
+    margin-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .icon__card_callouts {
+        grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .icon__card_callouts {
+        grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    }
+
+    .about__nmosd .intro__content {
+        // max-width: 58.25rem;
+        margin: 0 auto;
+    }
+
+    .about-nmosd__symptoms .all__symptoms--content {
+        padding-right: 5.75rem;
+        padding-left: 5.75rem;
+    }
+
+    .about-nmosd__symptoms .all__symptoms--content_title {
+        text-align: left;
+    }
+
+    .waves__callout .section-wrapper .end-cta {
+        bottom: 4rem;
+    }
+}
+
+// ========================== ABOUT PAGE =====================================
+
+
+
+// ========================== HOW DIAGNOSIS WORKS PAGE =====================================
+.how-diagnosis-works__diagnosed {
+
+    margin-bottom: 2.5rem;
+
+    .how-is-diagnosed,
+    .diagnosis-by,
+    h2,
+    h3,
+    ul {
+        margin-bottom: 1.5rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+        margin: 2.5rem 0;
+    }
+}
+
+.how-diagnosis-works__discover-steps {
+    margin-bottom: 2rem;
+    padding: 3.4375rem 0;
+    background-color: $color-bright-gray;
+
+    .how-diagnosis-works__title {
+        text-align: center;
+        margin-bottom: 2.375rem;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 6.375rem;
+
+        align-items: center;
+
+        margin-top: 5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    @media screen and (min-width: 980px) {
+        .cards {
+            flex-direction: row;
+            row-gap: 0;
+            -moz-column-gap: 1rem;
+            column-gap: 1rem;
+
+            justify-content: space-between;
+        }
+    }
+
+    .how-diagnosis-works__disclaimer {
+        font-weight: bold;
+    }
+}
+
+// ========================== HOW DIAGNOSIS WORKS PAGE =====================================
+
+
+// ========================== MANAGING NMOSD PAGE =====================================
+.manage-nmosd__treat {
+
+    .treat__title {
+        text-align: center;
+    }
+
+    .cards-container {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        gap: 2rem;
+
+        .icon__card_callout {
+            margin-top: 5.3rem;
+            margin-bottom: 0;
+        }
+    }
+
+    @media screen and (min-width: 950px) {
+        margin-top: 2.5rem;
+
+        .cards-container {
+            flex-direction: row;
+            gap: 1.5rem;
+        }
+    }
+}
+
+.manage-nmosd__treatment-essential {
+
+    margin: 3.5rem 0;
+
+    .treatment-essential__title,
+    .paragraph:not(:last-of-type) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+// ========================== MANAGING NMOSD PAGE =====================================
+
+
+// ========================== ACCESSIBILITY PAGE =====================================
+.accessibility__content {
+    margin: 2.5rem 0;
+
+    .paragraph:not(:last-of-type) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+// ========================== ACCESSIBILITY PAGE =====================================
+
+// ========================== A CAUSE OF DAMAGE PAGE =====================================
+
+.cause__of_damage_intro_content,
+.cause__of_damage_signs_content,
+.cause__of_damage_behind_content,
+.attack__steps {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-bottom: 3.5rem;
+    margin-left: auto;
+    max-width: 320px;
+
+    @media screen and (min-width: 376px) {
+        max-width: 100%;
+    }
+
+    .cause__of_damage_intro_content--title {
+        font-size: 24px;
+        margin-bottom: 1.5rem;
+    }
+
+    .cause__of_damage_signs_content--title,
+    .cause__of_damage_behind_content--title {
+        font-size: 28px;
+        line-height: 37.8px;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+    }
+
+    .list--toggle .list__element {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+    }
+
+}
+
+.cause__of_damage {
+    .signs {
+        margin-bottom: 3.5rem;
+    }
+}
+
+.cause__of_damage_intro_content {
+    img.align-right {
+        @media screen and (min-width: 1024px) {
+            position: relative;
+            float: right;
+            right: -2rem;
+            width: 376px;
+        }
+    }
+}
+
+.cause__of_damage_signs_content--title {
+    br {
+        display: none;
+    }
+
+    @media screen and (min-width: 1204px) {
+        br {
+            display: block;
+        }
+    }
+}
+
+.cause__of_damage_behind_content--results_item {
+    display: grid;
+    grid-template-columns: 1fr;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 60px 1fr;
+        align-items: center;
+        -moz-column-gap: 3rem;
+        column-gap: 3rem;
+
+        p {
+            margin-bottom: 0;
+        }
+
+
+
+    }
+
+    img {
+        margin-bottom: 1rem;
+        width: 60px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 0;
+        }
+
+    }
+
+}
+
+.attack__steps {
+    background-color: $color-bright-gray;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 100%;
+}
+
+.attack__step_cards {
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(276px, 1fr));
+        align-items: baseline;
+    }
+}
+
+.attack__step_card {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 24px;
+    margin-right: auto;
+    margin-left: auto;
+
+
+    &:not(:last-of-type) {
+        margin-bottom: 3rem;
+
+        @media screen and (min-width: 768px) {
+            margin-right: 2rem;
+            max-width: 276px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            margin-right: auto;
+            margin-bottom: 0;
+        }
+    }
+
+    &--step {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    &--title {
+        grid-area: 1 / 2 / 2 / 3;
+        color: $color-new-blue;
+        display: flex;
+        align-self: center;
+        font-weight: bold;
+    }
+
+    &--text {
+        grid-area: 2 / 1 / 3 / 3;
+        margin-bottom: 0.5rem !important;
+
+        @media screen and (min-width: 1024px) {
+            min-height: 135px;
+        }
+
+    }
+
+    &--image {
+        grid-area: 3 / 1 / 4 / 3;
+
+        margin: 0 auto;
+        max-width: 276px;
+
+        @media screen and (min-width: 1024px) {
+            margin: 0;
+            // max-width: 100%;
+        }
+
+    }
+}
+
+// ========================== A CAUSE OF DAMAGE PAGE =====================================
+
+
+// ========================== LIVING WITH NMOSD PAGE =====================================
+.living-with-nmosd__tips {
+
+    .living-with-nmosd__tips-header {
+
+        margin-bottom: 2rem;
+
+        .living-with-nmosd__title {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .living-with-nmosd__description {
+            text-align: center;
+        }
+    }
+
+    .tips {
+
+        .tip {
+
+            padding: 2rem 0;
+            border-bottom: 2px solid $color-new-blue;
+
+            .tip__image {
+
+                img {
+                    width: 9.9375rem;
+                }
+            }
+
+            .tip__title {
+                margin: .5rem 0 2rem 0;
+                max-width: 95%;
+            }
+
+            &:first-of-type {
+                padding-top: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-top: 2.5rem;
+    }
+
+    @media screen and (min-width: 900px) {
+        .tips .tip {
+            display: flex;
+
+            .tip__image {
+                flex: 0 0 auto;
+            }
+        }
+    }
+}
+
+.living-with-nmosd__children-book {
+    padding: 3.5rem 0;
+
+    .book {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        margin-bottom: 2rem;
+
+        .book__info {
+
+            .book__title {
+                margin-bottom: 1.5rem;
+            }
+
+            .paragraph {
+                margin-bottom: 2.5rem;
+            }
+
+            .book__order-link {
+                font-size: 1.125rem;
+                font-weight: bold;
+
+                max-width: 12.5rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .book .book__info .book__order-link {
+            max-width: -webkit-max-content;
+            max-width: -moz-max-content;
+            max-width: max-content;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .book {
+            flex-direction: row;
+        }
+    }
+}
+
+// ========================== LIVING WITH NMOSD PAGE =====================================
+
+
+
+// ========================== TALKING TO YOUR DOCTOR PAGE =====================================
+
+.talking__to_doctor.intro {
+    margin-top: 2rem;
+}
+
+.talking__to_doctor_content--results {
+    margin-top: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+.talking__to_doctor_content--results_item {
+    display: grid;
+    grid-template-columns: 1fr;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 128px 1fr;
+        align-items: center;
+        -moz-column-gap: 3rem;
+        column-gap: 3rem;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    img {
+        width: 128px;
+    }
+
+
+    &--text {
+        font-size: 18px;
+        line-height: 1.5;
+
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.talking__to_doctor_signs_content {
+    margin-bottom: 3.5rem;
+
+    &--title {
+        margin-bottom: 2rem;
+    }
+
+    .list {
+        margin-bottom: 2rem;
+    }
+}
+
+// ========================== TALKING TO YOUR DOCTOR PAGE =====================================
+
+
+// ========================== RESOURCES PAGE =====================================
+.resources__books-and-guides {
+
+    margin-bottom: 3.5rem;
+
+    .books-and-guides__title {
+        margin-bottom: 2.5rem;
+    }
+
+    .books-and-guides {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .resource {
+
+            .resource__title {
+                color: $color-new-blue;
+                font-weight: bold;
+
+                margin-bottom: 1.5rem;
+            }
+
+            .resource__content {
+                .resource__image {
+                    margin-bottom: 2.5rem;
+                    padding-left: 1.375rem;
+                }
+
+                .resource__description {
+                    margin-bottom: 1.5rem;
+                }
+
+                .link {
+                    max-width: 14rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .books-and-guides {
+            flex-direction: row;
+
+            .resource {
+                flex: 1;
+
+                .resource__content {
+                    position: relative;
+                    height: 27.9619rem;
+
+                    .link {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        margin-top: 3.5rem;
+
+        .books-and-guides {
+            justify-content: space-between;
+
+            .resource {
+                .resource__content {
+                    display: flex;
+                    height: auto;
+
+                    gap: 1.5rem;
+
+                    .link {
+                        position: initial;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .books-and-guides {
+            .resource {
+                .resource__content {
+                    gap: 2.9375rem;
+                }
+            }
+        }
+    }
+}
+
+.resources__helpful-websites {
+
+    margin-bottom: 5rem;
+
+    .helpful-websites__title {
+        margin-bottom: 2.5rem;
+    }
+
+    .websites {
+
+        .website {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+
+            &:not(:last-of-type) {
+                margin-bottom: 2.5rem;
+            }
+
+            .website__logo {
+
+                flex: 1 0 auto;
+
+                img {
+                    width: 12.5rem;
+                }
+            }
+
+            .website__info {
+                display: flex;
+                flex-direction: column;
+
+                .website__info-title {
+                    color: $color-new-blue;
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+
+                .website__info-description {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .websites {
+            .website {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 1rem;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+    }
+}
+
+.pre__footer.pre__footer--resources {
+    @media screen and (min-width: 1024px) {
+        .waves__callout {
+            .end-cta {
+                .end-cta__text {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+// ========================== RESOURCES PAGE =====================================
+
+
+// ========================== SITE MAP PAGE =====================================
+
+.site__map {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+
+    &-hero {
+        .wrapper {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .hero__content {
+            margin: 0;
+        }
+
+    }
+
+    &-columns {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+
+    .paragraph {
+        margin-bottom: 1.5rem;
+
+        &.mb-3 {
+            margin-bottom: 3rem;
+        }
+    }
+
+    .list {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .list .list__element:not(:last-of-type) {
+        margin-bottom: 1rem;
+    }
+
+    .list__element::before {
+        content: "";
+    }
+
+}
+
+// ========================== SITE MAP PAGE =====================================
+
+// ========================== GET NEWSLETTER PAGE =====================================
+.get-newsletter__form {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+
+    .form {
+
+        .form__control:nth-child(2),
+        .form__control:nth-child(3),
+        .form__control:nth-child(4) {
+            width: 100%;
+            max-width: 26.5625rem;
+        }
+
+        @media screen and (min-width: 426px) {
+            .form__control:nth-child(5) {
+                width: 100%;
+                max-width: 9.375rem;
+            }
+        }
+    }
+}
+
+// ========================== GET NEWSLETTER PAGE =====================================
+
+// ========================== CHILDREN'S BOOK PAGE =====================================
+.nmosd-children-book__memory {
+
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+
+    .make-memory {
+        display: flex;
+        flex-direction: column;
+
+        .make-memory__content {
+            order: 2;
+
+            h3 {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .make-memory__image {
+
+            margin-bottom: 2rem;
+            padding: .5rem 0;
+
+            .resource-placeholder {
+                margin-left: 1.375rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .make-memory {
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: space-between;
+
+            .make-memory__content {
+                order: initial;
+                margin: 0;
+            }
+
+            .make-memory__image {
+                margin: 0;
+
+            }
+        }
+    }
+}
+
+.nmosd-children-book__order-copy-form {
+    margin-bottom: 3.5rem;
+
+    .nmosd-children-book__order-copy-form__title {
+        margin-bottom: 1rem;
+    }
+
+    .form {
+
+        .form__control[data-field-index="0"],
+        .form__control[data-field-index="1"],
+        .form__control[data-field-index="2"],
+        .form__control[data-field-index="3"],
+        .form__control[data-field-index="4"],
+        .form__control[data-field-index="5"] {
+            width: 100%;
+            max-width: 26.5625rem;
+        }
+
+        @media screen and (min-width: 426px) {
+            .form__control[data-field-index="6"] {
+                width: 100%;
+                max-width: 4.375rem;
+            }
+
+            .form__control[data-field-index="7"] {
+                width: 100%;
+                max-width: 9.375rem;
+            }
+        }
+    }
+}
+
+// ========================== CHILDREN'S BOOK PAGE =====================================
+
+// ========================== THANK YOU & CONFIRMATION PAGES =====================================
+.thank__you {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
+
+    .email--color {
+        color: $color-pink;
+    }
+
+    &--links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+
+
+
+        .button {
+            max-width: 265px;
+        }
+
+        .button:first-of-type {
+            margin-bottom: 1.5rem;
+        }
+
+        .button:last-of-type {
+            max-width: 150px;
+        }
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+
+            .button:first-of-type {
+                margin-right: 1.5rem;
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+}

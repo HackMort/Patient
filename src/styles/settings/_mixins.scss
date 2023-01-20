@@ -1,0 +1,30 @@
+/*
+  This mixin will build the prefix values for the property and value passed in.
+  It will also add the property and value without the prefix.
+  Example:
+    @include build-prefix-values('transition', 'all 1s linear');
+*/
+$default-prefixes: webkit moz ms o;
+
+@mixin build-prefix-values($property, $value, $prefixes: $default-prefixes) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: #{$value};
+  }
+
+  #{$property}: #{$value};
+}
+
+@mixin transition($property: all, $delay: 1s, $timing: ease-in-out) {
+  $value: $property $delay $timing;
+  @include build-prefix-values('transition', $value);
+}
+
+/* 
+  Example usage:
+    .my-class {
+      // Default usage
+      @include transition();
+      // Custom usage
+      @include transition('all', 1s, linear);
+    }
+*/

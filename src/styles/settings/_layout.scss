@@ -1,0 +1,12 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: calc(100% - 2rem);
+  width: 1194px;
+
+  &.small {
+    // max-width: 990px width 100% - 2rem
+    max-width: calc(100% - 2rem);
+    width: 990px;
+  }
+
+}

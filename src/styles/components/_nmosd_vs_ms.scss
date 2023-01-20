@@ -1,0 +1,198 @@
+@import '../settings/variables';
+@import '../settings/mixins';
+
+.nmosd__symptoms {
+  position: relative;
+  background: $color-white;
+  border: solid 4px $color-new-blue;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 50px 20px;
+  max-width: 994px;
+}
+
+.nmosd__symptoms_grid:first-of-type {
+  margin-top: 0;
+}
+
+.nmosd__symptoms_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  place-items: stretch;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.nmosd__heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  max-width: 940px;
+}
+
+.nmosd__description {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.nmosd__buttons.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $color-white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 10px 0;
+  width: 100vw;
+  z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+.nmosd__buttons {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 1rem; */
+  list-style-type: none;
+  margin-right: auto;
+  margin-left: auto;
+  // transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.nmosd__buttons li.active .button {
+  background: $color-dark-purple;
+  border-color: $color-dark-purple;
+  box-shadow: none;
+  color: $color-white;
+  font-weight: 700;
+}
+
+.nmosd__buttons .button {
+  background-color: $color-white;
+  border: solid 4px $color-dark-purple;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  color: $color-dark-purple;
+  font-size: 24px;
+  line-height: 32px;
+  display: flex;
+  flex-grow: 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  gap: 8px;
+  // padding: 12px 24px;
+  // transition: all 0.3s ease-in-out;
+  width: 140px;
+}
+
+.nmosd__buttons li:first-of-type {
+  margin-right: 0.5rem;
+}
+
+
+.nmosd__symptoms_item {
+  display: block;
+  opacity: 0.2;
+  margin-bottom: 1rem;
+  @include transition(opacity 0.5s ease-in-out);
+  text-align: center;
+  width: 100%;
+}
+
+.nmosd__symptoms_item_image {
+  margin: 0 auto;
+  width: auto;
+  height: 83px;
+}
+
+.nmosd__symptoms_item.active {
+  opacity: 1;
+}
+
+.nmosd__symptoms_item>span {
+  display: block;
+  margin-top: 5px;
+}
+
+.nmosd__symptoms_item--cirle {
+  display: none;
+}
+
+.big__circle {
+  background: $color-yellow;
+  border-radius: 50%;
+  color: $color-white;
+  font-weight: bold;
+  display: flex;
+  font-size: 16px;
+  height: 150px;
+  line-height: 24px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+}
+
+.big__circle span {
+  display: block;
+  color: $color-new-blue;
+  max-width: 180px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .nmosd__symptoms_grid {
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+  }
+
+  .nmosd__symptoms_item--cirle {
+    display: block;
+  }
+
+  .nmosd__symptoms_grid.grid_5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .nmosd__symptoms_grid {
+    gap: 2rem;
+  }
+
+  .nmosd__symptoms_item>span {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .big__circle {
+    font-size: 24px;
+    height: 215px;
+    line-height: 32.4px;
+    width: 215px;
+  }
+}
+
+@media screen and (max-width: 1049px) {
+  .wrapper {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}

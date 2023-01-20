@@ -1,0 +1,109 @@
+@import '../settings/variables';
+@import '../settings/mixins';
+
+.button {
+    border-radius: .25rem;
+    width: 100%;
+
+    height: 2.6875rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    // transition: all 100ms ease;
+    @include transition(all, 100ms, ease);
+
+    &:disabled,
+    &[disabled] {
+        opacity: .5;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    .button__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        padding: .5rem 1rem;
+        box-shadow: 0 .1875rem .75rem 0 rgba(0, 0, 0, 0.25);
+
+        border-radius: inherit;
+        border-bottom-right-radius: 1.625rem;
+
+        overflow: hidden;
+
+        flex: 1 1 auto;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-weight: bold;
+        font-size: 1.125em;
+
+        -webkit-user-select: none;
+
+        -moz-user-select: none;
+
+        -ms-user-select: none;
+
+        user-select: none;
+        position: relative;
+    }
+
+    .button__icon {
+        height: 100%;
+        width: 3.125rem;
+
+        flex: 0 0 auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 1.0625rem;
+            height: 1.0625rem;
+        }
+    }
+
+    &.button--default {
+        background-color: $color-purple;
+
+        .button__label {
+            color: $color-white;
+            background-color: $color-dark-purple;
+
+            text-decoration: none;
+        }
+
+        &:hover {
+            .button__label {
+                text-decoration: underline;
+            }
+        }
+
+        &:active {
+            outline: 2px solid $color-dark-purple;
+        }
+    }
+
+    &.button--white {
+        background-color: $color-purple;
+        text-decoration: none;
+
+        .button__label {
+            color: $color-purple;
+            background-color: $color-white;
+        }
+
+        &:hover,
+        &:active {
+            background-color: $color-dark-purple;
+        }
+    }
+}
