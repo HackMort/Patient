@@ -2449,15 +2449,67 @@ hr {
 }
 
 .waves__callout {
-  height: 29rem;
+  height: 12rem;
   position: relative;
+  background-image: url("../assets/img/end-cta-tile-bg.png");
 }
-.waves__callout .waves__callout-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -o-object-position: 40% 0%;
-     object-position: 40% 0%;
+
+.waves__callout-image {
+  background-image: url("../assets/vectors/waves/end-cta-waves.png");
+  background-size: cover;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  height: 9rem;
+}
+@media screen and (min-width: 858px) {
+  .waves__callout-image {
+    height: 11rem;
+  }
+}
+@media screen and (min-width: 1054px) {
+  .waves__callout-image {
+    height: 13rem;
+  }
+}
+@media screen and (min-width: 1244px) {
+  .waves__callout-image {
+    height: 15rem;
+  }
+}
+@media screen and (min-width: 1430px) {
+  .waves__callout-image {
+    height: 17rem;
+  }
+}
+@media screen and (min-width: 1629px) {
+  .waves__callout-image {
+    height: 19rem;
+  }
+}
+@media screen and (min-width: 1787px) {
+  .waves__callout-image {
+    height: 21rem;
+  }
+}
+@media screen and (min-width: 1990px) {
+  .waves__callout-image {
+    height: 23rem;
+  }
+}
+@media screen and (min-width: 2230px) {
+  .waves__callout-image {
+    height: 25rem;
+  }
+}
+@media screen and (min-width: 2453px) {
+  .waves__callout-image {
+    height: 27rem;
+  }
+}
+@media screen and (min-width: 2623px) {
+  .waves__callout-image {
+    height: 29rem;
+  }
 }
 
 .waves__callout .section-wrapper {
@@ -2494,33 +2546,8 @@ hr {
   .about-nmosd__symptoms .all__symptoms--content_title {
     text-align: left;
   }
-  .waves__callout .waves__callout-image {
-    -o-object-position: initial;
-       object-position: initial;
-  }
-  .waves__callout {
-    height: 23.9375rem;
-  }
   .waves__callout .section-wrapper .end-cta {
     bottom: 4rem;
-  }
-}
-@media screen and (min-width: 1366px) {
-  .waves__callout {
-    height: 29rem;
-  }
-  .waves__callout .waves__callout-image {
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-}
-@media screen and (min-width: 2366px) {
-  .waves__callout {
-    height: 33rem;
-  }
-  .waves__callout .waves__callout-image {
-    -o-object-fit: fill;
-       object-fit: fill;
   }
 }
 .how-diagnosis-works__diagnosed {
@@ -3009,9 +3036,6 @@ hr {
   }
 }
 
-.pre__footer.pre__footer--resources .waves__callout {
-  height: 29.9375rem;
-}
 @media screen and (min-width: 1024px) {
   .pre__footer.pre__footer--resources .waves__callout .end-cta .end-cta__text {
     text-align: left;
