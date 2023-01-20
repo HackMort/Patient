@@ -868,6 +868,9 @@ hr {
     position: relative;
 
     background-image: url("../assets/img/end-cta-tile-bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .waves__callout-image {
