@@ -30,13 +30,13 @@ function numberIncrementAnimation(element, end, duration) {
     // Use that to calculate how many frames we need to complete the animation
     const totalFrames = Math.round(duration / frameDuration);
     // An ease-out function that slows the count as it progresses
-    let easeOutQuad;
-
-    if (end > 2000) {
-        easeOutQuad = x => 1 - Math.pow(1 - x, 8);
-    } else {
-        easeOutQuad = x => Math.sqrt(1 - Math.pow(x - 1, 2));
-    }
+    /**
+     * A function that is used to ease out the animation.
+     * @link https://easings.net/#easeOutQuint Ease function details
+     * @param {number} x 
+     * @returns number
+     */
+    let easeOutQuint = x => 1 - Math.pow(1 - x, 8);
 
     let frame = 0;
     // Start the animation running 60 times per second
@@ -45,7 +45,7 @@ function numberIncrementAnimation(element, end, duration) {
         // Calculate our progress as a value between 0 and 1
         // Pass that value to our easing function to get our
         // progress on a curve
-        const progress = easeOutQuad(frame / totalFrames);
+        const progress = easeOutQuint(frame / totalFrames);
         // Use the progress value to calculate the current count
         const value = Math.round(end * progress);
 
